@@ -1,10 +1,10 @@
 # coding=utf-8
 # @author: cer
 import tensorflow as tf
-from data import *
+from dataset.data import *
 # from model import Model
-from model import Model
-from my_metrics import *
+from dataset.model import Model
+from dataset.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
 
@@ -37,6 +37,9 @@ def train(is_debug=False):
     train_data = open("dataset/atis-2.train.w-intent.iob", "r").readlines()
     test_data = open("dataset/atis-2.dev.w-intent.iob", "r").readlines()
     train_data_ed = data_pipeline(train_data)
+
+
+
     test_data_ed = data_pipeline(test_data)
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
         get_info_from_training_data(train_data_ed)
@@ -119,16 +122,20 @@ def train(is_debug=False):
 def test_data():
     train_data = open("dataset/atis-2.train.w-intent.iob", "r").readlines()
     test_data = open("dataset/atis-2.dev.w-intent.iob", "r").readlines()
-    train_data_ed = data_pipeline(train_data)
+    train_data_ed = data_pipeline(train_data)   #此处数据已经进行PAD
     test_data_ed = data_pipeline(test_data)
+
+
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
         get_info_from_training_data(train_data_ed)
     # print("slot2index: ", slot2index)
     # print("index2slot: ", index2slot)
+
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)
     index_test = to_index(test_data_ed, word2index, slot2index, intent2index)
     batch = next(getBatch(batch_size, index_test))
     unziped = list(zip(*batch))
+
     print("word num: ", len(word2index.keys()), "slot num: ", len(slot2index.keys()), "intent num: ",
           len(intent2index.keys()))
     print(np.shape(unziped[0]), np.shape(unziped[1]), np.shape(unziped[2]), np.shape(unziped[3]))
@@ -138,6 +145,6 @@ def test_data():
 
 
 if __name__ == '__main__':
-    # train(is_debug=True)
-    # test_data()
-    train()
+    #train(is_debug=True)
+    test_data()
+    #train()

@@ -5,6 +5,8 @@ from tensorflow.contrib import layers
 import numpy as np
 from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple,DropoutWrapper
 import sys
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 class Model:
@@ -33,7 +35,7 @@ class Model:
 
         self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
                                                         -0.1, 0.1), dtype=tf.float32, name="embedding")
-
+        #随机生成871*64大小的矩阵，元素介于-0.1到0.1
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 
         # Encoder
@@ -43,6 +45,8 @@ class Model:
         encoder_b_cell_0 = LSTMCell(self.hidden_size)
         encoder_f_cell = DropoutWrapper(encoder_f_cell_0,output_keep_prob=0.5)
         encoder_b_cell = DropoutWrapper(encoder_b_cell_0,output_keep_prob=0.5)
+        #防止过拟合
+
         # encoder_inputs_time_major = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
         # 下面四个变量的尺寸：T*B*D，T*B*D，B*D，B*D
         (encoder_fw_outputs, encoder_bw_outputs), (encoder_fw_final_state, encoder_bw_final_state) = \
@@ -62,7 +66,7 @@ class Model:
         self.encoder_final_state = LSTMStateTuple(
             c=encoder_final_state_c,
             h=encoder_final_state_h
-        )
+        )#取出最后的状态
         print("encoder_outputs: ", encoder_outputs)
         print("encoder_outputs[0]: ", encoder_outputs[0])
         print("encoder_final_state_c: ", encoder_final_state_c)
@@ -80,6 +84,7 @@ class Model:
         intent_logits = tf.add(tf.matmul(encoder_final_state_h, intent_W), intent_b)
         # intent_prob = tf.nn.softmax(intent_logits)
         self.intent = tf.argmax(intent_logits, axis=1)
+        #返回最大值对应索引，即最可能的意图
 
         sos_time_slice = tf.ones([self.batch_size], dtype=tf.int32, name='SOS') * 2
         sos_step_embedded = tf.nn.embedding_lookup(self.embeddings, sos_time_slice)
