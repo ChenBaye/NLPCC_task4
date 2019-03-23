@@ -49,12 +49,13 @@ def f1_for_sequence_batch(true_batch, pred_batch, average="macro", padding_token
     return f1_score(true, pred, labels=labels, average=average)
 
 
-# 下面不包括OTHERS类
+# 下面不包括OTHERS类、<UNK>类
 def f1_for_sequence_batch_new(true_batch, pred_batch, option):
     # true, pred = get_data_from_sequence_batch(true_batch, pred_batch,0)
     # print("true: ", true)
     # print("pred: ", pred)
     labels = list(set(true_batch))
+
     if option == "no_others":       # 测算没有others的F1
         labels.remove(11)
 

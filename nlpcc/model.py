@@ -163,9 +163,12 @@ class Model:
             labels=tf.one_hot(self.intent_targets, depth=self.intent_size, dtype=tf.float32),
             logits=intent_logits)
         loss_intent = tf.reduce_mean(cross_entropy)
+        # 二次代价函数
 
         self.loss = loss_slot + loss_intent
-        optimizer = tf.train.AdamOptimizer(name="a_optimizer")  #优化函数、学习率
+        # 优化函数、学习率
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.002,name="a_optimizer")
+
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
         self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients

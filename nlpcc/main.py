@@ -10,12 +10,12 @@ from tensorflow.python import debug as tf_debug
 import numpy as np
 import operator
 
-input_steps = 50    # 每一条数据设置为input_steps长度（input_steps个槽、词）
+input_steps = 30    # 每一条数据设置为input_steps长度（input_steps个槽、词）
 embedding_size = 64
 hidden_size = 100
 n_layers = 2
 batch_size = 16     # 批大小，每次训练给神经网络喂入的数据量大小
-vocab_size = 11500
+vocab_size = 14407  # 共14404个不同词，其中包括空字符，在编程中又加入了<PAD> <UNK> <EOS>，变成14407
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12
 epoch_num = 50      # 将所有样本全部训练一次为一个epoch
@@ -36,14 +36,35 @@ def train(is_debug=False):
         sess.add_tensor_filter("has_inf_or_nan", tf_debug.has_inf_or_nan)
     sess.run(tf.global_variables_initializer())
     # print(tf.trainable_variables())
-    train_data = open("trainfile.txt", "r", encoding='UTF-8').readlines()
-    test_data = open("testfile.txt", "r", encoding='UTF-8').readlines()
 
-    train_data_ed = data_pipeline(train_data)
-    test_data_ed = data_pipeline(test_data)
+    '''
+    train_data = open("train_labeled.txt", "r", encoding='UTF-8').readlines()
+    test_data = open("test_labeled.txt", "r", encoding='UTF-8').readlines()
 
+    train_data_ed = data_pipeline(train_data, "data_list\\train_list.npy", input_steps)
+    test_data_ed = data_pipeline(test_data, "data_list\\test_list.npy", input_steps)
+
+    all_data = train_data_ed + test_data_ed     # list合并
+    # 要得到（训练集+测试集）的词集合、槽集合
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-        get_info_from_training_data(train_data_ed)
+    get_info_from_training_data(all_data)
+    '''
+
+
+    # 上一步保存后可以直接读取字典，节省时间
+    train_data_ed = file_to_list("data_list\\train_list.npy")
+    test_data_ed = file_to_list("data_list\\test_list.npy")
+
+
+    word2index = file_to_dictionary("dic\\word2index.txt")
+    index2word = file_to_dictionary("dic\\index2word.txt")
+    slot2index = file_to_dictionary("dic\\slot2index.txt")
+    index2slot = file_to_dictionary("dic\\index2slot.txt")
+    intent2index = file_to_dictionary("dic\\intent2index.txt")
+    index2intent = file_to_dictionary("dic\\index2intent.txt")
+
+
+
     # print("slot2index: ", slot2index)
     # print("index2slot: ", index2slot)
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)
@@ -209,6 +230,8 @@ def train(is_debug=False):
 
         print("Intent F1 score（不含OTHERS类）for epoch {}: {}".
               format(epoch, f1_for_sequence_batch_new(true_intents_a, pred_intents_a, "no_others")))
+
+
         # 查准率（precision），指的是预测值为1且真实值也为1的样本在预测值为1的所有样本中所占的比例
         # 以西瓜问题为例，算法挑出来的西瓜中有多少比例是好西瓜。
         # 召回率（recall），也叫查全率，指的是预测值为1且真实值也为1的样本在真实值为1的所有样本中所占的比例。
@@ -232,16 +255,18 @@ def train(is_debug=False):
 
 
 
-
+# 单独用于测试分词等是否正确，没有被调用
 def test_data():
-    train_data = open("trainfile.txt", "r", encoding='UTF-8').readlines()
-    test_data = open("testfile.txt", "r", encoding='UTF-8').readlines()
-    train_data_ed = data_pipeline(train_data)   #此处数据已经进行PAD
+    train_data = open("train_labeled.txt", "r", encoding='UTF-8').readlines()
+    test_data = open("test_labeled.txt", "r", encoding='UTF-8').readlines()
+    train_data_ed = data_pipeline(train_data)   # 此处数据已经进行PAD
     test_data_ed = data_pipeline(test_data)
 
+    all_data = train_data_ed+test_data_ed
+    # 要得到（训练集+测试集）的词集合、槽集合
 
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-        get_info_from_training_data(train_data_ed)
+        get_info_from_training_data(all_data)
     # print("slot2index: ", slot2index)
     # print("index2slot: ", index2slot)
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)
