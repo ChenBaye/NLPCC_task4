@@ -9,16 +9,17 @@ from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
 import operator
+import matplotlib.pyplot as plt
 
 input_steps = 30    # 每一条数据设置为input_steps长度（input_steps个槽、词）
-embedding_size = 64
-hidden_size = 100
+embedding_size = 300# 词向量维度
+hidden_size = 100   # 隐藏层的节点数
 n_layers = 2
-batch_size = 16     # 批大小，每次训练给神经网络喂入的数据量大小
+batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
 vocab_size = 14407  # 共14404个不同词，其中包括空字符，在编程中又加入了<PAD> <UNK> <EOS>，变成14407
 slot_size = 33      # 有多少种slot_tag
-intent_size = 12
-epoch_num = 50      # 将所有样本全部训练一次为一个epoch
+intent_size = 12    # 有多少种意图
+epoch_num = 25      # 将所有样本全部训练一次为一个epoch
 
 
 def get_model():
@@ -38,19 +39,19 @@ def train(is_debug=False):
     # print(tf.trainable_variables())
 
     '''
-    train_data = open("train_labeled.txt", "r", encoding='UTF-8').readlines()
-    test_data = open("test_labeled.txt", "r", encoding='UTF-8').readlines()
+    train_data = open("little_train.txt", "r", encoding='UTF-8').readlines()
+    test_data = open("little_train.txt", "r", encoding='UTF-8').readlines()
 
-    train_data_ed = data_pipeline(train_data, "data_list\\train_list.npy", input_steps)
-    test_data_ed = data_pipeline(test_data, "data_list\\test_list.npy", input_steps)
+    train_data_ed = data_pipeline(train_data, "data_list\\train_list.npy", input_steps, "test")
+    test_data_ed = data_pipeline(test_data, "data_list\\test_list.npy", input_steps, "test")
 
     all_data = train_data_ed + test_data_ed     # list合并
     # 要得到（训练集+测试集）的词集合、槽集合
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-    get_info_from_training_data(all_data)
+    get_info_from_training_data(all_data, "test")
+
+
     '''
-
-
     # 上一步保存后可以直接读取字典，节省时间
     train_data_ed = file_to_list("data_list\\train_list.npy")
     test_data_ed = file_to_list("data_list\\test_list.npy")
@@ -69,6 +70,10 @@ def train(is_debug=False):
     # print("index2slot: ", index2slot)
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)
     index_test = to_index(test_data_ed, word2index, slot2index, intent2index)
+    P = []
+    F1_MACRO = []
+    P_intent = []
+    P_slot = []
     for epoch in range(epoch_num):
         mean_loss = 0.0
         train_loss = 0.0
@@ -199,11 +204,13 @@ def train(is_debug=False):
             # 将各个batch的slot_acc排成数组，最终计算均值，即为整个测试集的slot_acc
             intent_accs.append(intent_acc)
 
+
         pred_intents_a = np.vstack(pred_intents)
         # print("pred_intents:",pred_intents_a)
         pred_intents_a = flatten(pred_intents_a)
         # 提前把pred_intents_a一维化
         # print("pred_intents:", pred_intents_a)
+        # print(len(pred_intents_a))
 
         true_intents_a = np.array(list(zip(*index_test))[3])[:len(pred_intents_a)]
         #print("true_intents_a:",true_intents_a)
@@ -250,6 +257,33 @@ def train(is_debug=False):
         print("P_Right_intent = ", Right_intent / sum)
         print("P_Both_right = ", Both_right / sum)
 
+        P.append(Both_right / sum)
+        F1_MACRO.append(f1_for_sequence_batch_new(true_intents_a, pred_intents_a, "no_others"))
+        P_intent.append(Right_intent / sum)
+        P_slot.append(Right_slot / sum)
+
+    output_picture(P, "P")
+    output_picture(F1_MACRO, "F1_MACRO(without OTHERS)")
+    output_picture(P_intent, "P_intent")
+    output_picture(P_slot, "P_slot")
+
+
+
+
+#将结果输出为折线图
+def output_picture(list, picturename):
+    x = range(1,len(list)+1)    # x = [1, 2, ... , len(list)]
+    y = list
+
+    plt.xlabel("epoch")         # 横坐标为轮数
+
+    plt.plot(x, y)
+    plt.title(picturename)
+    plt.xticks(range(len(list)+1))
+    # plt.show()
+    plt.savefig("result\\"+picturename+".jpg")
+
+
 
 
 
@@ -266,7 +300,7 @@ def test_data():
     # 要得到（训练集+测试集）的词集合、槽集合
 
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-        get_info_from_training_data(all_data)
+        get_info_from_training_data(all_data, "test")
     # print("slot2index: ", slot2index)
     # print("index2slot: ", index2slot)
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)

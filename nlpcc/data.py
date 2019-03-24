@@ -46,7 +46,7 @@ index_seq2slot = lambda s, index2slot: [index2slot[i] for i in s]
 index_seq2word = lambda s, index2word: [index2word[i] for i in s]
 
 
-def data_pipeline(data, file_name, length):     # 规定语句长度定为 input_steps ，不足用EOS+PAD补上
+def data_pipeline(data, file_name, length, option):     # 规定语句长度定为 input_steps ，不足用EOS+PAD补上
     data = [t[:-1] for t in data]  # 去掉'\n'
     # 数据的一行像这样：'BOS i want to fly from baltimore to dallas round trip EOS
     # \tO O O O O O B-fromloc.city_name O B-toloc.city_name B-round_trip I-round_trip atis_flight'
@@ -96,13 +96,14 @@ def data_pipeline(data, file_name, length):     # 规定语句长度定为 input
     print("结尾补上<EOS>+N*<PAD>之后: \n", data[0])
     print("\n")
 
-    #保存数据，方便读取
-    data_to_file(file_name, data)
+    #保存数据，方便读取，测试情况下不保存
+    if option != "test":
+        data_to_file(file_name, data)
     return data
 
 
 # 获取分词字典、槽字典、意图字典
-def get_info_from_training_data(data):
+def get_info_from_training_data(data, option):
     seq_in, seq_out, intent = list(zip(*data))
     vocab = set(flatten(seq_in))
 
@@ -121,18 +122,13 @@ def get_info_from_training_data(data):
 
     print("***共", len(word2index), "个词（包括了<PAD> <UNK> <EOS> 空符号）***", )
     print("word2index: ", word2index, "\n")
-    #保存字典，不用反复计算
-    data_to_file('dic\\word2index.txt', word2index)
 
 
 
 
     # 生成index2word，将字典key与value颠倒
     index2word = {v: k for k, v in word2index.items()}
-
     print("index2word: ", index2word)
-    # 保存字典，不用反复计算
-    data_to_file('dic\\index2word.txt', index2word)
 
 
 
@@ -145,17 +141,14 @@ def get_info_from_training_data(data):
 
     print("***共", len(slot2index), "个槽（包括了<PAD>）***", )
     print("slot2index: ", slot2index, "\n")
-    # 保存字典，不用反复计算
-    data_to_file('dic\\slot2index.txt', slot2index)
+
 
 
 
     # 生成index2slot
     index2slot = {v: k for k, v in slot2index.items()}
-
     print("index2slot: ", index2slot, "\n")
-    # 保存字典，不用反复计算
-    data_to_file('dic\\index2slot.txt', index2slot)
+
 
 
 
@@ -165,18 +158,25 @@ def get_info_from_training_data(data):
         #if ii not in intent2index.keys():
             #intent2index[ii] = len(intent2index)
     intent2index = ALL_INTENT
-
     print("***共", len(intent2index), "个意图（包括了<UNK>）***", )
     print("intent2index: ", intent2index, "\n")
-    # 保存字典，不用反复计算
-    data_to_file('dic\\intent2index.txt', intent2index)
+
+
 
     # 生成index2intent
     index2intent = {v: k for k, v in intent2index.items()}
-
     print("index2intent: ", index2intent, "\n")
+
+
     # 保存字典，不用反复计算
-    data_to_file('dic\\index2intent.txt', index2intent)
+    if option != "test":
+        data_to_file('dic\\word2index.txt', word2index)
+        data_to_file('dic\\index2word.txt', index2word)
+        data_to_file('dic\\slot2index.txt', slot2index)
+        data_to_file('dic\\index2slot.txt', index2slot)
+        data_to_file('dic\\intent2index.txt', intent2index)
+        data_to_file('dic\\index2intent.txt', index2intent)
+
 
     return word2index, index2word, slot2index, index2slot, intent2index, index2intent
 
@@ -217,8 +217,8 @@ def getBatch(batch_size, train_data):
     random.shuffle(train_data)      #将训练集随机排序
     sindex = 0
     eindex = batch_size
-    while eindex < len(train_data):
-        batch = train_data[sindex:eindex]   #取sindex到eindex作为一个batch
+    while eindex <= len(train_data):
+        batch = train_data[sindex:eindex]   #取sindex到eindex-1作为一个batch
         temp = eindex
         eindex = eindex + batch_size
         sindex = temp

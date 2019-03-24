@@ -50,8 +50,8 @@ class Model:
         # encoder_inputs_time_major = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
         # 下面四个变量的尺寸：T*B*D，T*B*D，B*D，B*D
         (encoder_fw_outputs, encoder_bw_outputs), (encoder_fw_final_state, encoder_bw_final_state) = \
-            tf.nn.bidirectional_dynamic_rnn(cell_fw=encoder_f_cell,
-                                            cell_bw=encoder_b_cell,
+            tf.nn.bidirectional_dynamic_rnn(cell_fw=encoder_f_cell,     #前向的lstm cell数目
+                                            cell_bw=encoder_b_cell,     #后向的lstm cell数目
                                             inputs=self.encoder_inputs_embedded,
                                             sequence_length=self.encoder_inputs_actual_length,
                                             dtype=tf.float32, time_major=True)
@@ -167,7 +167,7 @@ class Model:
 
         self.loss = loss_slot + loss_intent
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.002,name="a_optimizer")
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.0015,name="a_optimizer")
 
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
