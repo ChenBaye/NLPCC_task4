@@ -36,6 +36,7 @@ def getslot(list):#得到未处理序列中的槽 list
 
 
 
+
 # 输入标记好的数据集 train_labeled ，输出测试集、训练集
 # 没有用到这个函数，因为找到了有答案的测试集
 def generate(train_labeled, testfile, trainfile):
@@ -52,6 +53,13 @@ def generate(train_labeled, testfile, trainfile):
     fp1.close()
     fp2.close()
 
+# 删除list中所有空格
+def delete_blank(list):
+    for i in range(list.count(" ")):        # 先算出有多少空格，再删除
+        list.remove(" ")
+
+    return list
+
 
 
 def data_handle(data, filename):#
@@ -62,7 +70,7 @@ def data_handle(data, filename):#
     # 处理后：117194488	来 一首 周华健 的 花心	music.play	O O B-SINGER O B-SONG I-SONG
 
     data = [[t.split("\t")[0],      #第一部分 数字不变
-             (" ".join(jieba.cut(t.split("\t")[1], HMM=True))).split(" "),#第二部分 jieba分词
+             delete_blank(("~".join(jieba.cut(t.split("\t")[1], HMM=True))).split("~")),#第二部分 jieba分词
              t.split("\t")[2],      #第三部分 意图
              t.split("\t")[3]]      #第四部分 序列（未标注）
     for t in data]
@@ -105,7 +113,7 @@ def data_handle(data, filename):#
         fp.write("\t")
         for j in range(len(data[i][1])):   # 这个for循环用于写分好词的语句（如：播放 林忆莲 的 伤痕）
             fp.write(data[i][1][j])
-            if j!=(len(data[i][1])-1):
+            if j!=(len(data[i][1])-1):      # 末尾不加" "
                 fp.write(" ")
 
         fp.write("\t")

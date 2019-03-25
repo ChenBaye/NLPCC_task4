@@ -8,14 +8,14 @@ flatten = lambda l: [item for sublist in l for item in sublist]  # 二维展成�
 
 #本函数用于取出数据集中每行语句的分词
 # 从
-# 117194488	来一首周华健的花心	music.play	来一首<singer>周华健</singer>的<song>花心</song>
+# 117194488	来 一首 周华健 的 花心	O O B-singer O B-song music.play
 # 提取出
 # ['来', '一首', '周华健', '的', '花心']
 def get_wordfile(filename):
 
     data = open(filename, "r", encoding='UTF-8').readlines()
     data = [t[:-1] for t in data]      #去除空行
-    data_words = [(" ".join(jieba.cut(t.split("\t")[1], HMM=True))).split(" ") for t in data]
+    data_words = [t.split("\t")[1].split(" ") for t in data]
 
     print("data_words:")
     print(data_words)
@@ -128,7 +128,7 @@ def save_all_words_number(dic_file, train_words, test_words):
         for i in range(len(t)):
             fp2.write(str(t[i]))  # 数字无法直接写入，先转成字符串
             if (i != (len(t) - 1)):
-                fp2.write(" ")
+                fp2.write(" ")      #采用" "分隔
 
         fp2.write("\n")
 
@@ -138,8 +138,8 @@ def save_all_words_number(dic_file, train_words, test_words):
 
 if __name__ == '__main__':
     #取出数据集中每行语句的分词
-    train_words = get_wordfile("train_without_blankline.txt")
-    test_words = get_wordfile("test_without_blankline.txt")
+    train_words = get_wordfile("E:\\RNN-for-Joint-NLU\\nlpcc\\train_labeled.txt")
+    test_words = get_wordfile("E:\\RNN-for-Joint-NLU\\nlpcc\\test_labeled.txt")
 
     # 在train_words.txt中保存train_words
     # save_train_words(train_words)
@@ -149,7 +149,7 @@ if __name__ == '__main__':
 
     #得到无重复的单词列表
     # train_word_list = get_word_list(train_words)
-    test_word_list = get_word_list(test_words)
+    # test_word_list = get_word_list(test_words)
 
     #得到变成数字的分词文件，输入参数是单词列表 和 分词语句
     # save_train_words_number(train_word_list, train_words)

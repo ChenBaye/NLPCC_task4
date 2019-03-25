@@ -11,15 +11,15 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 
-input_steps = 30    # 每一条数据设置为input_steps长度（input_steps个槽、词）
-embedding_size = 300# 词向量维度
+input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
+embedding_size = 200# 词向量维度
 hidden_size = 100   # 隐藏层的节点数
-n_layers = 2
+n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
 vocab_size = 14407  # 共14404个不同词，其中包括空字符，在编程中又加入了<PAD> <UNK> <EOS>，变成14407
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12    # 有多少种意图
-epoch_num = 25      # 将所有样本全部训练一次为一个epoch
+epoch_num = 30      # 将所有样本全部训练一次为一个epoch
 
 
 def get_model():
@@ -38,7 +38,7 @@ def train(is_debug=False):
     sess.run(tf.global_variables_initializer())
     # print(tf.trainable_variables())
 
-    '''
+
     train_data = open("little_train.txt", "r", encoding='UTF-8').readlines()
     test_data = open("little_train.txt", "r", encoding='UTF-8').readlines()
 
@@ -49,9 +49,9 @@ def train(is_debug=False):
     # 要得到（训练集+测试集）的词集合、槽集合
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
     get_info_from_training_data(all_data, "test")
-
-
     '''
+
+
     # 上一步保存后可以直接读取字典，节省时间
     train_data_ed = file_to_list("data_list\\train_list.npy")
     test_data_ed = file_to_list("data_list\\test_list.npy")
@@ -63,7 +63,7 @@ def train(is_debug=False):
     index2slot = file_to_dictionary("dic\\index2slot.txt")
     intent2index = file_to_dictionary("dic\\intent2index.txt")
     index2intent = file_to_dictionary("dic\\index2intent.txt")
-
+    '''
 
 
     # print("slot2index: ", slot2index)
@@ -262,26 +262,28 @@ def train(is_debug=False):
         P_intent.append(Right_intent / sum)
         P_slot.append(Right_slot / sum)
 
-    output_picture(P, "P")
-    output_picture(F1_MACRO, "F1_MACRO(without OTHERS)")
-    output_picture(P_intent, "P_intent")
-    output_picture(P_slot, "P_slot")
+    # 输出折线图
+    output_picture(P, F1_MACRO, P_intent, P_slot)
 
 
 
 
 #将结果输出为折线图
-def output_picture(list, picturename):
-    x = range(1,len(list)+1)    # x = [1, 2, ... , len(list)]
-    y = list
+def output_picture(P, F1_MACRO, P_intent, P_slot):
+    x = range(1,len(P)+1)    # x = [1, 2, ... , len(list)]
+    plt.xticks(range(len(P) + 1))
+    plt.plot(x, P, label='P')
+    plt.plot(x, F1_MACRO, label='F1_MACRO')
+    plt.plot(x, P_intent, label='P_intent')
+    plt.plot(x, P_slot, label='P_slot')
 
-    plt.xlabel("epoch")         # 横坐标为轮数
+    # plt.legend()
+    plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=0,
+               ncol=3, mode="expand", borderaxespad=0.)
 
-    plt.plot(x, y)
-    plt.title(picturename)
-    plt.xticks(range(len(list)+1))
     # plt.show()
-    plt.savefig("result\\"+picturename+".jpg")
+    plt.xlabel("epoch")  # 横坐标为轮数
+    plt.savefig("result\\result.jpg")
 
 
 

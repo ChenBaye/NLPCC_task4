@@ -1,0 +1,1 @@
+{'<UNK>': 0, 'music.play': 1, 'music.pause': 2, 'music.prev': 3, 'music.next': 4, 'navigation.navigation': 5, 'navigation.open': 6, 'navigation.start_navigation': 7, 'navigation.cancel_navigation': 8, 'phone_call.make_a_phone_call': 9, 'phone_call.cancel': 10, 'OTHERS': 11}

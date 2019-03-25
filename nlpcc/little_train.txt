@@ -1,150 +1,151 @@
-117194488	来 一首 周华健 的 花心	O O B-singer O B-song music.play
-117194488	播放 我们 都 一样	O B-song I-song I-song music.play
-118198034	到 信阳市 汽车配件 城	O B-destination I-destination I-destination navigation.navigation
 118198034	米静	O OTHERS
-118198034	信阳 汽配城	B-destination I-destination navigation.navigation
+118195713	请/帮/我/放/一首/the/ /well/ /in/ /the/ /best/ /girls/ /run/ /and/ /run	O O O O O B-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song music.play
+117194488	来/一首/周华健/的/花心	O O B-singer O B-song music.play
+117194488	播放/我们/都/一样	O B-song I-song I-song music.play
+117194488	播放/不/一样/来/一首/我们/不/一样	O B-song I-song O O B-song I-song I-song music.play
+118198034	到/信阳市/汽车配件/城	O B-destination I-destination I-destination navigation.navigation
+118198034	信阳/汽配城	B-destination I-destination navigation.navigation
 118198034	取消	O navigation.cancel_navigation
-111196914	播放 dj 歌曲	O B-theme O music.play
-111196914	播放 dj	O B-theme music.play
-188126	请 播放 zapp 播放 听说 爱情 回来 过	O O B-singer O B-song I-song I-song I-song music.play
-188126	播放 蔡依林 我 知道 你 很 难过	O B-singer B-song I-song I-song I-song I-song music.play
-188126	拨通 对方 电话	O O O phone_call.make_a_phone_call
-188126	播放 林忆莲 的 伤痕	O B-singer O B-song music.play
-188126	今天天气 情况 如何	O O O OTHERS
-188126	呼图壁县 牧香 自助 火锅	B-destination I-destination I-destination I-destination navigation.navigation
-188126	先回 呼图壁县 牧香 自助 火锅	O B-destination I-destination I-destination I-destination navigation.navigation
-188126	呼图壁县 牧香 自助 火锅	B-destination I-destination I-destination I-destination navigation.navigation
+111196914	播放/dj/歌曲	O B-theme O music.play
+111196914	播放/dj	O B-theme music.play
+111196914	播放/dj	O B-theme music.play
+188126	请/播放/zapp/播放/听说/爱情/回来/过	O O B-singer O B-song I-song I-song I-song music.play
+188126	播放/蔡依林/我/知道/你/很/难过	O B-singer B-song I-song I-song I-song I-song music.play
+188126	拨通/对方/电话	O O O phone_call.make_a_phone_call
+188126	播放/林忆莲/的/伤痕	O B-singer O B-song music.play
+188126	今天天气/情况/如何	O O O OTHERS
+188126	我/是/1/个	O O O O OTHERS
+188126	去/牧香/自助/火锅	O B-destination I-destination I-destination navigation.navigation
+188126	呼图壁县/牧香/自助/火锅	B-destination I-destination I-destination I-destination navigation.navigation
+188126	先回/呼图壁县/牧香/自助/火锅	O B-destination I-destination I-destination I-destination navigation.navigation
+188126	呼图壁县/牧香/自助/火锅	B-destination I-destination I-destination I-destination navigation.navigation
 188126	导航	O navigation.open
-122197859	开始 导航	O O navigation.start_navigation
+122197859	开始/导航	O O navigation.start_navigation
+122197859	去/角美/南/农贸市场	O B-destination I-destination I-destination navigation.navigation
 122197859	取消	O navigation.cancel_navigation
-116195863	给 我 来 一首 追梦人	O O O O B-song music.play
-116195863	来 一首 劲 爆电音	O O B-emotion O music.play
-116195744	退出 音乐	O O OTHERS
-116195744	歌 在 飞	B-song I-song I-song music.play
-116195744	彭 远扬 的 歌	B-singer I-singer O O music.play
-116195744	彭丽媛 的 歌	B-singer O O music.play
-119197614	到 邵伯镇	O B-destination navigation.navigation
+116195863	给/我/来/一首/追梦人	O O O O B-song music.play
+116195863	给/我/来/一首/追梦人	O O O O B-song music.play
+116195863	来/一首/劲/爆电音	O O B-emotion O music.play
+116195744	退出/音乐	O O OTHERS
+116195744	歌/在/飞	B-song I-song I-song music.play
+116195744	彭/远扬/的/歌	B-singer I-singer O O music.play
+116195744	彭丽媛/的/歌	B-singer O O music.play
+119197614	到/邵伯镇	O B-destination navigation.navigation
+119197614	小纪镇	B-destination navigation.navigation
 119197614	李娇	O OTHERS
 119197614	取消	O navigation.cancel_navigation
 122199524	哈哈哈	O OTHERS
-122199524	是 的	O O OTHERS
-122199524	九号 公馆	B-destination I-destination navigation.navigation
-122199524	播放 九号 公馆	O B-song I-song music.play
-117196882	放 一首歌	O O music.play
-117196882	歌曲 用 车上 的 音箱 放	O O O O O O music.play
-117196882	关掉 音乐	O O music.pause
-122195888	吸 口琴	O O OTHERS
-122195888	常 码头 咯	O O O OTHERS
-122195888	我要 听 山里红	O O B-song music.play
-122195888	听 云朵 的 歌	O B-singer O O music.play
+122199524	是/的	O O OTHERS
+122199524	九号/公馆	B-destination I-destination navigation.navigation
+122199524	播放/九号/公馆	O B-song I-song music.play
+117196882	放/一首歌	O O music.play
+117196882	歌曲/用/车上/的/音箱/放	O O O O O O music.play
+117196882	关掉/音乐	O O music.pause
+122195888	吸/口琴	O O OTHERS
+122195888	常/码头/咯	O O O OTHERS
+122195888	我要/听/又/见/山里红	O O B-song I-song I-song music.play
+122195888	我要/听/山里红	O O B-song music.play
+122195888	听/云朵/的/歌	O B-singer O O music.play
 115194125	音乐	O music.play
-115194125	播放 刘德华 的 音乐	O B-singer O O music.play
-115194125	改名字 吗	O O OTHERS
-115194125	播放 音乐	O O music.play
+115194125	播放/刘德华/的/音乐	O B-singer O O music.play
+115194125	改名字/吗	O O OTHERS
+115194125	播放/音乐	O O music.play
+115194125	阿楠	O OTHERS
 115194125	凌度	O OTHERS
 115194125	关闭	O music.pause
 122197952	垦利县	B-destination navigation.navigation
-122197952	黎咀 大桥	B-destination I-destination navigation.navigation
+122197952	黎咀/大桥	B-destination I-destination navigation.navigation
+122197952	利津/大桥	B-destination I-destination navigation.navigation
 122197952	梅毅	O OTHERS
+122197952	取消	O navigation.cancel_navigation
 122197952	一	O OTHERS
 122197952	11	O OTHERS
 122197952	肖旭	O OTHERS
-118198649	快点 哦	O O OTHERS
-118198649	到 燕南园	O B-destination navigation.navigation
-118198649	到 大连 医大 一院	O B-destination I-destination I-destination navigation.navigation
-118198649	啊 哈哈 那 我 刚 到 他 被 我 就 在 延庆 这边 便利店 这边 找个 位置	O O O O O O O O O O O O O O O O O OTHERS
+118198649	快点/哦	O O OTHERS
+118198649	到/燕南园	O B-destination navigation.navigation
+118198649	到/大连/医大/一院	O B-destination I-destination I-destination navigation.navigation
+118198649	啊/哈哈/那/我/刚/到/他/被/我/就/在/延庆/这边/便利店/这边/找个/位置	O O O O O O O O O O O O O O O O O OTHERS
 118198649	可以	O OTHERS
+117195837	放/首歌	O O music.play
 117195837	放歌	O music.play
-117195837	请 放歌	O O music.play
-118195713	想 与 你好	O O O OTHERS
-118195713	请 帮 我 放 一首 the   well   in   the   best   girls   run   and   run	O O O O O B-song O O B-song O O B-song O O B-song O O B-song O O B-song O O B-song O O B-song O O B-song music.play
-118195713	暂时 不 放 歌曲	O O O O music.pause
-118195713	暂停 播放歌曲	O O music.pause
-111195960	的 理想	O O OTHERS
-111195960	放 一首 理想	O O B-song music.play
-111195960	播放 一首 成都	O O B-song music.play
+117195837	请放	O music.play
+117195837	请/放歌	O O music.play
+118195713	想/与/你好	O O O OTHERS
+118195713	请/帮/我/放/一首/the/ /well/ /in/ /the/ /best/ /girls/ /run/ /and/ /run	O O O O O B-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song I-song music.play
+118195713	暂时/不/放/歌曲	O O O O music.pause
+118195713	暂停/播放歌曲	O O music.pause
+111195960	的/理想	O O OTHERS
+111195960	放/一首/理想	O O B-song music.play
+111195960	播放/一首/成都	O O B-song music.play
 111195960	播放	O music.play
-111195960	打开 酷 我 音乐	O O O O OTHERS
-189162	请 帮 我 放 一首 半壶 纱	O O O O O B-song I-song music.play
-189162	请 播放 一首	O O O music.play
-189162	给 我播 小苹果	O O B-song music.play
-189162	给 我 剥 皮皮虾	O O O B-song music.play
-189162	请拨 皮皮虾 我们 走	O B-song I-song I-song music.play
-189162	太平 机场	B-destination I-destination navigation.navigation
+111195960	打开/酷/我/音乐	O O O O OTHERS
+189162	请/帮/我/放/一首/半壶/纱	O O O O O B-song I-song music.play
+189162	请/播放/一首	O O O music.play
+189162	给/我播/小苹果	O O B-song music.play
+189162	给/我/剥/皮皮虾	O O O B-song music.play
+189162	请拨/皮皮虾/我们/走	O B-song I-song I-song music.play
+189162	太平/机场	B-destination I-destination navigation.navigation
 188104	豆豆	O OTHERS
 188104	阿做	O OTHERS
-188104	帮 我 找	O O O OTHERS
+188104	帮/我/找	O O O OTHERS
 188104	阿丁	O OTHERS
-188104	我要 听歌	O O music.play
-188104	八戒 八戒 我 的	B-song I-song O O music.play
-188104	嗯 嗯	O O OTHERS
-188104	小王 我 想 听 八戒 八戒 心肠 的 歌	O O O O B-song I-song O O O music.play
-188104	我 想 听 远走高飞	O O O B-song music.play
+188104	我要/听歌	O O music.play
+188104	八戒/八戒/我/的	B-song I-song O O music.play
+188104	嗯/嗯	O O OTHERS
+188104	小王/我/想/听/八戒/八戒/心肠/的/歌	O O O O B-song I-song O O O music.play
+188104	我/想/听/远走高飞	O O O B-song music.play
 188104	算了吧	O OTHERS
-188104	我 想 听歌	O O O music.play
-188104	我 想 听 小苹果	O O O B-song music.play
+188104	我/想/听歌	O O O music.play
+188104	我/想/听/小苹果	O O O B-song music.play
 188104	关滨	O OTHERS
 188104	冰英	O OTHERS
 188104	钰童	O OTHERS
-188104	关闭 音乐	O O music.pause
-188104	我 想 去 中国 人民保险	O O O B-destination I-destination navigation.navigation
-188104	我 想 去 中国 人民保险	O O O B-destination I-destination navigation.navigation
-115197111	要 如果	O O OTHERS
+188104	关闭/音乐	O O music.pause
+188104	我/想/去/中国/人民保险	O O O B-destination I-destination navigation.navigation
+188104	我/想/去/中国/人民保险	O O O B-destination I-destination navigation.navigation
+115197111	要/如果	O O OTHERS
 115197111	小睿	O OTHERS
 115197111	每年	O OTHERS
-115197111	去 合正	O B-destination navigation.navigation
-115197111	他 叫 尼科	O O O OTHERS
-115197111	让 你 睡觉	O O O OTHERS
+115197111	去/合正	O B-destination navigation.navigation
+115197111	他/叫/尼科	O O O OTHERS
+115197111	让/你/睡觉	O O O OTHERS
 115197111	拜拜	O OTHERS
-115197111	关闭 音乐	O O music.pause
-115197111	打电话 给	O O phone_call.make_a_phone_call
-111195445	来 一首 王菲 的 那年	O O B-singer O B-song music.play
-111195445	来 一首 王菲 的 那年 匆匆	O O B-singer O B-song I-song music.play
-111195445	来 一首 王菲 的 红豆	O O B-singer O B-song music.play
+115197111	关闭/音乐	O O music.pause
+115197111	打电话/给	O O phone_call.make_a_phone_call
+111195445	来/一首/王菲/的/那年	O O B-singer O B-song music.play
+111195445	来/一首/王菲/的/那年/匆匆	O O B-singer O B-song I-song music.play
+111195445	来/一首/王菲/的/红豆	O O B-singer O B-song music.play
 111195445	恒晨	O OTHERS
-111195445	你 一定 有 都 这么 烦	O O O O O O OTHERS
-111195445	你 要	O O OTHERS
+111195445	你/一定/有/都/这么/烦	O O O O O O OTHERS
+111195445	你/要	O O OTHERS
 117198954	从	O OTHERS
 117198954	广州市	B-destination navigation.navigation
-117198954	打电话 给 15300004777	O O B-phone_num phone_call.make_a_phone_call
-117198954	打电话 给 15300004777	O O B-phone_num phone_call.make_a_phone_call
+117198954	打电话/给/15300004777	O O B-phone_num phone_call.make_a_phone_call
+117198954	打电话/给/15300004777	O O B-phone_num phone_call.make_a_phone_call
 117198954	丁浩	O OTHERS
-122199914	导航 到 双 骑龙村 村委会	O O B-destination I-destination I-destination navigation.navigation
+122199914	导航/到/双/骑龙村/村委会	O O B-destination I-destination I-destination navigation.navigation
 122199914	在	O OTHERS
-122199914	放快 歌 吗	O B-emotion O music.play
-122199914	我 选择 出租车 都 能染 观点	O O O O O O OTHERS
-116194223	六哲 的 歌曲	B-singer O O music.play
-116194223	错错 错六哲 的 错 错错	B-song O O B-song I-song music.play
-116194223	郑源 的 歌曲	B-singer O O music.play
-119195159	放 一首 钢琴 的 名 起来 听 一下	O O B-instrument O O O O O music.play
-119195159	放 刘德华 的 歌来 听	O B-singer O O O music.play
-119195159	放 谭咏麟 的 歌	O B-singer O O music.play
-122198834	导航 到 宝日 勿 苏镇	O O B-destination I-destination I-destination navigation.navigation
-122198834	导航 到 巴林右旗 宝日 勿 苏镇	O O B-destination I-destination I-destination I-destination navigation.navigation
-122198834	把 电话 发过来 然后 过去 取	O O O O O O OTHERS
+122199914	放快/歌/吗	O B-emotion O music.play
+122199914	我/选择/出租车/都/能染/观点	O O O O O O OTHERS
+122199914	打电话/见面/精神	O O O phone_call.make_a_phone_call
+116194223	六哲/的/歌曲	B-singer O O music.play
+116194223	错错/错六哲/的/错/错错	B-song O O B-song I-song music.play
+116194223	郑源/的/歌曲	B-singer O O music.play
+119195159	放/一首/钢琴/的/名/起来/听/一下	O O B-instrument O O O O O music.play
+119195159	放/刘德华/的/歌来/听	O B-singer O O O music.play
+119195159	放/谭咏麟/的/歌	O B-singer O O music.play
+122198834	导航/到/宝日/勿/苏镇	O O B-destination I-destination I-destination navigation.navigation
+122198834	导航/到/巴林右旗/宝日/勿/苏镇	O O B-destination I-destination I-destination I-destination navigation.navigation
+122198834	把/电话/发过来/然后/过去/取	O O O O O O OTHERS
 122198834	打电话	O phone_call.make_a_phone_call
-122198834	妈 了 个 小 逼	O O O O O OTHERS
-122198834	* 你	O O OTHERS
-122198834	日 你 妹	O O O OTHERS
-122198834	日 你 大爷	O O O OTHERS
-122198834	日 你	O O OTHERS
-122198569	帮 我 导航 到 卫校	O O O O B-destination navigation.navigation
-122198569	帮 我 导航 到 镇坪 裕祥 花园	O O O O B-destination I-destination I-destination navigation.navigation
+122198834	妈/了/个/小/逼	O O O O O OTHERS
+122198834	*/你	O O OTHERS
+122198834	日/你/妹	O O O OTHERS
+122198834	日/你/大爷	O O O OTHERS
+122198834	日/你	O O OTHERS
+122198569	帮/我/导航/到/卫校	O O O O B-destination navigation.navigation
+122198569	帮/我/导航/到/镇坪/裕祥/花园	O O O O B-destination I-destination I-destination navigation.navigation
 122198569	取消	O navigation.cancel_navigation
-116195949	播放 张宇 的 歌	O B-singer O O music.play
-116195949	播放 刘德华 的 冰雨	O B-singer O B-song music.play
-122199552	月亮 湾	B-destination I-destination navigation.navigation
-118199850	小红	O OTHERS
-118199850	从 乌鲁木齐	O O OTHERS
-118199850	刺儿	O OTHERS
-118199850	红颜	O OTHERS
-118199850	呼叫	O phone_call.make_a_phone_call
-118199850	呼叫 办世触 晨平	O B-contact_name I-contact_name phone_call.make_a_phone_call
-112195112	打电话 给	O O phone_call.make_a_phone_call
-112195112	郭达	B-contact_name phone_call.make_a_phone_call
-112195112	播放 刘德华 的 歌曲	O B-singer O O music.play
-112195112	拖拖	O OTHERS
-117197219	导航 到 八里 店 那个 雪佛兰 4s店	O O B-destination I-destination I-destination I-destination I-destination navigation.navigation
-117197219	导航 到 八里 店 雪佛兰 4s店	O O B-destination I-destination I-destination I-destination navigation.navigation
-117197219	打电话	O phone_call.make_a_phone_call
-117197219	马斌	B-contact_name phone_call.make_a_phone_call
+116195949	播放/张宇/的/歌	O B-singer O O music.play
+116195949	播放/刘德华/的/冰雨	O B-singer O B-song music.play
+116195949	播放/陕西/秦腔戏	O O O OTHERS

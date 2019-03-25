@@ -12,8 +12,10 @@ if __name__ == '__main__':
     t=" ".join(seg_list)
     print(t)
 
-    seg_list = jieba.cut("singer阿杜singer的歌", HMM=True)  # 使用HMM模型
-    print("/".join(seg_list))
+    seg_list = jieba.cut("请帮我放一首the well in the best girls run and run", HMM=True)  # 使用HMM模型
+    print("~".join(seg_list).split('~'))
+    print("请帮我放一首the well in the best girls run and run".split(" "))
+    print(list(jieba.cut("请帮我放一首the well in the best girls run and run", HMM=True)))
 
     seg_list = jieba.cut_for_search("小明硕士毕业于中国科学院计算所，后在日本京都大学深造", HMM=False)  # 搜索引擎模式
     print("/".join(seg_list))

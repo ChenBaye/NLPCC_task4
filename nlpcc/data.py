@@ -62,14 +62,14 @@ def data_pipeline(data, file_name, length, option):     # 规定语句长度定�
     sin = []
     sout = []
 
-    '''
+
     #统计句子中分词的最大数目以便确定input_size
     max=len(seq_in[0])
     for i in seq_in:
         if len(i) > max:
             max = len(i)
     print("一个句子最多有：", max, "个分词")
-    '''
+
 
     # padding，原始序列和标注序列结尾+<EOS>+n×<PAD>
     for i in range(len(seq_in)):
@@ -120,7 +120,7 @@ def get_info_from_training_data(data, option):
             word2index[token] = len(word2index)
 
 
-    print("***共", len(word2index), "个词（包括了<PAD> <UNK> <EOS> 空符号）***", )
+    print("***共", len(word2index), "个词（包括了<PAD> <UNK> <EOS>）***", )
     print("word2index: ", word2index, "\n")
 
 
