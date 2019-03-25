@@ -1,5 +1,4 @@
 # coding=utf-8
-# @author: cer
 
 import random
 import numpy as np
@@ -171,7 +170,7 @@ def get_info_from_training_data(data, option):
 
     # 保存字典，不用反复计算
     if option != "test":
-        path = os.path.abspath(os.path.dirname(__file__))  # path = ...\RNN-for-Joint-NLU\nlpcc
+        path = os.path.dirname(os.path.abspath(__file__))  # path = ...\RNN-for-Joint-NLU\nlpcc
         data_to_file(path+'\\dic\\word2index.txt', word2index)
         data_to_file(path+'\\dic\\index2word.txt', index2word)
         data_to_file(path+'\\dic\\slot2index.txt', slot2index)

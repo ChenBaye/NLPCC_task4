@@ -6,6 +6,8 @@ import numpy as np
 from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple,DropoutWrapper
 import sys
 import os
+from dataset_process import word_embeding
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
@@ -33,9 +35,12 @@ class Model:
 
     def build(self):
 
-        self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
-                                                        -0.1, 0.1), dtype=tf.float32, name="embedding")
-        #随机生成vocab_size*embedding_size大小的矩阵，元素介于-0.1到0.1
+        #self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
+        #                                               -0.1, 0.1), dtype=tf.float32, name="embedding")
+
+        self.embeddings = tf.Variable(self.load_word_embeding())
+        # 随机生成vocab_size*embedding_size大小的矩阵，元素介于-0.1到0.1
+
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 
         # Encoder
@@ -97,6 +102,7 @@ class Model:
             initial_elements_finished = (0 >= decoder_lengths)  # all False at the initial step
             initial_input = tf.concat((sos_step_embedded, encoder_outputs[0]), 1)
             return initial_elements_finished, initial_input
+
 
         def sample_fn(time, outputs, state):
             # 选择logit最大的下标作为sample
@@ -202,3 +208,9 @@ class Model:
 
         results = sess.run(output_feeds, feed_dict=feed_dict)   #为tensor赋值
         return results
+
+    # 装载词向量
+    def load_word_embeding(self):
+        path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
+        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count5size63")  # 生成向量
+        return list

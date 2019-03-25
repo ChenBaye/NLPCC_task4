@@ -23,7 +23,9 @@ if __name__ == '__main__':
     print("/".join(seg_list))
 
     seg_list = jieba.lcut_for_search("小明硕士毕业于中国科学院计算所，后在日本京都大学深造", HMM=True)
+    print(os.path.abspath(os.path.dirname(__file__)))
     print(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 

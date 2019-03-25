@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import os
 
 input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
-embedding_size = 200# 词向量维度
+embedding_size = 63 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
@@ -24,11 +24,13 @@ epoch_num = 30      # 将所有样本全部训练一次为一个epoch
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
 
+
 def get_model():
     model = Model(input_steps, embedding_size, hidden_size, vocab_size, slot_size,
                  intent_size, epoch_num, batch_size, n_layers)
     model.build()
     return model
+
 
 
 def train(is_debug=False):
@@ -40,17 +42,17 @@ def train(is_debug=False):
     sess.run(tf.global_variables_initializer())
     # print(tf.trainable_variables())
 
-
+    '''
     train_data = open(path+"\\train_test_file\\train_labeled.txt", "r", encoding='UTF-8').readlines()
     test_data = open(path+"\\train_test_file\\test_labeled.txt", "r", encoding='UTF-8').readlines()
 
-    train_data_ed = data_pipeline(train_data, path+"\\data_list\\train_list.npy", input_steps, "no_test")
-    test_data_ed = data_pipeline(test_data, path+"\\data_list\\test_list.npy", input_steps, "no_test")
+    train_data_ed = data_pipeline(train_data, path+"\\data_list\\train_list.npy", input_steps, "test")
+    test_data_ed = data_pipeline(test_data, path+"\\data_list\\test_list.npy", input_steps, "test")
 
     all_data = train_data_ed + test_data_ed     # list合并
     # 要得到（训练集+测试集）的词集合、槽集合
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-    get_info_from_training_data(all_data, "no_test")
+    get_info_from_training_data(all_data, "test")
     '''
 
 
@@ -65,7 +67,7 @@ def train(is_debug=False):
     index2slot = file_to_dictionary(path+"\\dic\\index2slot.txt")
     intent2index = file_to_dictionary(path+"\\dic\\intent2index.txt")
     index2intent = file_to_dictionary(path+"\\dic\\index2intent.txt")
-    '''
+
 
 
     # print("slot2index: ", slot2index)
