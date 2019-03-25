@@ -3,6 +3,7 @@
 
 import random
 import numpy as np
+import os
 
 #只有如下槽
 
@@ -170,12 +171,13 @@ def get_info_from_training_data(data, option):
 
     # 保存字典，不用反复计算
     if option != "test":
-        data_to_file('dic\\word2index.txt', word2index)
-        data_to_file('dic\\index2word.txt', index2word)
-        data_to_file('dic\\slot2index.txt', slot2index)
-        data_to_file('dic\\index2slot.txt', index2slot)
-        data_to_file('dic\\intent2index.txt', intent2index)
-        data_to_file('dic\\index2intent.txt', index2intent)
+        path = os.path.abspath(os.path.dirname(__file__))  # path = ...\RNN-for-Joint-NLU\nlpcc
+        data_to_file(path+'\\dic\\word2index.txt', word2index)
+        data_to_file(path+'\\dic\\index2word.txt', index2word)
+        data_to_file(path+'\\dic\\slot2index.txt', slot2index)
+        data_to_file(path+'\\dic\\index2slot.txt', index2slot)
+        data_to_file(path+'\\dic\\intent2index.txt', intent2index)
+        data_to_file(path+'\\dic\\index2intent.txt', index2intent)
 
 
     return word2index, index2word, slot2index, index2slot, intent2index, index2intent

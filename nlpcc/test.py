@@ -1,6 +1,8 @@
 # _*_coding:utf-8_*_
 import jieba
 
+import os
+
 if __name__ == '__main__':
     seg_list = jieba.cut("去青岛香港东路青岛大学", cut_all=True)  # 全模式
     print("Full Mode:" + "/".join(seg_list))
@@ -21,7 +23,8 @@ if __name__ == '__main__':
     print("/".join(seg_list))
 
     seg_list = jieba.lcut_for_search("小明硕士毕业于中国科学院计算所，后在日本京都大学深造", HMM=True)
-    print(seg_list)
+    print(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 

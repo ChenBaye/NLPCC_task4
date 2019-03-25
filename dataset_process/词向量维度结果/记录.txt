@@ -1,0 +1,39 @@
+skip_window: 5
+neg_samples: 1
+vocabulary_size: 14404
+min_count: 5
+----------------------------------------------
+vocabulary_size=1794
+n=1794, rank=455, sigma=0.2781420207134765
+optimal dimensionality is 62
+=================================================================
+skip_window: 5
+neg_samples: 1
+vocabulary_size: 14404
+min_count: 4
+-----------------------------------------------
+vocabulary_size=2332
+n=2332, rank=593, sigma=0.24890544693936215
+optimal dimensionality is 96
+=====================================================================
+skip_window: 5
+neg_samples: 1
+vocabulary_size: 14404
+min_count: 3
+-------------------------------------------------
+vocabulary_size=3343
+n=3343, rank=849, sigma=0.21033026614215217
+optimal dimensionality is 164
+======================================================================
+skip_window: 5
+neg_samples: 1
+vocabulary_size: 14404
+min_count: 2
+---------------------------------------------------
+vocabulary_size=5849
+n=5849, rank=1416, sigma=0.15711017697295518
+optimal dimensionality is 374
+
+
+
+

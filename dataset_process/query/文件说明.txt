@@ -1,0 +1,2 @@
+all_words.txt--------------------------将测试集和训练集的query分词后提取出来
+all_words_number.txt-------------------将all_words.txt数字化（使用nlpcc\dic\word2index的字典）
