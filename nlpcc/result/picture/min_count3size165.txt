@@ -3,9 +3,9 @@
 len_intent_all:  5350
 E:\Anaconda3\lib\site-packages\sklearn\metrics\classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
   'precision', 'predicted', average, warn_for)
-Intent F1 score（含OTHERS类）for epoch 0: 0.4633738266353621
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 0: 0.4633738266353621
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 0: 0.43228457273004955
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 0: 0.43228457273004955
 sum =  5350
 Right_slot =  3645
 Right_intent =  4439
@@ -17,9 +17,9 @@ len_intent_all:  5350
 [Epoch 1] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 1: 0.6082197351007226
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 1: 0.6082197351007226
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 1: 0.5890771172859203
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 1: 0.5890771172859203
 sum =  5350
 Right_slot =  4114
 Right_intent =  4575
@@ -31,9 +31,9 @@ len_intent_all:  5350
 [Epoch 2] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 2: 0.685058989552313
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 2: 0.685058989552313
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 2: 0.6728047934956678
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 2: 0.6728047934956678
 sum =  5350
 Right_slot =  4212
 Right_intent =  4607
@@ -45,9 +45,9 @@ len_intent_all:  5350
 [Epoch 3] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 3: 0.7084891762916722
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 3: 0.7084891762916722
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 3: 0.7001487412287644
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 3: 0.7001487412287644
 sum =  5350
 Right_slot =  4129
 Right_intent =  4537
@@ -59,9 +59,9 @@ len_intent_all:  5350
 [Epoch 4] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 4: 0.7047441505617731
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 4: 0.7047441505617731
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 4: 0.6946125050118899
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 4: 0.6946125050118899
 sum =  5350
 Right_slot =  4195
 Right_intent =  4597
@@ -73,9 +73,9 @@ len_intent_all:  5350
 [Epoch 5] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 5: 0.7150640779244347
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 5: 0.7150640779244347
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 5: 0.7059193800657726
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 5: 0.7059193800657726
 sum =  5350
 Right_slot =  4227
 Right_intent =  4600
@@ -87,9 +87,9 @@ len_intent_all:  5350
 [Epoch 6] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 6: 0.7140579016028558
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 6: 0.7140579016028558
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 6: 0.7055243897904555
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 6: 0.7055243897904555
 sum =  5350
 Right_slot =  4161
 Right_intent =  4580
@@ -101,9 +101,9 @@ len_intent_all:  5350
 [Epoch 7] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 7: 0.7027030529898092
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 7: 0.7027030529898092
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 7: 0.692392932231365
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 7: 0.692392932231365
 sum =  5350
 Right_slot =  4219
 Right_intent =  4604
@@ -115,9 +115,9 @@ len_intent_all:  5350
 [Epoch 8] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 8: 0.713764430295021
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 8: 0.713764430295021
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 8: 0.7046761836271829
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 8: 0.7046761836271829
 sum =  5350
 Right_slot =  4244
 Right_intent =  4600
@@ -129,9 +129,9 @@ len_intent_all:  5350
 [Epoch 9] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 9: 0.7117262509079819
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 9: 0.7117262509079819
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 9: 0.7032441287731328
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 9: 0.7032441287731328
 sum =  5350
 Right_slot =  4248
 Right_intent =  4578
@@ -143,9 +143,9 @@ len_intent_all:  5350
 [Epoch 10] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 10: 0.70356219968167
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 10: 0.70356219968167
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 10: 0.695349120096931
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 10: 0.695349120096931
 sum =  5350
 Right_slot =  4183
 Right_intent =  4536
@@ -157,9 +157,9 @@ len_intent_all:  5350
 [Epoch 11] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 11: 0.7745899310444553
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 11: 0.7745899310444553
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 11: 0.7725062789078624
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 11: 0.7725062789078624
 sum =  5350
 Right_slot =  4250
 Right_intent =  4577
@@ -171,9 +171,9 @@ len_intent_all:  5350
 [Epoch 12] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 12: 0.7480748956258345
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 12: 0.7480748956258345
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 12: 0.7432839204703783
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 12: 0.7432839204703783
 sum =  5350
 Right_slot =  4248
 Right_intent =  4563
@@ -185,9 +185,9 @@ len_intent_all:  5350
 [Epoch 13] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 13: 0.7637893984440255
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 13: 0.7637893984440255
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 13: 0.7616336728327817
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 13: 0.7616336728327817
 sum =  5350
 Right_slot =  4215
 Right_intent =  4547
@@ -199,9 +199,9 @@ len_intent_all:  5350
 [Epoch 14] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 14: 0.7687499907732082
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 14: 0.7687499907732082
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 14: 0.765784793169521
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 14: 0.765784793169521
 sum =  5350
 Right_slot =  4269
 Right_intent =  4577
@@ -213,9 +213,9 @@ len_intent_all:  5350
 [Epoch 15] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 15: 0.7725499344847125
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 15: 0.7725499344847125
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 15: 0.7694390742746473
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 15: 0.7694390742746473
 sum =  5350
 Right_slot =  4232
 Right_intent =  4599
@@ -227,9 +227,9 @@ len_intent_all:  5350
 [Epoch 16] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 16: 0.7466835521708804
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 16: 0.7466835521708804
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 16: 0.742439123636475
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 16: 0.742439123636475
 sum =  5350
 Right_slot =  4235
 Right_intent =  4547
@@ -241,9 +241,9 @@ len_intent_all:  5350
 [Epoch 17] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 17: 0.7708008475259477
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 17: 0.7708008475259477
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 17: 0.7683036863972866
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 17: 0.7683036863972866
 sum =  5350
 Right_slot =  4244
 Right_intent =  4569
@@ -255,9 +255,9 @@ len_intent_all:  5350
 [Epoch 18] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 18: 0.7505141117503237
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 18: 0.7505141117503237
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 18: 0.7459830850991356
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 18: 0.7459830850991356
 sum =  5350
 Right_slot =  4209
 Right_intent =  4571
@@ -269,9 +269,9 @@ len_intent_all:  5350
 [Epoch 19] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 19: 0.7590145757371989
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 19: 0.7590145757371989
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 19: 0.755929166519174
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 19: 0.755929166519174
 sum =  5350
 Right_slot =  4204
 Right_intent =  4557
@@ -283,9 +283,9 @@ len_intent_all:  5350
 [Epoch 20] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 20: 0.7556181413391911
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 20: 0.7556181413391911
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 20: 0.7518482723047935
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 20: 0.7518482723047935
 sum =  5350
 Right_slot =  4248
 Right_intent =  4565
@@ -297,9 +297,9 @@ len_intent_all:  5350
 [Epoch 21] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 21: 0.7490793599848754
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 21: 0.7490793599848754
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 21: 0.7447035664372067
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 21: 0.7447035664372067
 sum =  5350
 Right_slot =  4233
 Right_intent =  4566
@@ -311,9 +311,9 @@ len_intent_all:  5350
 [Epoch 22] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 22: 0.7453593282346556
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 22: 0.7453593282346556
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 22: 0.7411319881037176
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 22: 0.7411319881037176
 sum =  5350
 Right_slot =  4225
 Right_intent =  4557
@@ -325,9 +325,9 @@ len_intent_all:  5350
 [Epoch 23] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 23: 0.756135410208103
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 23: 0.756135410208103
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 23: 0.7522977507300048
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 23: 0.7522977507300048
 sum =  5350
 Right_slot =  4180
 Right_intent =  4568
@@ -339,9 +339,9 @@ len_intent_all:  5350
 [Epoch 24] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 24: 0.7805476836571931
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 24: 0.7805476836571931
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 24: 0.7788662409917374
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 24: 0.7788662409917374
 sum =  5350
 Right_slot =  4264
 Right_intent =  4556
@@ -353,9 +353,9 @@ len_intent_all:  5350
 [Epoch 25] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 25: 0.7658708461805251
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 25: 0.7658708461805251
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 25: 0.7634182262741087
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 25: 0.7634182262741087
 sum =  5350
 Right_slot =  4150
 Right_intent =  4556
@@ -367,9 +367,9 @@ len_intent_all:  5350
 [Epoch 26] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 26: 0.7677663966324938
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 26: 0.7677663966324938
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 26: 0.7652082657383056
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 26: 0.7652082657383056
 sum =  5350
 Right_slot =  4219
 Right_intent =  4565
@@ -381,9 +381,9 @@ len_intent_all:  5350
 [Epoch 27] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 27: 0.755576336110667
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 27: 0.755576336110667
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 27: 0.7515941687267088
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 27: 0.7515941687267088
 sum =  5350
 Right_slot =  4186
 Right_intent =  4570
@@ -395,9 +395,9 @@ len_intent_all:  5350
 [Epoch 28] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 28: 0.7553061301574864
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 28: 0.7553061301574864
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 28: 0.7513179276272758
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 28: 0.7513179276272758
 sum =  5350
 Right_slot =  4211
 Right_intent =  4565
@@ -409,9 +409,9 @@ len_intent_all:  5350
 [Epoch 29] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 29: 0.7563983784068667
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 29: 0.7563983784068667
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 29: 0.7528895425893178
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 29: 0.7528895425893178
 sum =  5350
 Right_slot =  4233
 Right_intent =  4542
@@ -423,9 +423,9 @@ len_intent_all:  5350
 [Epoch 30] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 30: 0.7566352434278488
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 30: 0.7566352434278488
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 30: 0.7536092201887304
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 30: 0.7536092201887304
 sum =  5350
 Right_slot =  4220
 Right_intent =  4545
@@ -437,9 +437,9 @@ len_intent_all:  5350
 [Epoch 31] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 31: 0.7586709854005975
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 31: 0.7586709854005975
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 31: 0.755878471947712
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 31: 0.755878471947712
 sum =  5350
 Right_slot =  4260
 Right_intent =  4531
@@ -451,9 +451,9 @@ len_intent_all:  5350
 [Epoch 32] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 32: 0.7528827771906523
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 32: 0.7528827771906523
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 32: 0.7487574935169259
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 32: 0.7487574935169259
 sum =  5350
 Right_slot =  4242
 Right_intent =  4563
@@ -465,9 +465,9 @@ len_intent_all:  5350
 [Epoch 33] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 33: 0.7612757958312397
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 33: 0.7612757958312397
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 33: 0.7582811565786429
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 33: 0.7582811565786429
 sum =  5350
 Right_slot =  4260
 Right_intent =  4547
@@ -479,9 +479,9 @@ len_intent_all:  5350
 [Epoch 34] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 34: 0.7466934188749117
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 34: 0.7466934188749117
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 34: 0.7426976832892205
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 34: 0.7426976832892205
 sum =  5350
 Right_slot =  4232
 Right_intent =  4531
@@ -493,9 +493,9 @@ len_intent_all:  5350
 [Epoch 35] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 35: 0.7839587471977989
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 35: 0.7839587471977989
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 35: 0.7832324030818579
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 35: 0.7832324030818579
 sum =  5350
 Right_slot =  4257
 Right_intent =  4556
@@ -507,9 +507,9 @@ len_intent_all:  5350
 [Epoch 36] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 36: 0.7671169454323734
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 36: 0.7671169454323734
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 36: 0.7654569805598246
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 36: 0.7654569805598246
 sum =  5350
 Right_slot =  4188
 Right_intent =  4542
@@ -521,9 +521,9 @@ len_intent_all:  5350
 [Epoch 37] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 37: 0.7639919559862332
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 37: 0.7639919559862332
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 37: 0.7615326060187319
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 37: 0.7615326060187319
 sum =  5350
 Right_slot =  4237
 Right_intent =  4550
@@ -535,9 +535,9 @@ len_intent_all:  5350
 [Epoch 38] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 38: 0.765926243984645
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 38: 0.765926243984645
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 38: 0.763871404388119
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 38: 0.763871404388119
 sum =  5350
 Right_slot =  4225
 Right_intent =  4541
@@ -549,9 +549,9 @@ len_intent_all:  5350
 [Epoch 39] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 39: 0.7734112777709956
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 39: 0.7734112777709956
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 39: 0.7720833621731694
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 39: 0.7720833621731694
 sum =  5350
 Right_slot =  4229
 Right_intent =  4539
@@ -563,9 +563,9 @@ len_intent_all:  5350
 [Epoch 40] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 40: 0.7598977434226565
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 40: 0.7598977434226565
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 40: 0.7565507047468073
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 40: 0.7565507047468073
 sum =  5350
 Right_slot =  4200
 Right_intent =  4565
@@ -577,9 +577,9 @@ len_intent_all:  5350
 [Epoch 41] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 41: 0.7538379441060815
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 41: 0.7538379441060815
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 41: 0.7507645419033312
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 41: 0.7507645419033312
 sum =  5350
 Right_slot =  4117
 Right_intent =  4536
@@ -591,9 +591,9 @@ len_intent_all:  5350
 [Epoch 42] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 42: 0.774812077106782
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 42: 0.774812077106782
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 42: 0.7731975895557693
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 42: 0.7731975895557693
 sum =  5350
 Right_slot =  4178
 Right_intent =  4556
@@ -605,9 +605,9 @@ len_intent_all:  5350
 [Epoch 43] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 43: 0.7736713559921102
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 43: 0.7736713559921102
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 43: 0.7716449272348855
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 43: 0.7716449272348855
 sum =  5350
 Right_slot =  4208
 Right_intent =  4562
@@ -619,9 +619,9 @@ len_intent_all:  5350
 [Epoch 44] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 44: 0.7509278940511284
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 44: 0.7509278940511284
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 44: 0.7476920273913831
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 44: 0.7476920273913831
 sum =  5350
 Right_slot =  4184
 Right_intent =  4529
@@ -633,9 +633,9 @@ len_intent_all:  5350
 [Epoch 45] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 45: 0.7536057652827398
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 45: 0.7536057652827398
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 45: 0.7503460807793171
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 45: 0.7503460807793171
 sum =  5350
 Right_slot =  4208
 Right_intent =  4542
@@ -647,9 +647,9 @@ len_intent_all:  5350
 [Epoch 46] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 46: 0.7654886712529572
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 46: 0.7654886712529572
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 46: 0.7634550080705128
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 46: 0.7634550080705128
 sum =  5350
 Right_slot =  4241
 Right_intent =  4546
@@ -661,9 +661,9 @@ len_intent_all:  5350
 [Epoch 47] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 47: 0.7474293118343759
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 47: 0.7474293118343759
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 47: 0.7438493170588483
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 47: 0.7438493170588483
 sum =  5350
 Right_slot =  4227
 Right_intent =  4525
@@ -675,9 +675,9 @@ len_intent_all:  5350
 [Epoch 48] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 48: 0.7512242301283436
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 48: 0.7512242301283436
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 48: 0.7483773645169223
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 48: 0.7483773645169223
 sum =  5350
 Right_slot =  4211
 Right_intent =  4525
@@ -689,9 +689,9 @@ len_intent_all:  5350
 [Epoch 49] Average train loss: 0.0
 
 len_intent_all:  5350
-Intent F1 score（含OTHERS类）for epoch 49: 0.7658463340321714
+Intent F1 score锛堝惈OTHERS绫伙級for epoch 49: 0.7658463340321714
 len_intent_all:  5350
-Intent F1 score（不含OTHERS类）for epoch 49: 0.7632578727115378
+Intent F1 score锛堜笉鍚玂THERS绫伙級for epoch 49: 0.7632578727115378
 sum =  5350
 Right_slot =  4255
 Right_intent =  4557

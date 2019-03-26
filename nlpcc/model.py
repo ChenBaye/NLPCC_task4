@@ -132,7 +132,7 @@ class Model:
                 attention_mechanism = tf.contrib.seq2seq.BahdanauAttention(
                     num_units=self.hidden_size, memory=memory,
                     memory_sequence_length=self.encoder_inputs_actual_length)
-                cell = tf.contrib.rnn.LSTMCell(num_units=self.hidden_size * 2)
+                cell = tf.contrib.rnn.LSTMCell(num_units=self.hidden_size * 2)  #隐藏层神经元数量self.hidden_size * 2
                 attn_cell = tf.contrib.seq2seq.AttentionWrapper(
                     cell, attention_mechanism, attention_layer_size=self.hidden_size)
                 out_cell = tf.contrib.rnn.OutputProjectionWrapper(
@@ -212,5 +212,5 @@ class Model:
     # 装载词向量
     def load_word_embeding(self):
         path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
-        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count3size165")  # 生成向量
+        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count3size100")  # 生成向量
         return list

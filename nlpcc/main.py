@@ -13,11 +13,11 @@ import matplotlib.pyplot as plt
 import os
 
 input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
-embedding_size = 165 # 词向量维度
+embedding_size = 100 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
-vocab_size = 14407  # 共14403个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14406
+vocab_size = 14405  # 共14405个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14405
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12    # 有多少种意图
 epoch_num = 50      # 将所有样本全部训练一次为一个epoch
@@ -275,7 +275,7 @@ def train(is_debug=False):
 #将结果输出为折线图
 def output_picture(P, F1_MACRO, P_intent, P_slot):
     x = range(1,len(P)+1)    # x = [1, 2, ... , len(list)]
-    plt.xticks(range(len(P) + 1))
+    plt.xticks(np.arange(0, len(P)+1, 10))
     plt.plot(x, P, label='P')
     plt.plot(x, F1_MACRO, label='F1_MACRO')
     plt.plot(x, P_intent, label='P_intent')
@@ -288,6 +288,12 @@ def output_picture(P, F1_MACRO, P_intent, P_slot):
     # plt.show()
     plt.xlabel("epoch")  # 横坐标为轮数
     plt.savefig(path+"\\result\\result.jpg")
+
+#加入基于规则的模型,针对music.prev、music.next（在训练集中，凡是这两个意图，均无槽)
+# 数据格式
+# index_test 每个单元 = [分词list、分词数目、槽list、意图]
+# def rule_based_model(index_test, pred_intents_a, pred_slots):
+
 
 
 
@@ -326,3 +332,4 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     train()
+

@@ -71,5 +71,5 @@ def accuracy_for_sequence_batch(true_batch, pred_batch, padding_token=0):
 if __name__ == '__main__':
     y_true = [1, 2, 3]
     y_pred = [1, 1, 3]
-    print(f1_score(y_true,y_pred,labels=[1, 3],average='macro'))
+    print(f1_score(y_true,y_pred,labels=[1],average='macro'))
     print(f1_for_sequence_batch_new(y_true,y_pred,"n"))
