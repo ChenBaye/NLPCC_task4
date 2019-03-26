@@ -173,7 +173,7 @@ class Model:
 
         self.loss = loss_slot + loss_intent
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.0015,name="a_optimizer")
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.0005,name="a_optimizer")
 
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
@@ -212,5 +212,5 @@ class Model:
     # 装载词向量
     def load_word_embeding(self):
         path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
-        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count5size63")  # 生成向量
+        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count3size165")  # 生成向量
         return list

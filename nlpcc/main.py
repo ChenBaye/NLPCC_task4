@@ -13,14 +13,14 @@ import matplotlib.pyplot as plt
 import os
 
 input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
-embedding_size = 63 # 词向量维度
+embedding_size = 165 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
-vocab_size = 14407  # 共14404个不同词，其中包括空字符，在编程中又加入了<PAD> <UNK> <EOS>，变成14407
+vocab_size = 14407  # 共14403个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14406
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12    # 有多少种意图
-epoch_num = 30      # 将所有样本全部训练一次为一个epoch
+epoch_num = 50      # 将所有样本全部训练一次为一个epoch
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
 
@@ -228,13 +228,13 @@ def train(is_debug=False):
         # 取出测试集中的slot部分，pred_slots_a.shape[0]实际上就是测试集语句条数
         # print("true_slots_a: ", true_slots_a)
 
-        print("Intent accuracy for epoch {}: {}".format(epoch, np.average(intent_accs)))
+        # print("Intent accuracy for epoch {}: {}".format(epoch, np.average(intent_accs)))
         # 所有batch的intent_acc的平均值与下面的P_right_intent相等
 
-        print("Slot accuracy for epoch {}: {}".format(epoch, np.average(slot_accs)))
+        # print("Slot accuracy for epoch {}: {}".format(epoch, np.average(slot_accs)))
         # slot_acc与P_right_slot不同，前者为   正确的槽数/全部槽数，后者为 槽正确的句子数/全部句子数
 
-        print("Slot F1 score for epoch {}: {}".format(epoch, f1_for_sequence_batch(true_slots_a, pred_slots_a)))
+        # print("Slot F1 score for epoch {}: {}".format(epoch, f1_for_sequence_batch(true_slots_a, pred_slots_a)))
 
         print("Intent F1 score（含OTHERS类）for epoch {}: {}".
               format(epoch, f1_for_sequence_batch_new(true_intents_a, pred_intents_a,"others")))

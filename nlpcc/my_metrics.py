@@ -55,7 +55,7 @@ def f1_for_sequence_batch_new(true_batch, pred_batch, option):
     # print("true: ", true)
     # print("pred: ", pred)
     labels = list(set(true_batch))
-
+    print("len_intent_all: ",len(true_batch))
     if option == "no_others":       # 测算没有others的F1
         labels.remove(11)
 
