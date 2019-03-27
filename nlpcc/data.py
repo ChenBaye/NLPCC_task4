@@ -73,6 +73,7 @@ def data_pipeline(data, file_name, length, option):     # 规定语句长度定�
 
     # padding，原始序列和标注序列结尾+<EOS>+n×<PAD>
     for i in range(len(seq_in)):
+        print(i)
         temp = seq_in[i]
         if len(temp) < length:
             temp.append('<EOS>')
