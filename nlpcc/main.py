@@ -236,8 +236,8 @@ def train(is_debug=False):
 
         # print("Slot F1 score for epoch {}: {}".format(epoch, f1_for_sequence_batch(true_slots_a, pred_slots_a)))
 
-        print("Intent F1 score（含OTHERS类）for epoch {}: {}".
-              format(epoch, f1_for_sequence_batch_new(true_intents_a, pred_intents_a,"others")))
+        # print("Intent F1 score（含OTHERS类）for epoch {}: {}".
+        #      format(epoch, f1_for_sequence_batch_new(true_intents_a, pred_intents_a,"others")))
 
         print("Intent F1 score（不含OTHERS类）for epoch {}: {}".
               format(epoch, f1_for_sequence_batch_new(true_intents_a, pred_intents_a, "no_others")))

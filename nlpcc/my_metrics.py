@@ -51,19 +51,19 @@ def f1_for_sequence_batch(true_batch, pred_batch, average="macro", padding_token
 
 # 下面不包括OTHERS类、<UNK>类
 def f1_for_sequence_batch_new(true_batch, pred_batch, option):
+    import warnings
+    warnings.filterwarnings("ignore")       #忽略警告
     ALL_INTENT = {'<UNK>': 0, "music.play": 1, "music.pause": 2, "music.prev": 3, "music.next": 4,
                   "navigation.navigation": 5, "navigation.open": 6, "navigation.start_navigation": 7,
                   "navigation.cancel_navigation": 8, "phone_call.make_a_phone_call": 9, "phone_call.cancel": 10,
                   "OTHERS": 11}
+    new_dict = {v: k for k, v in ALL_INTENT.items()}
 
-    for i in range(1,len(ALL_INTENT)):  #打印所有意图的F1
+    for i in range(1,len(new_dict)):  #打印所有意图的F1
         label = []
         label.append(i)
-        print(ALL_INTENT[i],":",f1_score(true_batch, pred_batch, label =label ))
+        print(new_dict[i],":",f1_score(true_batch, pred_batch, labels =label,average="macro" ))
 
-    # true, pred = get_data_from_sequence_batch(true_batch, pred_batch,0)
-    # print("true: ", true)
-    # print("pred: ", pred)
     labels = list(set(true_batch))
     # print("len_intent_all: ",len(true_batch))
     if option == "no_others":       # 测算没有others的F1
