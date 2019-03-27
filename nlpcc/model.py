@@ -7,6 +7,7 @@ from tensorflow.contrib.rnn import LSTMCell, LSTMStateTuple,DropoutWrapper
 import sys
 import os
 from dataset_process import word_embeding
+from dataset_process import read_fasttext
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
@@ -210,7 +211,10 @@ class Model:
         return results
 
     # 装载词向量
-    def load_word_embeding(self):
-        path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
-        list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count3size100")  # 生成向量
+    def load_word_embeding(self, option = "word2vec"):
+        if option == "word2vec":
+            path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
+            list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count3size100")  # 生成向量
+        else:
+            list = read_fasttext.get_vector()       #读取fastext的词向量
         return list

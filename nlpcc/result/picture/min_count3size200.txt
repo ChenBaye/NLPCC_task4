@@ -1,0 +1,550 @@
+[Epoch 0] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 0: 0.4987453804054368
+Intent F1 score（不含OTHERS类）for epoch 0: 0.4712592813583809
+sum =  5350
+Right_slot =  3760
+Right_intent =  4446
+Both_right =  3405
+P_Right_slot =  0.702803738317757
+P_Right_intent =  0.8310280373831775
+P_Both_right =  0.6364485981308411
+[Epoch 1] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 1: 0.6515366289528816
+Intent F1 score（不含OTHERS类）for epoch 1: 0.6361264046256142
+sum =  5350
+Right_slot =  4134
+Right_intent =  4610
+Both_right =  3854
+P_Right_slot =  0.7727102803738318
+P_Right_intent =  0.8616822429906542
+P_Both_right =  0.7203738317757009
+[Epoch 2] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 2: 0.6965359313179156
+Intent F1 score（不含OTHERS类）for epoch 2: 0.6860420485563437
+sum =  5350
+Right_slot =  4153
+Right_intent =  4584
+Both_right =  3900
+P_Right_slot =  0.7762616822429906
+P_Right_intent =  0.856822429906542
+P_Both_right =  0.7289719626168224
+[Epoch 3] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 3: 0.7164378647837597
+Intent F1 score（不含OTHERS类）for epoch 3: 0.7073660660589823
+sum =  5350
+Right_slot =  4232
+Right_intent =  4607
+Both_right =  3998
+P_Right_slot =  0.7910280373831776
+P_Right_intent =  0.8611214953271028
+P_Both_right =  0.7472897196261682
+[Epoch 4] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 4: 0.7113594565483532
+Intent F1 score（不含OTHERS类）for epoch 4: 0.7022569521286728
+sum =  5350
+Right_slot =  4246
+Right_intent =  4589
+Both_right =  4003
+P_Right_slot =  0.7936448598130841
+P_Right_intent =  0.8577570093457944
+P_Both_right =  0.7482242990654205
+[Epoch 5] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 5: 0.7114924111648705
+Intent F1 score（不含OTHERS类）for epoch 5: 0.7025450047428496
+sum =  5350
+Right_slot =  4267
+Right_intent =  4586
+Both_right =  4044
+P_Right_slot =  0.7975700934579439
+P_Right_intent =  0.8571962616822429
+P_Both_right =  0.7558878504672897
+[Epoch 6] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 6: 0.7142041039063642
+Intent F1 score（不含OTHERS类）for epoch 6: 0.7058385452125774
+sum =  5350
+Right_slot =  4244
+Right_intent =  4577
+Both_right =  3998
+P_Right_slot =  0.7932710280373831
+P_Right_intent =  0.8555140186915888
+P_Both_right =  0.7472897196261682
+[Epoch 7] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 7: 0.7094933748477636
+Intent F1 score（不含OTHERS类）for epoch 7: 0.7006701210698231
+sum =  5350
+Right_slot =  4192
+Right_intent =  4577
+Both_right =  3961
+P_Right_slot =  0.7835514018691588
+P_Right_intent =  0.8555140186915888
+P_Both_right =  0.7403738317757009
+[Epoch 8] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 8: 0.6980434299375063
+Intent F1 score（不含OTHERS类）for epoch 8: 0.6885290381380696
+sum =  5350
+Right_slot =  4272
+Right_intent =  4573
+Both_right =  4055
+P_Right_slot =  0.7985046728971963
+P_Right_intent =  0.854766355140187
+P_Both_right =  0.7579439252336448
+[Epoch 9] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 9: 0.7336236785436615
+Intent F1 score（不含OTHERS类）for epoch 9: 0.7272023275635429
+sum =  5350
+Right_slot =  4296
+Right_intent =  4579
+Both_right =  4051
+P_Right_slot =  0.8029906542056074
+P_Right_intent =  0.8558878504672898
+P_Both_right =  0.757196261682243
+[Epoch 10] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 10: 0.706817302265388
+Intent F1 score（不含OTHERS类）for epoch 10: 0.6980526249536465
+sum =  5350
+Right_slot =  4278
+Right_intent =  4571
+Both_right =  4021
+P_Right_slot =  0.7996261682242991
+P_Right_intent =  0.854392523364486
+P_Both_right =  0.751588785046729
+[Epoch 11] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 11: 0.7587264256157531
+Intent F1 score（不含OTHERS类）for epoch 11: 0.7553978392986801
+sum =  5350
+Right_slot =  4314
+Right_intent =  4565
+Both_right =  4065
+P_Right_slot =  0.8063551401869159
+P_Right_intent =  0.8532710280373832
+P_Both_right =  0.7598130841121495
+[Epoch 12] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 12: 0.742890394664165
+Intent F1 score（不含OTHERS类）for epoch 12: 0.7385889692208982
+sum =  5350
+Right_slot =  4251
+Right_intent =  4549
+Both_right =  3992
+P_Right_slot =  0.7945794392523364
+P_Right_intent =  0.8502803738317757
+P_Both_right =  0.7461682242990654
+[Epoch 13] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 13: 0.7336502848030784
+Intent F1 score（不含OTHERS类）for epoch 13: 0.7285163898752041
+sum =  5350
+Right_slot =  4258
+Right_intent =  4538
+Both_right =  3984
+P_Right_slot =  0.7958878504672897
+P_Right_intent =  0.8482242990654205
+P_Both_right =  0.7446728971962617
+[Epoch 14] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 14: 0.7101760034469454
+Intent F1 score（不含OTHERS类）for epoch 14: 0.7024281716928746
+sum =  5350
+Right_slot =  4264
+Right_intent =  4558
+Both_right =  4018
+P_Right_slot =  0.7970093457943925
+P_Right_intent =  0.8519626168224299
+P_Both_right =  0.7510280373831776
+[Epoch 15] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 15: 0.7461332173199711
+Intent F1 score（不含OTHERS类）for epoch 15: 0.741569634875064
+sum =  5350
+Right_slot =  4241
+Right_intent =  4563
+Both_right =  3986
+P_Right_slot =  0.7927102803738317
+P_Right_intent =  0.8528971962616823
+P_Both_right =  0.7450467289719627
+[Epoch 16] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 16: 0.770081360574854
+Intent F1 score（不含OTHERS类）for epoch 16: 0.7687018997331145
+sum =  5350
+Right_slot =  4226
+Right_intent =  4556
+Both_right =  3954
+P_Right_slot =  0.7899065420560748
+P_Right_intent =  0.851588785046729
+P_Both_right =  0.7390654205607476
+[Epoch 17] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 17: 0.7608457193141784
+Intent F1 score（不含OTHERS类）for epoch 17: 0.7582687121437471
+sum =  5350
+Right_slot =  4230
+Right_intent =  4545
+Both_right =  3968
+P_Right_slot =  0.7906542056074767
+P_Right_intent =  0.8495327102803738
+P_Both_right =  0.7416822429906542
+[Epoch 18] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 18: 0.7700766898326066
+Intent F1 score（不含OTHERS类）for epoch 18: 0.7683765761433269
+sum =  5350
+Right_slot =  4253
+Right_intent =  4552
+Both_right =  3988
+P_Right_slot =  0.7949532710280374
+P_Right_intent =  0.8508411214953271
+P_Both_right =  0.7454205607476635
+[Epoch 19] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 19: 0.7685020212354576
+Intent F1 score（不含OTHERS类）for epoch 19: 0.7673749642327318
+sum =  5350
+Right_slot =  4279
+Right_intent =  4525
+Both_right =  3986
+P_Right_slot =  0.7998130841121496
+P_Right_intent =  0.8457943925233645
+P_Both_right =  0.7450467289719627
+[Epoch 20] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 20: 0.7369333960487734
+Intent F1 score（不含OTHERS类）for epoch 20: 0.7323580251036057
+sum =  5350
+Right_slot =  4300
+Right_intent =  4542
+Both_right =  3991
+P_Right_slot =  0.8037383177570093
+P_Right_intent =  0.8489719626168224
+P_Both_right =  0.7459813084112149
+[Epoch 21] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 21: 0.731759999725994
+Intent F1 score（不含OTHERS类）for epoch 21: 0.7265279771351338
+sum =  5350
+Right_slot =  4225
+Right_intent =  4544
+Both_right =  3975
+P_Right_slot =  0.7897196261682243
+P_Right_intent =  0.8493457943925233
+P_Both_right =  0.7429906542056075
+[Epoch 22] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 22: 0.7475700205422261
+Intent F1 score（不含OTHERS类）for epoch 22: 0.7431135394503813
+sum =  5350
+Right_slot =  4211
+Right_intent =  4579
+Both_right =  3939
+P_Right_slot =  0.7871028037383178
+P_Right_intent =  0.8558878504672898
+P_Both_right =  0.7362616822429906
+[Epoch 23] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 23: 0.772245618125644
+Intent F1 score（不含OTHERS类）for epoch 23: 0.7701820547464318
+sum =  5350
+Right_slot =  4260
+Right_intent =  4577
+Both_right =  4020
+P_Right_slot =  0.7962616822429907
+P_Right_intent =  0.8555140186915888
+P_Both_right =  0.7514018691588785
+[Epoch 24] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 24: 0.7395898587258593
+Intent F1 score（不含OTHERS类）for epoch 24: 0.7343353614523778
+sum =  5350
+Right_slot =  4288
+Right_intent =  4574
+Both_right =  4044
+P_Right_slot =  0.8014953271028037
+P_Right_intent =  0.8549532710280374
+P_Both_right =  0.7558878504672897
+[Epoch 25] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 25: 0.756803578470468
+Intent F1 score（不含OTHERS类）for epoch 25: 0.7533454747790531
+sum =  5350
+Right_slot =  4263
+Right_intent =  4570
+Both_right =  4019
+P_Right_slot =  0.7968224299065421
+P_Right_intent =  0.8542056074766355
+P_Both_right =  0.751214953271028
+[Epoch 26] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 26: 0.7518655279475563
+Intent F1 score（不含OTHERS类）for epoch 26: 0.7496443399682347
+sum =  5350
+Right_slot =  4208
+Right_intent =  4514
+Both_right =  3899
+P_Right_slot =  0.7865420560747663
+P_Right_intent =  0.8437383177570094
+P_Both_right =  0.7287850467289719
+[Epoch 27] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 27: 0.7572221759241127
+Intent F1 score（不含OTHERS类）for epoch 27: 0.7540928961407907
+sum =  5350
+Right_slot =  4226
+Right_intent =  4555
+Both_right =  3975
+P_Right_slot =  0.7899065420560748
+P_Right_intent =  0.8514018691588785
+P_Both_right =  0.7429906542056075
+[Epoch 28] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 28: 0.7878422236870386
+Intent F1 score（不含OTHERS类）for epoch 28: 0.7871534068400563
+sum =  5350
+Right_slot =  4210
+Right_intent =  4578
+Both_right =  3957
+P_Right_slot =  0.7869158878504673
+P_Right_intent =  0.8557009345794393
+P_Both_right =  0.739626168224299
+[Epoch 29] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 29: 0.7530980127771517
+Intent F1 score（不含OTHERS类）for epoch 29: 0.7501359755181277
+sum =  5350
+Right_slot =  4251
+Right_intent =  4545
+Both_right =  3991
+P_Right_slot =  0.7945794392523364
+P_Right_intent =  0.8495327102803738
+P_Both_right =  0.7459813084112149
+[Epoch 30] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 30: 0.7460254202953561
+Intent F1 score（不含OTHERS类）for epoch 30: 0.7414996627546033
+sum =  5350
+Right_slot =  4250
+Right_intent =  4563
+Both_right =  4008
+P_Right_slot =  0.794392523364486
+P_Right_intent =  0.8528971962616823
+P_Both_right =  0.7491588785046729
+[Epoch 31] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 31: 0.7697913717961324
+Intent F1 score（不含OTHERS类）for epoch 31: 0.7677367523947608
+sum =  5350
+Right_slot =  4268
+Right_intent =  4560
+Both_right =  4019
+P_Right_slot =  0.7977570093457944
+P_Right_intent =  0.8523364485981308
+P_Both_right =  0.751214953271028
+[Epoch 32] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 32: 0.747331431631189
+Intent F1 score（不含OTHERS类）for epoch 32: 0.7423922446972205
+sum =  5350
+Right_slot =  4252
+Right_intent =  4573
+Both_right =  4005
+P_Right_slot =  0.7947663551401869
+P_Right_intent =  0.854766355140187
+P_Both_right =  0.7485981308411215
+[Epoch 33] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 33: 0.7436207250918748
+Intent F1 score（不含OTHERS类）for epoch 33: 0.7383628159890488
+sum =  5350
+Right_slot =  4270
+Right_intent =  4575
+Both_right =  4024
+P_Right_slot =  0.7981308411214953
+P_Right_intent =  0.8551401869158879
+P_Both_right =  0.7521495327102804
+[Epoch 34] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 34: 0.7401502740645949
+Intent F1 score（不含OTHERS类）for epoch 34: 0.7351012620621873
+sum =  5350
+Right_slot =  4179
+Right_intent =  4561
+Both_right =  3947
+P_Right_slot =  0.7811214953271028
+P_Right_intent =  0.8525233644859813
+P_Both_right =  0.7377570093457944
+[Epoch 35] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 35: 0.7808605513241701
+Intent F1 score（不含OTHERS类）for epoch 35: 0.7800975094256718
+sum =  5350
+Right_slot =  4280
+Right_intent =  4550
+Both_right =  4032
+P_Right_slot =  0.8
+P_Right_intent =  0.8504672897196262
+P_Both_right =  0.7536448598130842
+[Epoch 36] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 36: 0.7758225897407176
+Intent F1 score（不含OTHERS类）for epoch 36: 0.7754539799310866
+sum =  5350
+Right_slot =  4249
+Right_intent =  4525
+Both_right =  3966
+P_Right_slot =  0.7942056074766355
+P_Right_intent =  0.8457943925233645
+P_Both_right =  0.7413084112149533
+[Epoch 37] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 37: 0.7170151052862918
+Intent F1 score（不含OTHERS类）for epoch 37: 0.709897064631398
+sum =  5350
+Right_slot =  4237
+Right_intent =  4551
+Both_right =  3973
+P_Right_slot =  0.7919626168224299
+P_Right_intent =  0.8506542056074766
+P_Both_right =  0.7426168224299066
+[Epoch 38] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 38: 0.7518600433836119
+Intent F1 score（不含OTHERS类）for epoch 38: 0.7480549680541786
+sum =  5350
+Right_slot =  4273
+Right_intent =  4560
+Both_right =  4013
+P_Right_slot =  0.7986915887850468
+P_Right_intent =  0.8523364485981308
+P_Both_right =  0.7500934579439252
+[Epoch 39] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 39: 0.7662752269695754
+Intent F1 score（不含OTHERS类）for epoch 39: 0.7641205191601644
+sum =  5350
+Right_slot =  4214
+Right_intent =  4551
+Both_right =  3953
+P_Right_slot =  0.7876635514018692
+P_Right_intent =  0.8506542056074766
+P_Both_right =  0.7388785046728972
+[Epoch 40] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 40: 0.7568181349166249
+Intent F1 score（不含OTHERS类）for epoch 40: 0.7537982482537279
+sum =  5350
+Right_slot =  4237
+Right_intent =  4549
+Both_right =  3969
+P_Right_slot =  0.7919626168224299
+P_Right_intent =  0.8502803738317757
+P_Both_right =  0.7418691588785047
+[Epoch 41] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 41: 0.7509545264275551
+Intent F1 score（不含OTHERS类）for epoch 41: 0.7475587072498617
+sum =  5350
+Right_slot =  4212
+Right_intent =  4543
+Both_right =  3940
+P_Right_slot =  0.7872897196261682
+P_Right_intent =  0.8491588785046729
+P_Both_right =  0.7364485981308411
+[Epoch 42] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 42: 0.7644242596143471
+Intent F1 score（不含OTHERS类）for epoch 42: 0.7622352703347243
+sum =  5350
+Right_slot =  4233
+Right_intent =  4550
+Both_right =  3969
+P_Right_slot =  0.7912149532710281
+P_Right_intent =  0.8504672897196262
+P_Both_right =  0.7418691588785047
+[Epoch 43] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 43: 0.7399821383270944
+Intent F1 score（不含OTHERS类）for epoch 43: 0.7350796429399458
+sum =  5350
+Right_slot =  4247
+Right_intent =  4545
+Both_right =  3978
+P_Right_slot =  0.7938317757009345
+P_Right_intent =  0.8495327102803738
+P_Both_right =  0.7435514018691589
+[Epoch 44] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 44: 0.7702487203696553
+Intent F1 score（不含OTHERS类）for epoch 44: 0.7686799396374858
+sum =  5350
+Right_slot =  4209
+Right_intent =  4548
+Both_right =  3965
+P_Right_slot =  0.7867289719626168
+P_Right_intent =  0.8500934579439252
+P_Both_right =  0.7411214953271028
+[Epoch 45] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 45: 0.7543558544418815
+Intent F1 score（不含OTHERS类）for epoch 45: 0.7513904482529739
+sum =  5350
+Right_slot =  4250
+Right_intent =  4542
+Both_right =  3967
+P_Right_slot =  0.794392523364486
+P_Right_intent =  0.8489719626168224
+P_Both_right =  0.7414953271028037
+[Epoch 46] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 46: 0.7406212675707582
+Intent F1 score（不含OTHERS类）for epoch 46: 0.7366833943278339
+sum =  5350
+Right_slot =  4220
+Right_intent =  4536
+Both_right =  3935
+P_Right_slot =  0.788785046728972
+P_Right_intent =  0.8478504672897196
+P_Both_right =  0.7355140186915888
+[Epoch 47] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 47: 0.7539876789927895
+Intent F1 score（不含OTHERS类）for epoch 47: 0.7507131672888447
+sum =  5350
+Right_slot =  4219
+Right_intent =  4548
+Both_right =  3950
+P_Right_slot =  0.7885981308411215
+P_Right_intent =  0.8500934579439252
+P_Both_right =  0.7383177570093458
+[Epoch 48] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 48: 0.7479536452280169
+Intent F1 score（不含OTHERS类）for epoch 48: 0.7433800026366831
+sum =  5350
+Right_slot =  4223
+Right_intent =  4563
+Both_right =  3966
+P_Right_slot =  0.7893457943925234
+P_Right_intent =  0.8528971962616823
+P_Both_right =  0.7413084112149533
+[Epoch 49] Average train loss: 0.0
+
+Intent F1 score（含OTHERS类）for epoch 49: 0.7682665782436747
+Intent F1 score（不含OTHERS类）for epoch 49: 0.7665061776122748
+sum =  5350
+Right_slot =  4184
+Right_intent =  4541
+Both_right =  3913
+P_Right_slot =  0.7820560747663552
+P_Right_intent =  0.8487850467289719
+P_Both_right =  0.7314018691588785
