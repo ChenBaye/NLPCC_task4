@@ -81,21 +81,40 @@ def data_handle(data, filename):#
         print(t)
 
     # 复制出现次数少的数据，
-    # music.prev复制60遍，5*60
-    # music.next复制2遍,132*2
-    # navigation.start_navigation复制10遍,33*10
-    # phone_call.cancel复制20遍,22*20
+    # music.play不复制 6425
+    # music.prev复制1285遍，5*1285 = 6425
+    # music.next复制48遍,  132*48 = 6336
+    # music.pause复制21遍，300*21=6300
+    # navigation.navigation复制前2424条各一遍， 3,961+2424=6425
+    # navigation.start_navigation复制194遍,33*194=6420
+    # navigation.open复制26遍，245*26=6370
+    # phone_call.cancel复制292遍,22*292=6424
+    # phone_call.make_a_phone_call复制2遍,2,796*2 = 5592
+    # navigation.cancel_navigation复制7遍,835*7=5845
+    # OTHERS不复制 6598
     temp_data = []
+    count_navigation = 2424
     for t in data:
         copy = 1
         if t[2] == "music.prev":
-            copy = 60
+            copy = 1285
         elif t[2] == "music.next":
+            copy = 48
+        elif t[2] == "music.pause":
+            copy = 21
+        elif t[2] == "navigation.navigation" and  count_navigation>0:
             copy = 2
+            count_navigation = count_navigation - 1
         elif t[2] == "navigation.start_navigation":
-            copy = 10
+            copy = 194
+        elif t[2] == "navigation.cancel_navigation":
+            copy = 7
+        elif t[2] == "navigation.open":
+            copy = 26
         elif t[2] == "phone_call.cancel":
-            copy = 20
+            copy = 292
+        elif t[2] == "phone_call.make_a_phone_call":
+            copy = 2
         else:
             copy = 1
 

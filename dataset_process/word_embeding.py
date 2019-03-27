@@ -58,5 +58,5 @@ def get_vector(modelname, word2index = eval(open(os.path.dirname(path)+"\\nlpcc\
     return word_vector
 
 if __name__ == '__main__':
-    generate_model(3, 5, 300)
+    generate_model(3, 5, 100)
    # get_vector(path+"\\word2vec\\min_count5size63")
