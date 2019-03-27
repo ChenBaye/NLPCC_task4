@@ -8,33 +8,31 @@ path = os.path.dirname(os.path.abspath(__file__))  # 上个目录 ...\\dataset_p
 
 #读取fast_text中的词向量，提取需要的词向量保存在...\dataset_process\fasettext
 def load_vectors(fasttext, word2index = eval(open(os.path.dirname(path)+"\\nlpcc\\dic\\word2index.txt", 'r', encoding='UTF-8').read())):
-    dictionary = {}
-    with io.open(fasttext, 'r', encoding='utf-8', newline='\n') as fin:
-        for line in fin:
-            tokens = line.rstrip().split(' ')
-            dictionary[tokens[0]] = map(float, tokens[1:])
-
+    dictionary = {} # 存储输出的词向量
     word_number = len(word2index)  # 共有多少个词
     vec_size = 300  # 每个词向量的维度， fast_text为300维
     word_vector = []  # 存储最终需要的词向量
-
-
     # 先随机生成一个词向量列表
     for i in range(word_number):
         word_vector.append(random_list(vec_size))
 
     print(len(word_vector))
     nothing = 0
-    for key in word2index:
-        try:
-            vector = dictionary[key]
-            word_vector[word2index[key]] = vector
-        except:  # 发生异常什么都不做
-            nothing = nothing + 1
-        else:
-            continue
 
-    print("缺少", nothing, "个词向量")
+
+    with io.open(fasttext, 'r', encoding='utf-8', newline='\n') as fin:
+        for line in fin:
+            tokens = line.rstrip().split(' ')       #fasttext每一行的词 和 词向量
+
+            word = tokens[0]
+            vector = list(map(float, tokens[1:]))
+
+            # 如果需要该词向量,即该词向量存在于数据集的词表中
+            if word in word2index:
+                word_vector[word2index[word]] = vector
+                nothing = nothing + 1
+
+    print("缺少", word_number - nothing, "个词向量")
     print(len(word_vector))
 
     f = open(path+"\\fasttext\\word_vector.txt", 'w', encoding='UTF-8')
