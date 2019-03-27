@@ -14,7 +14,7 @@ import os
 import copy
 
 input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
-embedding_size = 100 # 词向量维度
+embedding_size = 300 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
@@ -47,16 +47,15 @@ def train(is_debug=False):
     train_data = open(path+"\\train_test_file\\train_labeled.txt", "r", encoding='UTF-8').readlines()
     test_data = open(path+"\\train_test_file\\test_labeled.txt", "r", encoding='UTF-8').readlines()
 
-    train_data_ed = data_pipeline(train_data, path+"\\data_list\\train_list.npy", input_steps, "test")
-    test_data_ed = data_pipeline(test_data, path+"\\data_list\\test_list.npy", input_steps, "test")
+    train_data_ed = data_pipeline(train_data, path+"\\data_list\\train_list.npy", input_steps, "no_test")
+    test_data_ed = data_pipeline(test_data, path+"\\data_list\\test_list.npy", input_steps, "no_test")
 
     all_data = train_data_ed + test_data_ed     # list合并
     # 要得到（训练集+测试集）的词集合、槽集合
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-    get_info_from_training_data(all_data, "test")
+    get_info_from_training_data(all_data, "no_test")
+    print("get list.....")
     '''
-
-
     # 上一步保存后可以直接读取字典，节省时间
     train_data_ed = file_to_list(path+"\\data_list\\train_list.npy")
     test_data_ed = file_to_list(path+"\\data_list\\test_list.npy")

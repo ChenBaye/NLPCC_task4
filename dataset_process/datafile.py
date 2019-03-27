@@ -64,7 +64,7 @@ def delete_blank(list):
 
 
 
-def data_handle(data, filename):#
+def data_handle(data, filename, option):#
     data = [t[:-1] for t in data]  # 去掉'\n'，读入每一行
 
 
@@ -92,37 +92,39 @@ def data_handle(data, filename):#
     # phone_call.make_a_phone_call复制2遍,2,796*2 = 5592
     # navigation.cancel_navigation复制7遍,835*7=5845
     # OTHERS不复制 6598
-    temp_data = []
-    count_navigation = 2424
-    for t in data:
-        copy = 1
-        if t[2] == "music.prev":
-            copy = 1285
-        elif t[2] == "music.next":
-            copy = 48
-        elif t[2] == "music.pause":
-            copy = 21
-        elif t[2] == "navigation.navigation" and  count_navigation>0:
-            copy = 2
-            count_navigation = count_navigation - 1
-        elif t[2] == "navigation.start_navigation":
-            copy = 194
-        elif t[2] == "navigation.cancel_navigation":
-            copy = 7
-        elif t[2] == "navigation.open":
-            copy = 26
-        elif t[2] == "phone_call.cancel":
-            copy = 292
-        elif t[2] == "phone_call.make_a_phone_call":
-            copy = 2
-        else:
+
+    if option == "train":   #只有训练集需要复制数据
+        temp_data = []
+        count_navigation = 2424
+        for t in data:
             copy = 1
+            if t[2] == "music.prev":
+                copy = 1285
+            elif t[2] == "music.next":
+                copy = 48
+            elif t[2] == "music.pause":
+                copy = 21
+            elif t[2] == "navigation.navigation" and  count_navigation>0:
+                copy = 2
+                count_navigation = count_navigation - 1
+            elif t[2] == "navigation.start_navigation":
+                copy = 194
+            elif t[2] == "navigation.cancel_navigation":
+                copy = 7
+            elif t[2] == "navigation.open":
+                copy = 26
+            elif t[2] == "phone_call.cancel":
+                copy = 292
+            elif t[2] == "phone_call.make_a_phone_call":
+                copy = 2
+            else:
+                copy = 1
 
-        for count in range(copy):
-            temp = t.copy()
-            temp_data.append(temp)
+            for count in range(copy):
+                temp = t.copy()
+                temp_data.append(temp)
 
-    data = temp_data
+        data = temp_data
 
 
 
@@ -187,6 +189,6 @@ if __name__ == '__main__':
 
     path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  #上上个目录
     # 得到train_labeled.txt 和 train_labeled.txt 两个已经标注好的文件
-    data_handle(train_data,path+"\\nlpcc\\train_test_file\\train_labeled.txt")
-    data_handle(test_data,path+"\\nlpcc\\train_test_file\\test_labeled.txt")
+    data_handle(train_data,path+"\\nlpcc\\train_test_file\\train_labeled.txt","train")
+    data_handle(test_data,path+"\\nlpcc\\train_test_file\\test_labeled.txt","test")
 
