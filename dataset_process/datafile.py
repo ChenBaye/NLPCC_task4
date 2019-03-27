@@ -4,6 +4,7 @@ import jieba
 import re
 import random
 import os
+import copy
 
 #只有如下槽
 slot=["song","singer","theme","style","age","toplist","emotion","language","instrument","scene",
@@ -79,14 +80,41 @@ def data_handle(data, filename):#
     for t in data:
         print(t)
 
+    # 复制出现次数少的数据，
+    # music.prev复制60遍，5*60
+    # music.next复制2遍,132*2
+    # navigation.start_navigation复制10遍,33*10
+    # phone_call.cancel复制20遍,22*20
+    temp_data = []
+    for t in data:
+        copy = 1
+        if t[2] == "music.prev":
+            copy = 60
+        elif t[2] == "music.next":
+            copy = 2
+        elif t[2] == "navigation.start_navigation":
+            copy = 10
+        elif t[2] == "phone_call.cancel":
+            copy = 20
+        else:
+            copy = 1
+
+        for count in range(copy):
+            temp = t.copy()
+            temp_data.append(temp)
+
+    data = temp_data
+
+
+
     # 下面完成序列标注
 
     for i in range(len(data)):
         word_num=len(data[i][1])    #每句话多少个词
         list = ["O"] * word_num     #初始化标记序列
-        data[i][3] = data[i][3].replace("<","")
-        data[i][3] = data[i][3].replace(">", "")
-        data[i][3] = data[i][3].replace("/", "")
+        data[i][3] = (data[i][3]).replace("<","")
+        data[i][3] = (data[i][3]).replace(">", "")
+        data[i][3] = (data[i][3]).replace("/", "")
         #print(data[i][3])
         for j in range(len(slot)):    # 找出slot位置
             if data[i][3].find(slot[j])!=-1:    # 找出了对应slot
@@ -105,7 +133,7 @@ def data_handle(data, filename):#
 
 
         data[i][3]=list
-        print(data[i])
+        # print(data[i])
 
     #将已经标记好的data写入文件,需要注意，序列标注和意图之间用 空格 隔开********
     fp = open(filename, 'w',encoding='UTF-8')

@@ -11,6 +11,7 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
+import copy
 
 input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
 embedding_size = 100 # 词向量维度

@@ -1,8 +1,6 @@
 # 提取 train_without_blankline.txt 以及 train_without_blankline 中各个query的分词
 
 
-import jieba
-from tkinter import _flatten
 import os
 
 flatten = lambda l: [item for sublist in l for item in sublist]  # 二维展成一维

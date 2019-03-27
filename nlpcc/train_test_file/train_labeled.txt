@@ -20,6 +20,15 @@
 188126	呼图壁县 牧香 自助 火锅	B-destination I-destination I-destination I-destination navigation.navigation
 188126	导航	O navigation.open
 122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
+122197859	开始 导航	O O navigation.start_navigation
 122197859	去 角美 南 农贸市场	O B-destination I-destination I-destination navigation.navigation
 122197859	取消	O navigation.cancel_navigation
 116195863	给 我 来 一首 追梦人	O O O O B-song music.play
@@ -513,6 +522,8 @@
 192053	有田震 的 歌	O O O music.play
 119196422	茄 海涛	O O OTHERS
 119196422	叮当 下手	O O music.next
+119196422	叮当 下手	O O music.next
+119196422	下 一首	O O music.next
 119196422	下 一首	O O music.next
 119196422	我 想 听差 一步	O O O B-song music.play
 119196422	我 想 听差 一步	O O O B-song music.play
@@ -936,6 +947,7 @@
 115195512	播放 一首	O O music.play
 115195512	霍霍	O OTHERS
 115195512	下 一首	O O music.next
+115195512	下 一首	O O music.next
 117195387	唱 一首 天边	O O B-song music.play
 117195387	歌	O music.play
 117195387	放 一首 下马 酒之歌	O O B-song I-song music.play
@@ -1325,6 +1337,7 @@
 116196400	a	O OTHERS
 116196400	唱 一首歌 听	O O O music.play
 116196400	换 一首歌 听	O O O music.next
+116196400	换 一首歌 听	O O O music.next
 118194006	体面	B-song music.play
 118194006	体面 的 歌	B-song O O music.play
 118194006	一晃 就 老 了	B-song I-song I-song I-song music.play
@@ -1704,6 +1717,15 @@
 119196106	播放 腾格尔 的 歌曲	O B-singer O O music.play
 119196106	播放 腾格尔 的 歌曲	O B-singer O O music.play
 112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
+112199445	开始 导航 去	O O O navigation.start_navigation
 112199445	去 闽清 北中	O B-destination I-destination navigation.navigation
 112199445	打个 电话 老婆	O O B-contact_name phone_call.make_a_phone_call
 112199445	去 福润通 酒店	O B-destination I-destination navigation.navigation
@@ -1956,6 +1978,16 @@
 112198368	取消	O phone_call.cancel
 112198368	取消	O phone_call.cancel
 112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
+112198368	取消	O phone_call.cancel
 112198368	关滨	O OTHERS
 112198368	取消 导航	O O navigation.cancel_navigation
 112198368	周华	O OTHERS
@@ -1986,6 +2018,8 @@
 112194369	古田	B-destination navigation.navigation
 112196368	点 一首 红豆 红	O O B-song I-song music.play
 112196368	下 一首	O O music.next
+112196368	下 一首	O O music.next
+112196368	切换 到 下 一首	O O O O music.next
 112196368	切换 到 下 一首	O O O O music.next
 112196368	哦	O OTHERS
 117198961	导航 到 四川省 达州市 万源市	O O B-destination I-destination I-destination navigation.navigation
@@ -1996,6 +2030,7 @@
 115194739	搜索 周杰伦 的 音乐	O B-singer O O music.play
 115194739	搜索 电视剧	O O OTHERS
 115194739	请 播放 一下 酒干 倘卖 无	O O O B-song I-song I-song music.play
+115194739	下 一曲 下 一曲	O O O O music.next
 115194739	下 一曲 下 一曲	O O O O music.next
 118195305	播放 赵 真的 歌曲	O B-singer O O music.play
 118195305	唱 一首 秋秋 的 歌	O O B-singer O O music.play
@@ -2011,6 +2046,15 @@
 119196105	秘密 来 一首	B-song O O music.play
 119196105	求 你 放 甜蜜蜜 你 为什么 又 不是 甜蜜蜜 啊	O O O B-song O O O O B-song O music.play
 119196105	请 你 放 邓丽君 的 甜蜜蜜	O O O B-singer O B-song music.play
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
+112197598	导航	O navigation.start_navigation
 112197598	导航	O navigation.start_navigation
 112197598	长城 花卉 中心	B-destination I-destination I-destination navigation.navigation
 112197598	打电话	O phone_call.make_a_phone_call
@@ -2036,6 +2080,8 @@
 112195459	叶蓝	O OTHERS
 112195459	漂亮 歌曲	B-song O music.play
 117196231	放 音乐	O O music.play
+117196231	播放 下 一首 音乐	O O O O music.next
+117196231	播放 下 一首 音乐	O O O O music.next
 117196231	播放 下 一首 音乐	O O O O music.next
 117196231	播放 下 一首 音乐	O O O O music.next
 115197614	凯林路	B-destination navigation.navigation
@@ -2256,6 +2302,7 @@
 112194818	张靓 玫 的 27 找个 许佳慧 的 走 后 的 思恋	O O O O O B-singer O B-song I-song O B-song music.play
 122199071	我要 去 安顺	O O B-destination navigation.navigation
 122199071	播放 下 一首 音乐	O O O O music.next
+122199071	播放 下 一首 音乐	O O O O music.next
 122199071	新月	O OTHERS
 122199071	这么 快 回来 了	O O O O OTHERS
 122199071	好 的	O O OTHERS
@@ -2283,6 +2330,7 @@
 122197617	帮 我 导航 到 六委 门诊	O O O O B-destination I-destination navigation.navigation
 122197617	取消	O navigation.cancel_navigation
 111198287	去 羊 台山	O B-destination I-destination navigation.navigation
+111198287	播放 下 一曲 歌曲	O O O O music.next
 111198287	播放 下 一曲 歌曲	O O O O music.next
 111198287	打开 蓝牙	O O OTHERS
 111198287	拨打 电话	O O phone_call.make_a_phone_call
@@ -2313,7 +2361,9 @@
 115195494	粤语 歌曲	B-language O music.play
 115195494	播放 音乐	O O music.play
 115195494	下 一曲	O O music.next
+115195494	下 一曲	O O music.next
 119197889	打开 收音机	O O OTHERS
+119197889	下 一首	O O music.next
 119197889	下 一首	O O music.next
 119197889	打电话 给 521	O O B-phone_num phone_call.make_a_phone_call
 119197889	导航 结束	O O navigation.cancel_navigation
@@ -2363,7 +2413,10 @@
 192100	来个 音乐	O O music.play
 192100	可以	O OTHERS
 192100	下 一首	O O music.next
+192100	下 一首	O O music.next
 192100	唱下 一首	O O music.next
+192100	唱下 一首	O O music.next
+192100	下 一首歌	O O music.next
 192100	下 一首歌	O O music.next
 192100	你 卖 钩子	O O O OTHERS
 192100	到 万秀	O B-destination navigation.navigation
@@ -2902,6 +2955,7 @@
 189058	冬天 的 秘密	B-song I-song I-song music.play
 189058	在 群	O O OTHERS
 189058	下 一曲	O O music.next
+189058	下 一曲	O O music.next
 189058	我要 听 网络 歌曲	O O B-toplist O music.play
 189058	网络 歌曲	B-toplist O music.play
 115197507	阿布	B-singer music.play
@@ -2929,6 +2983,8 @@
 119197613	你好 叮当	O O OTHERS
 119197613	我要 的 音乐	O O O music.play
 119197613	是 的	O O OTHERS
+111195294	切换 到 下 一首 播放	O O O O O music.next
+111195294	切换 到 下 一首 播放	O O O O O music.next
 111195294	切换 到 下 一首 播放	O O O O O music.next
 111195294	切换 到 下 一首 播放	O O O O O music.next
 111195294	播放 一首 空空如也	O O B-song music.play
@@ -3110,6 +3166,8 @@
 116195995	放 一曲	O O music.play
 116195995	切歌	O music.next
 116195995	切歌	O music.next
+116195995	切歌	O music.next
+116195995	切歌	O music.next
 112194471	给 我 播放 一首	O O O O music.play
 112194471	你好 叮当	O O OTHERS
 112194471	我要 播放 一首	O O O music.play
@@ -3224,6 +3282,15 @@
 118197716	去 中川 机场	O B-destination I-destination navigation.navigation
 118197716	您 拨打 的 电话 已 关机	O O O O O O OTHERS
 118197716	打个 电话 啊	O O O phone_call.make_a_phone_call
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
+118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
 118197716	继续 导航 刚刚 的 地方	O O O O O navigation.start_navigation
 118197716	东方明珠	B-destination navigation.navigation
 118197716	你 妈 卖批	O O O OTHERS
@@ -3419,6 +3486,7 @@
 192111	邓戈	O OTHERS
 192111	播放歌曲	O music.play
 192111	播放歌曲 换 一首歌	O O O music.next
+192111	播放歌曲 换 一首歌	O O O music.next
 192111	听 凉凉	O B-song music.play
 117195550	放 一首 烟花 树下 的 约定	O O B-song I-song I-song I-song music.play
 117195550	放 一首 樱花树 下 的 约定	O O B-song I-song I-song I-song music.play
@@ -3456,6 +3524,7 @@
 117195742	播放歌曲	O music.play
 117195742	小睿	B-singer music.play
 117195742	播放 下 一首	O O O music.next
+117195742	播放 下 一首	O O O music.next
 117195742	播放歌曲	O music.play
 118197556	我要 回家	O O navigation.navigation
 118197556	大同路 95 号 夺宝奇兵	B-destination I-destination I-destination I-destination navigation.navigation
@@ -3492,6 +3561,16 @@
 187150	结束 导航	O O navigation.cancel_navigation
 187099	拨打 电话 13600008065	O O B-phone_num phone_call.make_a_phone_call
 187099	拨打 电话 13600008065	O O B-phone_num phone_call.make_a_phone_call
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
+187099	关闭	O phone_call.cancel
 187099	关闭	O phone_call.cancel
 187099	关闭	O phone_call.cancel
 187099	关闭	O phone_call.cancel
@@ -3628,6 +3707,33 @@
 118197350	呼叫 13900005489	O B-phone_num phone_call.make_a_phone_call
 186124	导航 开始	O O navigation.start_navigation
 186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	导航 开始	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
+186124	开始 导航	O O navigation.start_navigation
 186124	开始 导航	O O navigation.start_navigation
 186124	打电话 现在 就 你 新 的 手机号码	O O O O O O O phone_call.make_a_phone_call
 186124	我 的 号码 你 有 的 呀 我 不 打 你	O O O O O O O O O O O OTHERS
@@ -3709,6 +3815,7 @@
 119195172	找个 歌曲	O O music.play
 119195172	把 卡朋特 音乐	O B-singer O music.play
 122195556	红楼梦 的 主题曲	O O O music.play
+122195556	想换 一首歌	O O music.next
 122195556	想换 一首歌	O O music.next
 122195556	这 首歌	O O OTHERS
 122195556	高原 蓝	B-song I-song music.play
@@ -4008,6 +4115,16 @@
 111199359	不要 打电话 了	O O O phone_call.cancel
 111199359	不要 打电话 了	O O O phone_call.cancel
 111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
+111199359	不要 打电话 了	O O O phone_call.cancel
 117197675	打电话	O phone_call.make_a_phone_call
 117197675	语嫣	B-contact_name phone_call.make_a_phone_call
 117197675	万达 广场	B-destination I-destination navigation.navigation
@@ -4133,6 +4250,7 @@
 111196958	搜索 飞儿 乐团	O O O OTHERS
 111196958	放 林俊杰	O B-singer music.play
 111196958	下 一首歌	O O music.next
+111196958	下 一首歌	O O music.next
 111196958	结束 导航	O O navigation.cancel_navigation
 116196950	邯郸 房产 妈 打电话	B-contact_name I-contact_name I-contact_name O phone_call.make_a_phone_call
 116196950	来 一首 郑智化 的 余震 12 元	O O B-singer O O O O music.play
@@ -4198,7 +4316,10 @@
 186997	不要	O OTHERS
 186997	你好 叮当	O O OTHERS
 186997	再切	O music.next
+186997	再切	O music.next
 186997	切歌	O music.next
+186997	切歌	O music.next
+186997	换下 一曲 下 一首	O O O O music.next
 186997	换下 一曲 下 一首	O O O O music.next
 118198099	去 平顶山	O B-destination navigation.navigation
 118198099	许昌	B-destination navigation.navigation
@@ -4433,6 +4554,8 @@
 119198469	张志洪 太安	O O OTHERS
 116194105	音乐	O music.play
 116194105	给 我 换 一首 歌曲	O O O O O music.next
+116194105	给 我 换 一首 歌曲	O O O O O music.next
+116194105	换 一首 歌曲	O O O music.next
 116194105	换 一首 歌曲	O O O music.next
 117194067	呃 我 要 听 体面 这 首歌	O O O O B-song O O music.play
 117194067	我要 听 光辉 岁月	O O B-song I-song music.play
@@ -4496,6 +4619,26 @@
 119198887	到 高铁 站	O B-destination I-destination navigation.navigation
 119198887	打个 电话 绝对 也 有 反应	O O O O O O phone_call.make_a_phone_call
 119198887	打开 蓝牙 音乐	O O O OTHERS
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
+119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
 119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
 119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
 119198887	请 帮 我 刚刚 放 的 歌 听 一下	O O O O O O O O O music.prev
@@ -4644,12 +4787,15 @@
 117199644	取消	O navigation.cancel_navigation
 117199644	没有 来 没有	O O O OTHERS
 119195578	播放 下 一曲	O O O music.next
+119195578	播放 下 一曲	O O O music.next
 119195578	播放 dj	O B-theme music.play
+119195578	下 一首	O O music.next
 119195578	下 一首	O O music.next
 119195578	没事 了	O O OTHERS
 111198021	显示 导航	O O navigation.open
 111198021	打电话 给	O O phone_call.make_a_phone_call
 111198021	凤雪	B-contact_name phone_call.make_a_phone_call
+111198021	下 一曲	O O music.next
 111198021	下 一曲	O O music.next
 189002	退出 拨打 电话	O O O OTHERS
 189002	放 音乐	O O music.play
@@ -4677,6 +4823,7 @@
 111194473	我要 听 张杰 的 歌	O O B-singer O O music.play
 122195240	播放 一首 歌曲	O O O music.play
 122195240	手机 下午 也 不 回	O O O O O OTHERS
+122195240	切歌	O music.next
 122195240	切歌	O music.next
 122195240	给 我 播放 一首 歌曲	O O O O O music.play
 122195240	猪头	O OTHERS
@@ -4776,6 +4923,7 @@
 112198642	讲 笑话	O O OTHERS
 112198642	再 讲 一 笑话	O O O O OTHERS
 112198642	下 一曲	O O music.next
+112198642	下 一曲	O O music.next
 112198642	去 的士 站	O B-destination I-destination navigation.navigation
 112198642	打个 电话	O O phone_call.make_a_phone_call
 116197340	呼叫 18200007497	O B-phone_num phone_call.make_a_phone_call
@@ -4866,6 +5014,7 @@
 118196320	凌度	O OTHERS
 118196320	凌度	O OTHERS
 118196320	谁 叫 你 啊	O O O O OTHERS
+118196320	播放 下 一首	O O O music.next
 118196320	播放 下 一首	O O O music.next
 119198597	可以	O OTHERS
 119198597	我 和 请 刘德华 的 忘情水	O O O B-singer O B-song music.play
@@ -5240,6 +5389,7 @@
 115198586	我要 到 椒江区 鑫泰 广场	O O B-destination I-destination I-destination navigation.navigation
 117199853	取消	O OTHERS
 117199853	下 一首	O O music.next
+117199853	下 一首	O O music.next
 117199853	导航 结束	O O navigation.cancel_navigation
 118197123	华殇	O OTHERS
 118197123	coco	O OTHERS
@@ -5376,6 +5526,15 @@
 122197493	家家	O OTHERS
 122197493	天气	O OTHERS
 122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
+122197493	开始 导航	O O navigation.start_navigation
 122197493	金叶	O OTHERS
 122197493	打开 音乐	O O music.play
 118197719	来段 冯巩 的 相声	O O O O OTHERS
@@ -5393,6 +5552,7 @@
 119196542	播放 现代 爱情故事	O B-song I-song music.play
 190105	播放歌曲 广东 爱情故事	O B-song I-song music.play
 190105	播放歌曲 浮夸	O B-song music.play
+190105	下雨 播放 下 一曲	O O O O music.next
 190105	下雨 播放 下 一曲	O O O O music.next
 190105	播放歌曲 三世	O B-song music.play
 190105	把 音乐 关掉	O O O music.pause
@@ -5493,6 +5653,16 @@
 112194538	陈来	O OTHERS
 112194538	una	O OTHERS
 112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	那 接着 导航	O O O navigation.start_navigation
+112199281	切歌	O music.next
 112199281	切歌	O music.next
 112199281	帮 我 导航 第一 人民 医院	O O O B-destination I-destination I-destination navigation.navigation
 112199281	电话 给 6626	O O B-phone_num phone_call.make_a_phone_call
@@ -5548,6 +5718,15 @@
 119198688	导航 结束	O O navigation.cancel_navigation
 119198688	导航 结束	O O navigation.cancel_navigation
 119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
+119198688	开始 导航 前方 在 红绿灯 路口 右转 请 走 右侧 车道	O O O O O O O O O O O navigation.start_navigation
 119198688	他 不是 受不了 属于 被 他 偷 的 不能 过 所以 关键 还是 穷人 还 在 哥们儿 还 挺 严格	O O O O O O O O O O O O O O O O O O O O OTHERS
 119198688	知豆	O OTHERS
 119198688	他 打电话	O O OTHERS
@@ -5561,6 +5740,7 @@
 112195532	不好 笑	O O OTHERS
 112195532	唱歌	O music.play
 112195532	歌曲 差 一步 dj	O B-song I-song B-theme music.play
+112195532	接着 放	O O music.next
 112195532	接着 放	O O music.next
 112195532	唱 一首 友情 岁月	O O B-song I-song music.play
 112198383	导航 罗 芳村	O B-destination I-destination navigation.navigation
@@ -5690,6 +5870,8 @@
 111199814	打电话 给 董小加	O O B-contact_name phone_call.make_a_phone_call
 111199814	打电话 给 陈蕊	O O B-contact_name phone_call.make_a_phone_call
 117194808	切换 到 下 一首	O O O O music.next
+117194808	切换 到 下 一首	O O O O music.next
+117194808	我要 听 下 一首	O O O O music.next
 117194808	我要 听 下 一首	O O O O music.next
 117194808	播放 音乐	O O music.play
 191182	合正	O OTHERS
@@ -5743,6 +5925,8 @@
 111199542	电话 给 打电话 给 727528	O O O O B-phone_num phone_call.make_a_phone_call
 111199542	打电话 给 727528	O O B-phone_num phone_call.make_a_phone_call
 188050	换 一首 换下 一首 歌曲	O O O O O music.next
+188050	换 一首 换下 一首 歌曲	O O O O O music.next
+188050	换 一首歌 换 一首歌	O O O O music.next
 188050	换 一首歌 换 一首歌	O O O O music.next
 188050	音乐 退出	O O music.pause
 188050	榜单	B-toplist music.play
@@ -5859,6 +6043,7 @@
 186141	导航 到 南张 庄乡 卫生院	O O B-destination I-destination I-destination navigation.navigation
 186141	不 需要 了	O O O navigation.cancel_navigation
 115196577	下 一曲	O O music.next
+115196577	下 一曲	O O music.next
 115196577	导航 停止	O O navigation.cancel_navigation
 115196577	音乐 继续	O O music.play
 112199244	超辣 的	O O OTHERS
@@ -5903,6 +6088,16 @@
 111197668	退出	O phone_call.cancel
 111197668	退出	O phone_call.cancel
 111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
+111197668	退出	O phone_call.cancel
 111197668	播放 dj 版 的 音乐	O B-theme O O O music.play
 111197668	dj	B-theme music.play
 111197668	有 什么 铃声	O O O OTHERS
@@ -5935,6 +6130,7 @@
 118195702	来 一曲 dj 舞曲	O O B-theme B-style music.play
 112196348	打开 摄像头	O O OTHERS
 112196348	把 导航 行车 方向 前进	O O O O O OTHERS
+112196348	下 一首歌	O O music.next
 112196348	下 一首歌	O O music.next
 112196348	臭 胖胖 听 不听话	O O O O OTHERS
 112196348	讲 笑话 听 一下 说话	O O O O O OTHERS
@@ -6093,6 +6289,7 @@
 117199624	取消	O navigation.cancel_navigation
 119196311	邓丽君 的 歌 邓丽君	B-singer O O B-singer music.play
 119196311	叮当 下 一首 叮当 你好 下 一首	O O O O O O O music.next
+119196311	叮当 下 一首 叮当 你好 下 一首	O O O O O O O music.next
 119196311	停止 播放	O O music.pause
 118197302	上海市 闵行区 莘沥路 542 号	B-destination I-destination I-destination I-destination I-destination navigation.navigation
 118197302	打电话	O phone_call.make_a_phone_call
@@ -6129,6 +6326,8 @@
 119197485	到 大安 舍	O B-destination I-destination navigation.navigation
 117195183	他 没事	O O OTHERS
 117195183	下 一首	O O music.next
+117195183	下 一首	O O music.next
+117195183	下 一曲	O O music.next
 117195183	下 一曲	O O music.next
 115198368	魏绮清	B-singer music.play
 115198368	取消	O music.pause
@@ -6227,6 +6426,7 @@
 119195591	唱 首歌曲	O O music.play
 119195591	来 首歌	O O music.play
 119195591	播放 下 一首歌	O O O music.next
+119195591	播放 下 一首歌	O O O music.next
 112198739	把 老虎 打死 都 跳 出来 了 武松打虎 吗 她 会 给 我 开 50 个 回答	O O O O O O O O O O O O O O O O O OTHERS
 112198739	你 敢 碰 她	O O O O OTHERS
 112198739	点击 说话 你们 俩 出去	O O O O O OTHERS
@@ -6244,6 +6444,15 @@
 111199903	薇 薇	B-contact_name I-contact_name phone_call.make_a_phone_call
 111199903	小优	B-contact_name phone_call.make_a_phone_call
 111199903	王鲁湘	B-contact_name phone_call.make_a_phone_call
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
+111199903	继续 上次 导航	O O O navigation.start_navigation
 111199903	继续 上次 导航	O O O navigation.start_navigation
 111199903	播放 音乐 摇滚 的 歌	O O B-style O O music.play
 189054	播放 一首 上海滩 的 歌曲	O O B-song O O music.play
@@ -6313,6 +6522,15 @@
 111197195	导航 去 西安	O O B-destination navigation.navigation
 111197195	导航 去 重庆	O O B-destination navigation.navigation
 111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
+111197195	恢复 导航	O O navigation.start_navigation
 111197195	删除 里面 所有 的 录像 视频	O O O O O O OTHERS
 111197195	删除 里面 所有 录像 视频	O O O O O OTHERS
 119198481	周传雄 的 歌曲	B-singer O O music.play
@@ -6376,6 +6594,7 @@
 117195988	返回 菜单	O O OTHERS
 117195988	播放	O music.play
 117195988	收音机	O OTHERS
+117195988	下 一首歌	O O music.next
 117195988	下 一首歌	O O music.next
 119198249	取消	O OTHERS
 119198249	导航	O navigation.open
@@ -6446,6 +6665,16 @@
 119197843	放弃	O phone_call.cancel
 119197843	放弃	O phone_call.cancel
 119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
+119197843	放弃	O phone_call.cancel
 118198095	私聊 吧	O O OTHERS
 118198095	大卫	O OTHERS
 118198095	乡村 爱情	O O OTHERS
@@ -6453,6 +6682,15 @@
 118198095	其 下面 的 交流会 在 哪 有 呢	O O O O O O O O OTHERS
 118198095	导航 贺兰 供电局	O B-destination I-destination navigation.navigation
 118198095	你 跟 丁前 交 过手 催眠术	O O O O O O OTHERS
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
+118198095	继续 导航	O O navigation.start_navigation
 118198095	继续 导航	O O navigation.start_navigation
 118198095	退出	O navigation.cancel_navigation
 190054	播放 熊出没	O O OTHERS
@@ -6521,6 +6759,7 @@
 112195712	年家	O OTHERS
 112195712	车子 年检 在 哪里 接	O O O O O OTHERS
 112195712	没有 了	O O OTHERS
+112195712	换 一首	O O music.next
 112195712	换 一首	O O music.next
 112195712	播放 伍佰 的 歌曲	O B-singer O O music.play
 112195712	播放 音乐	O O music.play
@@ -6710,7 +6949,25 @@
 115197524	王群	B-contact_name phone_call.make_a_phone_call
 115197524	对放	O OTHERS
 115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
 115197524	叮当 你好	O O OTHERS
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
+115197524	开始 导航	O O navigation.start_navigation
 115197524	开始 导航	O O navigation.start_navigation
 115197273	你 是 个 笨蛋	O O O O OTHERS
 115197273	叫 你 打个 电话 你 都 不 懂	O O O O O O O O phone_call.make_a_phone_call
@@ -7072,6 +7329,7 @@
 118197549	艾楠	O OTHERS
 118197549	取消	O navigation.cancel_navigation
 118197549	播放 下 一首	O O O music.next
+118197549	播放 下 一首	O O O music.next
 118197549	播放 第一首	O O music.play
 118197549	返回 主 界面	O O O OTHERS
 115199914	连接 蓝牙	O O OTHERS
@@ -7310,6 +7568,7 @@
 118199026	我要 听 九十九	O O B-song music.play
 118199026	949	B-phone_num phone_call.make_a_phone_call
 118199026	切歌	O music.next
+118199026	切歌	O music.next
 118199026	青县 交通局	B-destination I-destination navigation.navigation
 190030	唱 一首歌 映山红	O O B-song music.play
 190030	唱 一首歌 映山红	O O B-song music.play
@@ -7335,6 +7594,8 @@
 122195190	播放 本地 音乐	O O O music.play
 122195190	播放 音乐 乡愁	O O B-song music.play
 122195190	播放 本地 音乐 消愁	O O O B-song music.play
+116196062	下 一首歌	O O music.next
+116196062	下 一首歌	O O music.next
 116196062	下 一首歌	O O music.next
 116196062	下 一首歌	O O music.next
 116196062	我 想 听 遥远 的 歌	O O O B-song I-song I-song music.play
@@ -7447,6 +7708,7 @@
 119195988	放 一首 社会 摇	O O B-song I-song music.play
 119195988	放 一首歌	O O music.play
 119195988	帮 我 换 一首歌	O O O O music.next
+119195988	帮 我 换 一首歌	O O O O music.next
 119199835	导航 到 清华 古村	O O B-destination I-destination navigation.navigation
 119199835	导航 到 千华古村	O O B-destination navigation.navigation
 119199835	拨打 电话 504284	O O B-phone_num phone_call.make_a_phone_call
@@ -7496,6 +7758,7 @@
 122194223	播放 一首 叹 情缘	O O B-song I-song music.play
 122194223	放 一首 叹 情缘	O O B-song I-song music.play
 117194748	放 音乐	O O music.play
+117194748	下 一首歌	O O music.next
 117194748	下 一首歌	O O music.next
 117194748	那首歌 叫 什么 名字 广东话 放着 呢	O O O O O O O OTHERS
 117194748	我 正在 建场 建好 完全 还 没 完全 建完 你 看 他 这 机器 还 没完 呢	O O O O O O O O O O O O O O O O O OTHERS
@@ -7647,6 +7910,7 @@
 111199341	播歌	O music.play
 119196800	放 首歌曲 听听	O O O music.play
 119196800	放首祁隆 的 歌	O O O music.play
+119196800	下 一曲	O O music.next
 119196800	下 一曲	O O music.next
 118197691	找 好 歌 100 首	O O O O O music.play
 118197691	没	O OTHERS
@@ -7865,8 +8129,10 @@
 117198132	去 你 妈 的	O O O O OTHERS
 187042	播放	O music.play
 187042	下 一首 播放 下 一首	O O O O O music.next
+187042	下 一首 播放 下 一首	O O O O O music.next
 187042	播放 王杰 的 歌曲	O B-singer O O music.play
 187042	你 是 个 王八蛋	O O O O OTHERS
+187042	请 播放 下 一曲	O O O O music.next
 187042	请 播放 下 一曲	O O O O music.next
 187042	夏夏 一首	B-singer O music.play
 187042	你 喜欢 谁	O O O OTHERS
@@ -7992,6 +8258,7 @@
 188106	你 在 哪里 啊	O O O O OTHERS
 188106	搜索 导航 去 建新 花卉市场	O O O B-destination I-destination navigation.navigation
 188106	打电话 给 67000077	O O B-phone_num phone_call.make_a_phone_call
+188106	下 一首 歌曲	O O O music.next
 188106	下 一首 歌曲	O O O music.next
 117199156	坦洲 家私城	B-destination I-destination navigation.navigation
 117199156	关闭 导航	O O navigation.cancel_navigation
@@ -8159,6 +8426,7 @@
 112198020	去 曹妃甸	O B-destination navigation.navigation
 112198020	打电话	O phone_call.make_a_phone_call
 112198020	打电话 15800006991	O B-phone_num phone_call.make_a_phone_call
+115197790	下 一曲	O O music.next
 115197790	下 一曲	O O music.next
 115197790	打电话	O phone_call.make_a_phone_call
 115197790	导航 去 房管局	O O B-destination navigation.navigation
@@ -8576,6 +8844,7 @@
 119196438	批发市场 天朝 不 认识	O O O O OTHERS
 119196438	你 看	O O OTHERS
 119196438	切歌	O music.next
+119196438	切歌	O music.next
 119196438	我要 听 郑智化 的 水手	O O B-singer O B-song music.play
 119196438	什么 呀	O O OTHERS
 119196438	歌曲 爱到 尽头 也 无悔	O B-song I-song I-song I-song music.play
@@ -8727,6 +8996,15 @@
 112197058	请 拨打 忠青	O O B-contact_name phone_call.make_a_phone_call
 112197058	私聊 吧	O O OTHERS
 112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
+112197058	导航 到 导航 开始	O O O O navigation.start_navigation
 112197058	丁雁	O OTHERS
 112197058	轻音乐	B-style music.play
 112197058	关闭 导航 叮当 你好 听不懂	O O O O O navigation.cancel_navigation
@@ -8755,8 +9033,26 @@
 115199449	拨打 电话 给 老婆	O O O B-contact_name phone_call.make_a_phone_call
 115199449	拨打 电话 给 朋浩	O O O B-contact_name phone_call.make_a_phone_call
 115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
+115199449	帮 我切 到 导航	O O O O navigation.start_navigation
 115199449	帮 我 切换 到 高德 地图	O O O O O O OTHERS
 115199449	刺儿	O OTHERS
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
+115199449	切换 到 导航	O O O navigation.start_navigation
 115199449	切换 到 导航	O O O navigation.start_navigation
 115199449	切换 到 高德 地图	O O O O OTHERS
 112199564	古镇	B-destination navigation.navigation
@@ -8872,6 +9168,16 @@
 122198590	请 帮 我 导到	O O O O OTHERS
 122198590	请 帮 我导 到 南 五台 服务区	O O O O B-destination I-destination I-destination navigation.navigation
 115197964	我要 打电话	O O phone_call.make_a_phone_call
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
+115197964	算了	O phone_call.cancel
 115197964	算了	O phone_call.cancel
 115197964	算了	O phone_call.cancel
 115197964	算了	O phone_call.cancel
@@ -9154,6 +9460,7 @@
 115195968	搜索 金志 文 的 歌	O B-singer I-singer O O music.play
 115195968	去 孟村 回族 自治县	O B-destination I-destination I-destination navigation.navigation
 115195968	歌曲 播放 下 一首	O O O O music.next
+115195968	歌曲 播放 下 一首	O O O O music.next
 112197772	去 介休	O B-destination navigation.navigation
 112197772	帮 我播 一下 beyond 的 真的 爱 你	O O O B-singer O B-song I-song I-song music.play
 112197772	取消	O music.pause
@@ -9296,6 +9603,7 @@
 192129	打电话 一 接电话 咯 走 咯	O O O O O O OTHERS
 192129	何炅	O OTHERS
 192129	下 一首	O O music.next
+192129	下 一首	O O music.next
 192129	放 一首	O O music.play
 118195352	点 一首 民歌	O O B-style music.play
 118195352	点 一首歌	O O music.play
@@ -9403,6 +9711,7 @@
 117196631	平凡 的 世界	B-song I-song I-song music.play
 117196631	我 想 听 平凡 的 世界	O O O B-song I-song I-song music.play
 191074	圈圈	O OTHERS
+191074	请 播放 下 一曲	O O O O music.next
 191074	请 播放 下 一曲	O O O O music.next
 191074	播放 经典歌曲	O O music.play
 111194283	老鬼	O OTHERS
@@ -9608,6 +9917,7 @@
 116199022	打电话 给 任 四方 方	O O B-contact_name I-contact_name I-contact_name phone_call.make_a_phone_call
 119196149	播放 越策 菩萨 的 莲	O O O O O music.play
 119196149	关闭 屏幕	O O OTHERS
+119196149	播放 下 一曲	O O O music.next
 119196149	播放 下 一曲	O O O music.next
 119196149	播放 逆流 成河	O B-song I-song music.play
 119196149	西雅	O OTHERS
@@ -9924,11 +10234,23 @@
 116197285	不用 了	O O phone_call.cancel
 116197285	不用 了	O O phone_call.cancel
 116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
+116197285	不用 了	O O phone_call.cancel
 122199271	我要 回家	O O navigation.navigation
 122199271	请 打电话 给 段 云学	O O O B-contact_name I-contact_name phone_call.make_a_phone_call
 122199271	am	O OTHERS
 122199271	打电话 给 陈建明	O O B-contact_name phone_call.make_a_phone_call
 116194401	帮 我 搜 一下 韩国 歌曲	O O O O B-language O music.play
+116194401	下 一曲	O O music.next
+116194401	下 一曲	O O music.next
 116194401	下 一曲	O O music.next
 116194401	下 一曲	O O music.next
 111196164	多年 以前	B-song I-song music.play
@@ -9957,6 +10279,8 @@
 112196551	音乐 后台 播放	O O O music.play
 112196551	我 想 听 谭咏麟 的 一生 中 最 爱	O O O B-singer O B-song I-song I-song I-song music.play
 122195788	听下 一首歌	O O music.next
+122195788	听下 一首歌	O O music.next
+122195788	听下 一首 歌曲	O O O music.next
 122195788	听下 一首 歌曲	O O O music.next
 122195788	歌曲	O music.play
 115197661	不 知道 不 认识	O O O O OTHERS
@@ -10016,8 +10340,19 @@
 119194050	放 一首歌	O O music.play
 119194050	播歌	O music.play
 119194050	下 一首	O O music.next
+119194050	下 一首	O O music.next
 117199646	到 五桥 的 路线	O B-destination O O navigation.navigation
 117199646	到 遂宁 涪江 五桥	O B-destination I-destination I-destination navigation.navigation
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
+117199646	取消 打电话	O O phone_call.cancel
 117199646	取消 打电话	O O phone_call.cancel
 117199646	取消 打电话	O O phone_call.cancel
 117199646	取消 打电话	O O phone_call.cancel
@@ -10072,10 +10407,29 @@
 115195141	放 手机 上 蓝牙 的 歌曲	O O O O O O OTHERS
 115195141	白雪	O OTHERS
 115195141	播放 下 一首 歌曲	O O O O music.next
+115195141	播放 下 一首 歌曲	O O O O music.next
 119199284	金豪 眉山	B-destination I-destination navigation.navigation
 119199284	打电话 纯音乐	O B-theme music.play
 119199284	可以 放点 快 歌 吗	O O B-emotion I-emotion O music.play
 118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续 上次 导航 继续下去 导航	O O O O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
+118194560	继续下去 导航	O O navigation.start_navigation
 118194560	继续下去 导航	O O navigation.start_navigation
 118194560	播放 当 你老 了	O B-song I-song I-song music.play
 118194560	关闭 音乐	O O music.pause
@@ -10403,6 +10757,7 @@
 188097	有 事儿 早上 起来	O O O O OTHERS
 188097	废话 不 需要 帮助 叫 你 饿 吗	O O O O O O O O OTHERS
 188097	播下 一曲 歌曲	O O O music.next
+188097	播下 一曲 歌曲	O O O music.next
 188097	打电话	O phone_call.make_a_phone_call
 188097	打电话	O phone_call.make_a_phone_call
 115195088	放 一首 嗨	O O B-song music.play
@@ -10510,6 +10865,15 @@
 112197902	取消	O phone_call.cancel
 112197902	取消	O phone_call.cancel
 112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
+112197902	取消	O phone_call.cancel
 190183	打电话 喜 文学	O B-contact_name I-contact_name phone_call.make_a_phone_call
 190183	杂杂	O OTHERS
 190183	成都	B-song music.play
@@ -10575,6 +10939,7 @@
 119199347	取消	O navigation.cancel_navigation
 116195400	来 一首	O O music.play
 116195400	阿布	B-singer music.play
+116195400	下 一首	O O music.next
 116195400	下 一首	O O music.next
 111195928	秋恺	O OTHERS
 111195928	勿 刘	O O OTHERS
@@ -11002,6 +11367,16 @@
 112197288	退出	O phone_call.cancel
 112197288	退出	O phone_call.cancel
 112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
+112197288	退出	O phone_call.cancel
 112197288	连接 蓝牙	O O OTHERS
 112197288	退出	O OTHERS
 112197288	给 559 打电话	O B-phone_num O phone_call.make_a_phone_call
@@ -11025,6 +11400,7 @@
 115197697	我要 去丽顺 街	O O B-destination navigation.navigation
 115197526	我 给 你 一包 打电话 了 然后 我 说 那个 交给 谁 吞噬 着 个 笑话 就行了 他 同事	O O O O O O O O O O O O O O O O O O O OTHERS
 115197526	我要 去 胜腾 物流	O O B-destination I-destination navigation.navigation
+115197526	换 一首 音乐	O O O music.next
 115197526	换 一首 音乐	O O O music.next
 115197526	退出 导航	O O navigation.cancel_navigation
 111198342	是 的	O O OTHERS
@@ -11070,11 +11446,30 @@
 112198783	取消 导航	O O navigation.cancel_navigation
 112198783	取消	O navigation.cancel_navigation
 112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
+112198783	仅 恢复 上 一次 导航	O O O O O navigation.start_navigation
 119198432	泌阳县 富祥 八号	B-destination I-destination I-destination navigation.navigation
 119198432	打开 行车 记录仪	O O O OTHERS
 119198432	打开 行车 记录仪	O O O OTHERS
 119198432	阿丁	O OTHERS
 119198432	打电话 给 妈	O O B-contact_name phone_call.make_a_phone_call
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
+119198432	取消	O phone_call.cancel
 119198432	取消	O phone_call.cancel
 119198432	取消	O phone_call.cancel
 119198432	取消	O phone_call.cancel
@@ -11110,6 +11505,7 @@
 192034	又 见 山里红 歌	B-song I-song I-song O music.play
 115197600	日语 怎么 说 杂个 休闲 会 所	O O O O O O O OTHERS
 115197600	停止 导航	O O navigation.cancel_navigation
+115197600	下 一首	O O music.next
 115197600	下 一首	O O music.next
 115197600	应该 是 这个 吧 家乡 味道	O O O O O O OTHERS
 118199565	第 1 个	O O O OTHERS
@@ -11520,6 +11916,15 @@
 115199678	吴文	O OTHERS
 115199678	取消	O navigation.cancel_navigation
 112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
+112197204	继续 上次 导航	O O O navigation.start_navigation
 112197204	叮当 你好	O O OTHERS
 112197204	你好 叮当	O O OTHERS
 112197204	打开 蓝牙	O O OTHERS
@@ -11573,6 +11978,15 @@
 117194730	来 一首 周杰伦 的 青花瓷	O O B-singer O B-song music.play
 117194730	小鹿	B-song music.play
 117194730	保谦	O OTHERS
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
+119197771	继续 导航	O O navigation.start_navigation
 119197771	继续 导航	O O navigation.start_navigation
 119197771	打开 收音机	O O OTHERS
 119197771	你 呆 家里 打电话	O O O O phone_call.make_a_phone_call
@@ -11983,6 +12397,25 @@
 122194337	播放 上 一首	O O O music.prev
 122194337	播放 上 一首	O O O music.prev
 122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
+122194337	播放 上 一首	O O O music.prev
 122194337	黄金 时段 1314	B-song I-song I-song music.play
 122194337	的 温柔	O O OTHERS
 111195543	播放 追光	O B-song music.play
@@ -12048,6 +12481,16 @@
 191090	我 想 听 降央卓玛 的 美丽 大 草原	O O O B-singer O B-song I-song I-song music.play
 119198025	打电话	O phone_call.make_a_phone_call
 119198025	尚文	B-contact_name phone_call.make_a_phone_call
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
+119198025	取消	O phone_call.cancel
 119198025	取消	O phone_call.cancel
 119198025	取消	O phone_call.cancel
 119198025	取消	O phone_call.cancel
@@ -12477,6 +12920,8 @@
 111195190	播放 音乐	O O music.play
 111195190	再换 一曲	O O music.next
 111195190	再换 一曲	O O music.next
+111195190	再换 一曲	O O music.next
+111195190	再换 一曲	O O music.next
 111195190	让 我 中 抽到 啥 东西 啊 不 开庭 了 这时候	O O O O O O O O O O O OTHERS
 111195190	这个 问题 我 很 不会	O O O O O OTHERS
 122198032	艾乔	O OTHERS
@@ -12522,6 +12967,15 @@
 116197481	取消	O phone_call.cancel
 116197481	取消	O phone_call.cancel
 116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
+116197481	取消	O phone_call.cancel
 116197481	取消 导航	O O navigation.cancel_navigation
 116197481	打开 收音机	O O OTHERS
 190053	播放 音乐	O O music.play
@@ -12546,6 +13000,7 @@
 117194389	你好 啊	O O OTHERS
 117194389	你好 啊	O O OTHERS
 117194389	哦 说 小镇 幼儿园	O O B-destination I-destination navigation.navigation
+117194389	切歌	O music.next
 117194389	切歌	O music.next
 117194389	要 多方 去 小 状元 幼儿园	O O O B-destination I-destination I-destination navigation.navigation
 112198506	拨打 固君	O B-contact_name phone_call.make_a_phone_call
@@ -12625,6 +13080,8 @@
 117195523	我 想 听 蔡琴 的 心经	O O O B-singer O B-song music.play
 117195523	想 听 齐 秦 齐豫 的 心经	O O B-singer I-singer I-singer O B-song music.play
 117194085	播放 下 一首 音乐	O O O O music.next
+117194085	播放 下 一首 音乐	O O O O music.next
+117194085	继续 播放 下 一首	O O O O music.next
 117194085	继续 播放 下 一首	O O O O music.next
 117194085	删除 当前 歌曲	O O O OTHERS
 111194224	请 播放歌曲 青藏高原	O O B-song music.play
@@ -12873,6 +13330,7 @@
 111196999	尉氏县	B-destination navigation.navigation
 111196999	音量 增大	O O OTHERS
 111199909	我要 去 贵溪市 人民法院	O O B-destination I-destination navigation.navigation
+111199909	下 一首	O O music.next
 111199909	下 一首	O O music.next
 111199909	没有	O OTHERS
 111199909	拨打 662	O B-phone_num phone_call.make_a_phone_call
@@ -13139,27 +13597,47 @@
 115194942	我要 听	O O music.play
 115194942	容中尔甲 的	B-singer O music.play
 115194942	下 一曲	O O music.next
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
-115194942	上 一曲	O O music.prev
 115194942	下 一曲	O O music.next
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
+115194942	上 一曲	O O music.prev
 115194942	上 一曲	O O music.prev
 115194942	上 一曲	O O music.prev
 115194942	上 一曲	O O music.prev
@@ -13206,6 +13684,7 @@
 118194994	你好 讲个 笑话 给 我 听	O O O O O O OTHERS
 118194994	张北 冥	O O OTHERS
 118194994	好 的	O O OTHERS
+118194994	播放 下 一首歌	O O O music.next
 118194994	播放 下 一首歌	O O O music.next
 111194182	娜娜	B-singer music.play
 111194182	吴楠	O OTHERS
@@ -13279,6 +13758,8 @@
 111198884	导航 结束	O O navigation.cancel_navigation
 116196146	放 音乐	O O music.play
 116196146	要 一首	O O OTHERS
+116196146	下 一首	O O music.next
+116196146	下 一首	O O music.next
 116196146	下 一首	O O music.next
 116196146	下 一首	O O music.next
 111198976	打电话	O phone_call.make_a_phone_call
@@ -13428,6 +13909,7 @@
 111198753	给 我 导航 一下 吐鲁番 公安局	O O O O B-destination I-destination navigation.navigation
 112195994	找个 音乐	O O music.play
 112195994	下 一曲	O O music.next
+112195994	下 一曲	O O music.next
 112195994	清越	O OTHERS
 112195994	冯春岭	O OTHERS
 112195994	林志玲	O OTHERS
@@ -13512,6 +13994,7 @@
 112195100	打开	O OTHERS
 112195100	我 想 听 多年 以后	O O O B-song I-song music.play
 112195100	要 一首	O O OTHERS
+112195100	听下 一首	O O music.next
 112195100	听下 一首	O O music.next
 118197479	东区	B-destination navigation.navigation
 118197479	你好 啊	O O OTHERS
@@ -13649,6 +14132,16 @@
 188169	取消	O phone_call.cancel
 188169	取消	O phone_call.cancel
 188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
+188169	取消	O phone_call.cancel
 188169	取消 导航	O O navigation.cancel_navigation
 117197105	是 的	O O OTHERS
 117197105	我要 去 智车联 技术	O O B-destination I-destination navigation.navigation
@@ -13759,6 +14252,7 @@
 112195705	开始 播放	O O OTHERS
 112195705	唱 一曲	O O music.play
 112195705	下 一曲	O O music.next
+112195705	下 一曲	O O music.next
 112195705	聚会	O OTHERS
 186160	取消	O OTHERS
 186160	导航 去 机场	O O B-destination navigation.navigation
@@ -13808,6 +14302,15 @@
 119194822	听 恭喜发财	O B-song music.play
 115198252	拨打 的 电话 正在 通话 中	O O O O O O OTHERS
 115198252	薛店 收费站	B-destination I-destination navigation.navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
+115198252	继续 导航	O O navigation.start_navigation
 115198252	继续 导航	O O navigation.start_navigation
 115198252	打开 导航	O O navigation.open
 122199511	你 这个 炮放 吧 没 生意 没动静 了 啊 几分钟 啊	O O O O O O O O O O O OTHERS
@@ -13899,6 +14402,15 @@
 115197117	问题	O OTHERS
 115197117	请 打电话	O O phone_call.make_a_phone_call
 111199544	瓦房店	B-destination navigation.navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
+111199544	恢复 导航	O O navigation.start_navigation
 111199544	恢复 导航	O O navigation.start_navigation
 111199544	导航	O navigation.open
 111199544	退出 导航	O O navigation.cancel_navigation
@@ -14195,6 +14707,16 @@
 118198046	取消	O phone_call.cancel
 118198046	取消	O phone_call.cancel
 118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
+118198046	取消	O phone_call.cancel
 118198046	取消 导航	O O navigation.cancel_navigation
 118198575	我要 听 刘德华 的 歌	O O B-singer O O music.play
 118198575	我要 去 机场	O O B-destination navigation.navigation
@@ -14411,6 +14933,16 @@
 111197893	取消	O phone_call.cancel
 111197893	取消	O phone_call.cancel
 111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
+111197893	取消	O phone_call.cancel
 119199090	导航	O navigation.open
 119199090	山东 菏泽	B-destination I-destination navigation.navigation
 119199090	取消	O navigation.cancel_navigation
@@ -14453,12 +14985,14 @@
 118194100	播放 蓝牙 音乐	O O O OTHERS
 118194100	播放 南洋 音乐	O B-singer O music.play
 118194100	播放 下 一首	O O O music.next
+118194100	播放 下 一首	O O O music.next
 190193	葡萄	B-song music.play
 190193	导航 去 香港	O O B-destination navigation.navigation
 190193	嘻哈	B-style music.play
 190193	打开 调频	O O OTHERS
 112194331	放 音乐	O O music.play
 112194331	取消 单曲 循环	O O O OTHERS
+112194331	下 一曲	O O music.next
 112194331	下 一曲	O O music.next
 115199954	我要 去 郝家	O O B-destination navigation.navigation
 115199954	我要 去 豪杰 汽车 服务	O O B-destination I-destination I-destination navigation.navigation
@@ -14467,6 +15001,15 @@
 116198632	拨打 的 电话	O O O phone_call.make_a_phone_call
 116198632	我 想 去 普宁市 嘉桦 大酒店	O O O B-destination I-destination I-destination navigation.navigation
 116198632	请 取消 导航	O O O navigation.cancel_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
+122198534	开始 导航	O O navigation.start_navigation
 122198534	开始 导航	O O navigation.start_navigation
 122198534	拨 韩鹏 的 歌曲 何鹏	O B-singer O O B-singer music.play
 122198534	系好 安全带	O O OTHERS
@@ -14572,6 +15115,7 @@
 122195080	沙崴	O OTHERS
 122195080	杨雨	O OTHERS
 122195080	放 一首 大海	O O B-song music.play
+122195080	下 一首	O O music.next
 122195080	下 一首	O O music.next
 122195080	还 没有 睡 吗	O O O O OTHERS
 122195080	田瑞	O OTHERS
@@ -15100,6 +15644,7 @@
 122197698	歌曲	O music.play
 115194911	放 刘德华 的 歌	O B-singer O O music.play
 115194911	放下 一首	O O music.next
+115194911	放下 一首	O O music.next
 115194911	放 费玉清 的 梦 驼铃	O B-singer O B-song I-song music.play
 111198882	搜去 松北区	O B-destination navigation.navigation
 111198882	打电话 给 67409	O O B-phone_num phone_call.make_a_phone_call
@@ -15500,6 +16045,7 @@
 112195300	不是 我 说 歌曲 说散 就 散	O O O O B-song I-song I-song music.play
 119198251	避开 限行	O O OTHERS
 119198251	播放 下 一首	O O O music.next
+119198251	播放 下 一首	O O O music.next
 119198251	打电话 18700006898	O B-phone_num phone_call.make_a_phone_call
 111197820	导航 结束	O O navigation.cancel_navigation
 111197820	我 恨 你 是 了	O O O O O OTHERS
@@ -15540,6 +16086,9 @@
 122194171	播放 本地 歌曲	O O O music.play
 122194171	播放 当 的 音乐	O B-song O O music.play
 122194171	播放 本地 音乐	O O O music.play
+116195714	切换 到 下 一曲	O O O O music.next
+116195714	切换 到 下 一曲	O O O O music.next
+116195714	切换 到 下 一曲	O O O O music.next
 116195714	切换 到 下 一曲	O O O O music.next
 116195714	切换 到 下 一曲	O O O O music.next
 116195714	切换 到 下 一曲	O O O O music.next
@@ -15914,6 +16463,7 @@
 115199089	戴君	O OTHERS
 115199089	取消	O navigation.cancel_navigation
 115199089	下 一首歌	O O music.next
+115199089	下 一首歌	O O music.next
 122195665	袁维雅 的 说 散 就 散	O O B-song I-song I-song I-song music.play
 122195665	说散 就 散 了 最近 前任 的 主题曲	B-song I-song I-song O O O O O music.play
 122195665	播放 再见 前阵 片尾曲	O O O O music.play
@@ -15993,6 +16543,8 @@
 116199577	现在 你们 这里 边 是不是 带 一张 流量 卡 呀 还是 怎么回事 导航 是 用 流量 吗	O O O O O O O O O O O O O O O O O OTHERS
 112196422	耳朵 聋 了 吗	O O O O OTHERS
 112196422	下 一首	O O music.next
+112196422	下 一首	O O music.next
+112196422	换 一首	O O music.next
 112196422	换 一首	O O music.next
 112196422	这个 导航	O O OTHERS
 115194607	唱 两句 阿宝 的 歌	O O B-singer O O music.play
@@ -16198,6 +16750,7 @@
 115198102	导航	O navigation.open
 115198102	燕尾 岛	B-destination I-destination navigation.navigation
 115198102	下 一曲	O O music.next
+115198102	下 一曲	O O music.next
 115198102	打电话	O phone_call.make_a_phone_call
 115198102	李伯清	O OTHERS
 119197292	打电话 给	O O phone_call.make_a_phone_call
@@ -16232,7 +16785,10 @@
 111196597	我要 听	O O music.play
 111196597	我想 听祁隆 的 歌	O O O O music.play
 116195882	换 一首歌 听	O O O music.next
+116195882	换 一首歌 听	O O O music.next
 116195882	再换 一首歌 不 听 这 首歌	O O O O O O music.next
+116195882	再换 一首歌 不 听 这 首歌	O O O O O O music.next
+116195882	换 一首歌 不停	O O O music.next
 116195882	换 一首歌 不停	O O O music.next
 116195882	放 一段 相声 听听 呗	O O O O O OTHERS
 119197950	叮当	O OTHERS
@@ -16565,6 +17121,7 @@
 118196259	全程 多少 公里	O O O OTHERS
 118196259	结束 导航	O O navigation.cancel_navigation
 118196259	下 一首	O O music.next
+118196259	下 一首	O O music.next
 118196259	蓝牙 音乐	O O OTHERS
 118196259	善良 曲	B-song O music.play
 187090	叮当 你好 帮 我 播放 音乐	O O O O O O music.play
@@ -16611,7 +17168,27 @@
 111199645	没 需要 了	O O O phone_call.cancel
 111199645	没 需要 了	O O O phone_call.cancel
 111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
+111199645	没 需要 了	O O O phone_call.cancel
 111199645	你 也 不要 休息	O O O O OTHERS
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
+111199645	退出	O phone_call.cancel
 111199645	退出	O phone_call.cancel
 111199645	退出	O phone_call.cancel
 111199645	退出	O phone_call.cancel
@@ -16806,6 +17383,16 @@
 192171	取消	O phone_call.cancel
 192171	取消	O phone_call.cancel
 192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
+192171	取消	O phone_call.cancel
 192171	反背 音乐	B-song O music.play
 192171	小小 苹果	O B-song music.play
 192171	关滨	O OTHERS
@@ -16831,6 +17418,7 @@
 119199143	打电话 给 662	O O B-phone_num phone_call.make_a_phone_call
 119199143	导航 结束	O O navigation.cancel_navigation
 118197070	下 一首	O O music.next
+118197070	下 一首	O O music.next
 118197070	拨打 蓝牙 电话	O O O phone_call.make_a_phone_call
 118197070	导航 到 天府广场	O O B-destination navigation.navigation
 111199586	我要 听 广东 十 连 爱情	O O B-song I-song I-song I-song music.play
@@ -16845,6 +17433,7 @@
 190119	胸科 医院 东 院区	B-destination I-destination I-destination I-destination navigation.navigation
 117198763	停止 导航	O O navigation.cancel_navigation
 117198763	阿青	O OTHERS
+117198763	下 一首	O O music.next
 117198763	下 一首	O O music.next
 117198763	大兵	O OTHERS
 117198763	周帝	B-singer music.play
@@ -16988,6 +17577,8 @@
 117194953	叮当 你好	O O OTHERS
 117194953	叮当 你好	O O OTHERS
 117194953	播放 下 一首	O O O music.next
+117194953	播放 下 一首	O O O music.next
+117194953	放下 一首	O O music.next
 117194953	放下 一首	O O music.next
 117194953	明天 什么 天气	O O O OTHERS
 117194953	播放 成都	O B-song music.play
@@ -17291,7 +17882,10 @@
 117194577	请 播放 站 在 草原 望 北京	O O B-song I-song I-song I-song I-song music.play
 115194631	下 一首歌	O O music.next
 115194631	下 一首歌	O O music.next
+115194631	下 一首歌	O O music.next
+115194631	下 一首歌	O O music.next
 115194631	查 一首	O O OTHERS
+115194631	下 一首歌	O O music.next
 115194631	下 一首歌	O O music.next
 119199000	讲个 笑话 儿 吧	O O O O OTHERS
 119199000	再 讲个 笑话 儿 吧 不好 笑	O O O O O O O OTHERS
@@ -17423,6 +18017,16 @@
 115197068	退出 打电话	O O phone_call.cancel
 115197068	退出 打电话	O O phone_call.cancel
 115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
+115197068	退出 打电话	O O phone_call.cancel
 115197068	林北	O OTHERS
 122194133	导航 去 淄川	O O B-destination navigation.navigation
 122194133	赵婷 是 傻 *	O O O O OTHERS
@@ -17471,6 +18075,15 @@
 116198383	导航 结束	O O navigation.cancel_navigation
 116198383	停止 接单 了	O O O OTHERS
 118197889	取消	O OTHERS
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
+118197889	开始 导航	O O navigation.start_navigation
 118197889	开始 导航	O O navigation.start_navigation
 118197889	立刻 播放歌曲	O O music.play
 112195882	请 播放歌曲 我 不想 说	O O B-song I-song I-song music.play
@@ -17875,6 +18488,7 @@
 115196369	我要 听歌	O O music.play
 115196369	请 播放 轻松 的 音乐	O O B-emotion O O music.play
 115196369	请 播放 下 一首	O O O O music.next
+115196369	请 播放 下 一首	O O O O music.next
 119195201	陈雅森 的 歌	B-singer O O music.play
 119195201	华哥	B-singer music.play
 119195201	文华 的 歌	B-singer O O music.play
@@ -18060,6 +18674,7 @@
 116196137	缘分 让 我 爱 上 了 你 歌曲	B-song I-song I-song I-song I-song I-song I-song O music.play
 116196137	逆流 成河	B-song I-song music.play
 116196137	雨蝶	B-song music.play
+112196280	下 一曲	O O music.next
 112196280	下 一曲	O O music.next
 112196280	放 一曲	O O music.play
 112196280	把酒 倒 满	B-song I-song I-song music.play
@@ -18300,6 +18915,7 @@
 189091	我 想 听 李白	O O O B-song music.play
 189091	听 李白	O B-song music.play
 116198876	打电话 给 修车 南门	O O B-contact_name I-contact_name phone_call.make_a_phone_call
+116198876	蓝牙 音乐 下 一曲	O O O O music.next
 116198876	蓝牙 音乐 下 一曲	O O O O music.next
 116198876	梅毅	O OTHERS
 116198876	开 蓝牙 音乐	O O O OTHERS
@@ -18759,6 +19375,16 @@
 119198398	通话 结束	O O phone_call.cancel
 119198398	通话 结束	O O phone_call.cancel
 119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
+119198398	通话 结束	O O phone_call.cancel
 119198398	拨打 电话	O O phone_call.make_a_phone_call
 119198398	呃 我 想 取消 导航	O O O O O navigation.cancel_navigation
 118194638	二十年 后 再 相会	B-song I-song I-song I-song music.play
@@ -18771,6 +19397,7 @@
 116197000	回复 声音	O O OTHERS
 116197000	回复 导航 声音	O O O OTHERS
 116197000	打个 电话 中 了 几条	O O O O O phone_call.make_a_phone_call
+112197010	放下 一曲	O O music.next
 112197010	放下 一曲	O O music.next
 112197010	没有 取消	O O OTHERS
 112197010	取消	O navigation.cancel_navigation
@@ -18900,6 +19527,15 @@
 122197341	请 呼叫 663333	O O B-phone_num phone_call.make_a_phone_call
 122197341	拨打 663333	O B-phone_num phone_call.make_a_phone_call
 122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
+122197341	开始 导航	O O navigation.start_navigation
 112198065	创业园	B-destination navigation.navigation
 112198065	观音山 科尔 创业园	B-destination I-destination I-destination navigation.navigation
 112198065	广汽 丰田 新城 店	B-destination I-destination I-destination I-destination navigation.navigation
@@ -18949,6 +19585,7 @@
 115198989	拨打 电话 158	O O B-phone_num phone_call.make_a_phone_call
 115198989	播放 林忆莲 歌曲	O B-singer O music.play
 115198989	顺义 国泰	B-destination I-destination navigation.navigation
+112199729	下 一首	O O music.next
 112199729	下 一首	O O music.next
 112199729	阿铁	O OTHERS
 112199729	取消 导航	O O navigation.cancel_navigation
@@ -19095,6 +19732,7 @@
 115199494	玉林 博白 镇	B-destination I-destination I-destination navigation.navigation
 115199494	取消	O navigation.cancel_navigation
 112195710	换 一首 音乐	O O O music.next
+112195710	换 一首 音乐	O O O music.next
 112195710	把 音乐 关掉	O O O music.pause
 112195710	先到 医院 太 难听 了	O O O O O OTHERS
 112195710	娜	O OTHERS
@@ -19108,6 +19746,15 @@
 117199578	奈美	O OTHERS
 117199578	第 4 台	O O O OTHERS
 117199578	什么 电视台	O O OTHERS
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
+117199578	继续 导航	O O navigation.start_navigation
 117199578	继续 导航	O O navigation.start_navigation
 190022	度娘	O OTHERS
 190022	播放 凉凉	O B-song music.play
@@ -19151,6 +19798,7 @@
 116196725	我要 听 滚动 的 天空	O O O O O music.play
 112194985	我要 听 虞姬 的 歌曲	O O B-singer O O music.play
 112194985	我要 找	O O OTHERS
+112194985	会 找到 播放 下 一首	O O O O O music.next
 112194985	会 找到 播放 下 一首	O O O O O music.next
 112194985	我要 听 7 妹 的 歌	O O B-singer I-singer O O music.play
 112196049	我 想 听	O O O music.play
@@ -19210,6 +19858,46 @@
 189038	播放 上 一曲	O O O music.prev
 189038	播放 上 一曲	O O O music.prev
 189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	播放 上 一曲	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
+189038	再 上 一首	O O O music.prev
 189038	再 上 一首	O O O music.prev
 189038	再 上 一首	O O O music.prev
 189038	再 上 一首	O O O music.prev
@@ -19274,6 +19962,7 @@
 119195351	我要 听 梦 中 的 兰花花	O O B-song I-song I-song I-song music.play
 118194639	可乐	O OTHERS
 118194639	净儿	O OTHERS
+118194639	下 一曲	O O music.next
 118194639	下 一曲	O O music.next
 118194639	dj 歌曲	B-theme O music.play
 118194639	dj 专辑	B-theme O music.play
@@ -19460,6 +20149,7 @@
 122196436	我们 不 一样	B-song I-song I-song music.play
 122196436	今生 是 兄弟	B-song I-song I-song music.play
 122196436	bonnie	B-singer music.play
+122196436	下 一首	O O music.next
 122196436	下 一首	O O music.next
 119198934	我	O OTHERS
 119198934	湄潭	B-destination navigation.navigation
@@ -19782,6 +20472,7 @@
 122199207	好好	O OTHERS
 111199776	给 一二 打电话	O B-contact_name O phone_call.make_a_phone_call
 111199776	切歌	O music.next
+111199776	切歌	O music.next
 111199776	走同 和 地铁站	O B-destination I-destination navigation.navigation
 111199776	导航 广州 同 和	O B-destination I-destination I-destination navigation.navigation
 117197574	你 休息 吧	O O O OTHERS
@@ -19877,6 +20568,7 @@
 111195496	小平 您好	O O OTHERS
 111195496	请 播放 成都	O O B-song music.play
 111195496	请 播放 赵雷 的 歌曲	O O B-singer O O music.play
+111195496	请 播放 下 一首	O O O O music.next
 111195496	请 播放 下 一首	O O O O music.next
 189131	am	O OTHERS
 189131	关闭	O OTHERS
@@ -20159,6 +20851,7 @@
 116198584	去 运城	O B-destination navigation.navigation
 122199270	说 我 用 自己 的 电话 打 给 你 的	O O O O O O O O O O OTHERS
 122199270	切歌	O music.next
+122199270	切歌	O music.next
 122199270	黑龙江 牡丹江	B-destination I-destination navigation.navigation
 186154	大王	O OTHERS
 186154	梓峰	O OTHERS
@@ -20198,7 +20891,9 @@
 116195962	我要 听 usb 的 歌曲	O O O O O OTHERS
 116195962	我 想 听 bond 的 音乐	O O O B-singer O O music.play
 116195962	听下 一曲	O O music.next
+116195962	听下 一曲	O O music.next
 116196046	播放 繁花	O B-song music.play
+116196046	播放 其他 歌曲	O O O music.next
 116196046	播放 其他 歌曲	O O O music.next
 116196046	播放歌曲 不 一样 我们 不 一样	O O O B-song O O music.play
 116196046	关机	O OTHERS
@@ -20276,6 +20971,16 @@
 188131	黄家驹 的 歌	B-singer O O music.play
 188131	赵雷 的 成都	B-singer O B-song music.play
 116197239	呼叫 13200006119	O B-phone_num phone_call.make_a_phone_call
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
+116197239	取消	O phone_call.cancel
 116197239	取消	O phone_call.cancel
 116197239	取消	O phone_call.cancel
 116197239	取消	O phone_call.cancel
@@ -20764,6 +21469,15 @@
 122197856	打 一下 65733	O O B-phone_num phone_call.make_a_phone_call
 122197856	月 尘	O O OTHERS
 122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
+122197856	继续 导航	O O navigation.start_navigation
 122197856	月 尘	O O OTHERS
 122197856	嘿嘿	O OTHERS
 111196693	倾城	O OTHERS
@@ -20989,6 +21703,7 @@
 115196571	退出	O OTHERS
 115196571	请放 歌曲	O O music.play
 115196571	下 一首	O O music.next
+115196571	下 一首	O O music.next
 115197785	许昌市 榆岭 乡马 张村	B-destination I-destination I-destination I-destination navigation.navigation
 115197785	导航 到 雄县 医院	O O B-destination I-destination navigation.navigation
 115197785	给 安亚峰 打电话	O B-contact_name O phone_call.make_a_phone_call
@@ -21106,6 +21821,24 @@
 111199400	拨打	O phone_call.make_a_phone_call
 111199400	切换 到 导航	O O O navigation.start_navigation
 111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
+111199400	切换 到 导航	O O O navigation.start_navigation
 111199400	把 屏幕 调到 最暗	O O O O OTHERS
 112199176	6200	O OTHERS
 112199176	猫猫	O OTHERS
@@ -21152,6 +21885,7 @@
 118198324	东软 软件园	B-destination I-destination navigation.navigation
 118198324	拨打 电话 502	O O B-phone_num phone_call.make_a_phone_call
 187071	播放 下 一首	O O O music.next
+187071	播放 下 一首	O O O music.next
 187071	播放 一个 孙露	O O B-singer music.play
 187071	摩崖	O OTHERS
 187071	查 一下	O O OTHERS
@@ -21162,6 +21896,15 @@
 115197561	拨打 13800001722	O B-phone_num phone_call.make_a_phone_call
 115197561	导航 去宏发 世纪 城	O O B-destination I-destination navigation.navigation
 115197561	公明 派出所	B-destination I-destination navigation.navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
+115197561	的 导航	O O navigation.start_navigation
 115197561	的 导航	O O navigation.start_navigation
 111197170	去 了	O O OTHERS
 111197170	过不去 吗	O O OTHERS
@@ -21509,6 +22252,8 @@
 117197585	取消 导航	O O navigation.cancel_navigation
 122195467	再见	O OTHERS
 122195467	播下 一首	O O music.next
+122195467	播下 一首	O O music.next
+122195467	播放 下 一首	O O O music.next
 122195467	播放 下 一首	O O O music.next
 122195467	我 想 听 刘德华 忘情水	O O O B-singer B-song music.play
 116194092	放 郭峰 的 歌曲	O B-singer O O music.play
