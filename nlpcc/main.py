@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import os
 import copy
 
-input_steps = 27    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
+input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
 embedding_size = 300 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
@@ -56,6 +56,7 @@ def train(is_debug=False):
     get_info_from_training_data(all_data, "no_test")
     print("get list.....")
     '''
+
     # 上一步保存后可以直接读取字典，节省时间
     train_data_ed = file_to_list(path+"\\data_list\\train_list.npy")
     test_data_ed = file_to_list(path+"\\data_list\\test_list.npy")
@@ -305,14 +306,14 @@ def output_picture(P, F1_MACRO, P_intent, P_slot):
 def test_data():
     train_data = open(path+"\\train_test_file\\train_labeled.txt", "r", encoding='UTF-8').readlines()
     test_data = open(path+"\\train_test_file\\test_labeled.txt", "r", encoding='UTF-8').readlines()
-    train_data_ed = data_pipeline(train_data)   # 此处数据已经进行PAD
-    test_data_ed = data_pipeline(test_data)
+    train_data_ed = data_pipeline(train_data, path+"\\data_list\\train_list.npy", input_steps, "no_test")   # 此处数据已经进行PAD
+    test_data_ed = data_pipeline(test_data, path+"\\data_list\\test_list.npy", input_steps, "no_test")
 
     all_data = train_data_ed+test_data_ed
     # 要得到（训练集+测试集）的词集合、槽集合
 
     word2index, index2word, slot2index, index2slot, intent2index, index2intent = \
-        get_info_from_training_data(all_data, "test")
+        get_info_from_training_data(all_data, "no_test")
     # print("slot2index: ", slot2index)
     # print("index2slot: ", index2slot)
     index_train = to_index(train_data_ed, word2index, slot2index, intent2index)

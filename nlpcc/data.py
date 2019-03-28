@@ -48,11 +48,10 @@ index_seq2word = lambda s, index2word: [index2word[i] for i in s]
 
 def data_pipeline(data, file_name, length, option):     # 规定语句长度定为 input_steps ，不足用EOS+PAD补上
     data = [t[:-1] for t in data]  # 去掉'\n'
-    # 数据的一行像这样：'BOS i want to fly from baltimore to dallas round trip EOS
-    # \tO O O O O O B-fromloc.city_name O B-toloc.city_name B-round_trip I-round_trip atis_flight'
+    # 数据的一行像这样：111196914    播/放/dj/歌/曲	O O B-theme O O    music.play
     # 分割成这样[原始句子的词，标注的序列，intent]
     print("切分之前: \n",data[0])
-    data = [[t.split("\t")[1].split(" "), t.split("\t")[2].split(" ")[:-1], t.split("\t")[2].split(" ")[-1]] for t in
+    data = [[t.split("\t")[1].split("/"), t.split("\t")[2].split(" "), t.split("\t")[3]] for t in
             data]
     #按tab分割，导致标注序列和intent在同一块（标注序列和intent中间是空格），使用[-1:]和[-1]分开
     print("切分之后: \n",data[0])

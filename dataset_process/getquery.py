@@ -14,7 +14,7 @@ def get_wordfile(filename):
 
     data = open(filename, "r", encoding='UTF-8').readlines()
     data = [t[:-1] for t in data]      #去除空行
-    data_words = [t.split("\t")[1].split(" ") for t in data]
+    data_words = [t.split("\t")[1].split("/") for t in data]
 
     print("data_words:")
     print(data_words)
@@ -37,7 +37,7 @@ def save_train_words(train_words):
         for i in range(len(t)):
             fp1.write(t[i])
             if (i != (len(t) - 1)):
-                fp1.write(" ")
+                fp1.write("/")
 
         fp1.write("\n")
 
@@ -52,7 +52,7 @@ def save_all_words(train_words, test_words):
         for i in range(len(t)):
             fp2.write(t[i])
             if (i != (len(t) - 1)):
-                fp2.write(" ")
+                fp2.write("/")
 
         fp2.write("\n")
 
@@ -60,7 +60,7 @@ def save_all_words(train_words, test_words):
         for i in range(len(t)):
             fp2.write(t[i])
             if (i != (len(t)-1)):
-                fp2.write(" ")
+                fp2.write("/")
 
         fp2.write("\n")
 

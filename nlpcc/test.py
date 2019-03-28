@@ -40,7 +40,9 @@ if __name__ == '__main__':
     print(os.path.abspath(os.path.dirname(__file__)))
     print(os.path.dirname(os.path.abspath(__file__)))
 
-    print(seg_char("小明硕士毕业于中国科学院计算所，后在 haha123 日本456京都 78 9 大学深"))
+    print(seg_char("*请帮我100放,t一首1*2the well, in the best girls run and run"))
+    print(seg_char("*11 text"))
+
 
 
 

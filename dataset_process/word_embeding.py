@@ -11,7 +11,7 @@ def generate_model(min_count, window, size, all_word = path+"\\query\\all_words.
     data = open(all_word, "r", encoding='UTF-8').readlines()
     data = [t[:-1] for t in data]  # 去除空行
     print("line: ", len(data))
-    sentences = [t.split(" ") for t in data]
+    sentences = [t.split("/") for t in data]
     print(sentences)
     model = Word2Vec(sentences, min_count = min_count, window = window, size = size)
     #保存模型
@@ -58,5 +58,5 @@ def get_vector(modelname, word2index = eval(open(os.path.dirname(path)+"\\nlpcc\
     return word_vector
 
 if __name__ == '__main__':
-    generate_model(2, 5, 100)
+    generate_model(3, 5, 100)
    # get_vector(path+"\\word2vec\\min_count5size63")

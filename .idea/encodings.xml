@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/dataset_process/raw_dataset/文件说明.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/nlpcc/result/picture/min_count3size165.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/nlpcc/train_test_file/文件说明.txt" charset="GBK" />
   </component>
 </project>

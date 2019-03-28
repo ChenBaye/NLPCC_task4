@@ -62,6 +62,13 @@ def delete_blank(list):
 
     return list
 
+#把句子按字分开，不破坏英文、数字结构
+def seg_char(sent):
+    pattern = re.compile(r'([\u4e00-\u9fa5])')
+    chars = pattern.split(sent)
+    chars = [w for w in chars if len(w.strip())>0]
+    return chars
+
 
 
 def data_handle(data, filename, option):#
@@ -71,10 +78,10 @@ def data_handle(data, filename, option):#
     # 原始数据：117194488	来一首周华健的花心	music.play	来一首<singer>周华健</singer>的<song>花心</song>
     # 处理后：117194488	来 一首 周华健 的 花心	music.play	O O B-SINGER O B-SONG I-SONG
 
-    data = [[t.split("\t")[0],      #第一部分 数字不变
-             delete_blank(("~".join(jieba.cut(t.split("\t")[1], HMM=True))).split("~")),#第二部分 jieba分词
-             t.split("\t")[2],      #第三部分 意图
-             t.split("\t")[3]]      #第四部分 序列（未标注）
+    data = [[t.split("\t")[0],              # 第一部分 数字不变
+             seg_char(t.split("\t")[1]),    # 第二部分 分出中文字、英文、数字
+             t.split("\t")[2],              # 第三部分 意图
+             t.split("\t")[3]]              # 第四部分 序列（未标注）
     for t in data]
 
     for t in data:
@@ -93,6 +100,7 @@ def data_handle(data, filename, option):#
     # navigation.cancel_navigation复制7遍,835*7=5845
     # OTHERS不复制 6598
 
+    '''
     if option == "train":   #只有训练集需要复制数据
         temp_data = []
         count_navigation = 2424
@@ -125,7 +133,7 @@ def data_handle(data, filename, option):#
                 temp_data.append(temp)
 
         data = temp_data
-
+    '''
 
 
     # 下面完成序列标注
@@ -156,15 +164,15 @@ def data_handle(data, filename, option):#
         data[i][3]=list
         # print(data[i])
 
-    #将已经标记好的data写入文件,需要注意，序列标注和意图之间用 空格 隔开********
+    # 将已经标记好的data写入文件,需要注意，序列标注和意图之间用 空格 隔开********
     fp = open(filename, 'w',encoding='UTF-8')
     for i in range(len(data)):
         fp.write(data[i][0])               # 写语句数字编号（如：188126）
         fp.write("\t")
-        for j in range(len(data[i][1])):   # 这个for循环用于写分好词的语句（如：播放 林忆莲 的 伤痕）
+        for j in range(len(data[i][1])):   # 这个for循环用于写分好词的语句（如：播放/林忆莲/的/伤痕）
             fp.write(data[i][1][j])
-            if j!=(len(data[i][1])-1):      # 末尾不加" "
-                fp.write(" ")
+            if j!=(len(data[i][1])-1):      # 末尾不加"/"
+                fp.write("/")
 
         fp.write("\t")
 
@@ -173,7 +181,7 @@ def data_handle(data, filename, option):#
             if k!=(len(data[i][3])-1):
                 fp.write(" ")
 
-        fp.write(" ")                       # 此处用空格隔开而而非tab
+        fp.write("\t")                       # 此处用空tab隔开
         fp.write(data[i][2])                # 最后写 意图（如：OTHERS）
 
         fp.write("\n")
