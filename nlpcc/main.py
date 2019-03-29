@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import os
 import copy
 
-input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为27
+input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
 embedding_size = 300 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数

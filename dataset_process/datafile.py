@@ -100,7 +100,7 @@ def data_handle(data, filename, option):#
     # navigation.cancel_navigation复制7遍,835*7=5845
     # OTHERS不复制 6598
 
-    '''
+
     if option == "train":   #只有训练集需要复制数据
         temp_data = []
         count_navigation = 2424
@@ -133,7 +133,7 @@ def data_handle(data, filename, option):#
                 temp_data.append(temp)
 
         data = temp_data
-    '''
+
 
 
     # 下面完成序列标注

@@ -214,7 +214,7 @@ class Model:
     def load_word_embeding(self, option = "word2vec"):
         if option == "word2vec":
             path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
-            list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count2size300")  # 生成向量
+            list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count1size300")  # 生成向量
         else:
             print("get fasttext word_vector...")
             list = read_fasttext.get_vector()       #读取fastext的词向量
