@@ -103,7 +103,7 @@ class Model:
         temp = tf.reshape(encoder_outputs, [-1, self.hidden_size * 2])
 
         # 此时就可以matmul了
-        slot_logits = tf.matmul(temp, self.slot_W)
+        slot_logits = tf.add(tf.matmul(temp, self.slot_W)+self.slot_b)
         print(slot_logits.shape)
 
 
@@ -136,7 +136,8 @@ class Model:
         loss_intent = tf.reduce_mean(cross_entropy)
         # 二次代价函数
 
-        self.loss = loss_slot + loss_intent
+        # self.loss = loss_slot + loss_intent
+        self.loss = loss_slot
         # 优化函数、学习率
         optimizer = tf.train.AdamOptimizer(learning_rate=0.0005,name="a_optimizer")
 
