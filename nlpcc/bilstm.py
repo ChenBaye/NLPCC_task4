@@ -103,12 +103,12 @@ class Model:
         temp = tf.reshape(encoder_outputs, [-1, self.hidden_size * 2])
 
         # 此时就可以matmul了
-        slot_logits = tf.add(tf.matmul(temp, self.slot_W)+self.slot_b)
+        slot_logits = tf.add(tf.matmul(temp, self.slot_W), self.slot_b)
         print(slot_logits.shape)
 
 
         # 计算slot预测值，并再把前两个维度还原
-        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
+        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.input_steps, self.batch_size])
         print(self.slot.shape)
         # batch_size * time
 
@@ -123,6 +123,7 @@ class Model:
         # apply mask，除去padding
         losses = tf.boolean_mask(losses, self.mask)
         loss_slot = tf.reduce_mean(losses)
+        print("***loss_slot: ", loss_slot)
         #槽损失
 
         # 定义intent分类的损失
