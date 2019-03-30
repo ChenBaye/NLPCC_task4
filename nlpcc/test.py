@@ -2,6 +2,7 @@
 import jieba
 import re
 import os
+import tensorflow as tf
 
 
 
@@ -42,6 +43,20 @@ if __name__ == '__main__':
 
     print(seg_char("*请帮我100放,t一首1*2the well, in the best girls run and run"))
     print(seg_char("*11 text"))
+
+
+    fw_cell = tf.nn.rnn_cell.BasicRNNCell(128)
+    bw_cell = tf.nn.rnn_cell.BasicRNNCell(256)
+    inputs = tf.Variable(tf.random_normal([100, 40, 300]))  # [batch_size,timestep,embedding_dim]
+    inputs = tf.unstack(inputs, 40, axis=1)
+    print(inputs[0])
+    outputs, fw, bw = tf.nn.static_bidirectional_rnn(fw_cell, bw_cell, inputs, dtype=tf.float32)
+    print(len(outputs))     # 40，40个时间步
+    print(outputs[0].shape)     # (100, 384),每个时间步的输出神经元为384=128+256
+    print(outputs[1].shape)     # (100, 384)
+    print(fw.shape)     # (100, 128),前向RNN隐藏层
+    print(bw.shape)  # (100, 128)，后向RNN传播隐藏层
+
 
 
 

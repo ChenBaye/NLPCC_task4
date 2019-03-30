@@ -27,10 +27,10 @@ class Model:
         self.encoder_inputs = tf.placeholder(tf.int32, [input_steps, batch_size],
                                              name='encoder_inputs')
         # 每句输入的实际长度，除了padding
-        self.encoder_inputs_actual_length = tf.placeholder(tf.int32, [batch_size],
-                                                           name='encoder_inputs_actual_length')
-        self.decoder_targets = tf.placeholder(tf.int32, [batch_size, input_steps],
-                                              name='decoder_targets')
+        self.inputs_actual_length = tf.placeholder(tf.int32, [batch_size],
+                                                           name='inputs_actual_length')
+        self.slot_targets = tf.placeholder(tf.int32, [batch_size, input_steps],
+                                              name='slot_targets')
         self.intent_targets = tf.placeholder(tf.int32, [batch_size],
                                              name='intent_targets')
 
@@ -38,9 +38,9 @@ class Model:
 
         #self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
         #                                               -0.1, 0.1), dtype=tf.float32, name="embedding")
-
-        self.embeddings = tf.Variable(self.load_word_embeding())
         # 随机生成vocab_size*embedding_size大小的矩阵，元素介于-0.1到0.1
+        self.embeddings = tf.Variable(self.load_word_embeding())
+
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 
@@ -53,13 +53,15 @@ class Model:
         encoder_b_cell = DropoutWrapper(encoder_b_cell_0,output_keep_prob=0.5)
         #防止过拟合
 
+
         # encoder_inputs_time_major = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
+        # T代表时间序列的长度，B代表batch size，D代表隐藏层的维度
         # 下面四个变量的尺寸：T*B*D，T*B*D，B*D，B*D
         (encoder_fw_outputs, encoder_bw_outputs), (encoder_fw_final_state, encoder_bw_final_state) = \
             tf.nn.bidirectional_dynamic_rnn(cell_fw=encoder_f_cell,     #前向的lstm cell数目
                                             cell_bw=encoder_b_cell,     #后向的lstm cell数目
                                             inputs=self.encoder_inputs_embedded,
-                                            sequence_length=self.encoder_inputs_actual_length,
+                                            sequence_length=self.inputs_actual_length,
                                             dtype=tf.float32, time_major=True)
         encoder_outputs = tf.concat((encoder_fw_outputs, encoder_bw_outputs), 2)
 
@@ -76,9 +78,8 @@ class Model:
         print("encoder_outputs: ", encoder_outputs)
         print("encoder_outputs[0]: ", encoder_outputs[0])
         print("encoder_final_state_c: ", encoder_final_state_c)
+        print("encoder_final_state_h: ", encoder_final_state_h)
 
-        # Decoder
-        decoder_lengths = self.encoder_inputs_actual_length
         self.slot_W = tf.Variable(tf.random_uniform([self.hidden_size * 2, self.slot_size], -1, 1),
                              dtype=tf.float32, name="slot_W")
         self.slot_b = tf.Variable(tf.zeros([self.slot_size]), dtype=tf.float32, name="slot_b")
@@ -92,80 +93,42 @@ class Model:
         self.intent = tf.argmax(intent_logits, axis=1)
         #返回最大值对应索引，即最可能的意图
 
-        sos_time_slice = tf.ones([self.batch_size], dtype=tf.int32, name='SOS') * 2
-        sos_step_embedded = tf.nn.embedding_lookup(self.embeddings, sos_time_slice)
-        # pad_time_slice = tf.zeros([self.batch_size], dtype=tf.int32, name='PAD')
-        # pad_step_embedded = tf.nn.embedding_lookup(self.embeddings, pad_time_slice)
-        pad_step_embedded = tf.zeros([self.batch_size, self.hidden_size*2+self.embedding_size],
-                                     dtype=tf.float32)
+        # 求slot
+        # encoder_outputs:
+        # time * batch_size * (forward_hidden+backward_hidden)
+        # slot.w:
+        # (forward_hidden+backward_hidden) * slot_size
 
-        def initial_fn():
-            initial_elements_finished = (0 >= decoder_lengths)  # all False at the initial step
-            initial_input = tf.concat((sos_step_embedded, encoder_outputs[0]), 1)
-            return initial_elements_finished, initial_input
+        # 把A的前两个维度展为一个维度
+        temp = tf.reshape(encoder_outputs, [-1, self.hidden_size * 2])
+
+        # 此时就可以matmul了
+        slot_logits = tf.matmul(temp, self.slot_W)
+        print(slot_logits.shape)
 
 
-        def sample_fn(time, outputs, state):
-            # 选择logit最大的下标作为sample
-            print("outputs", outputs)
-            # output_logits = tf.add(tf.matmul(outputs, self.slot_W), self.slot_b)
-            # print("slot output_logits: ", output_logits)
-            # prediction_id = tf.argmax(output_logits, axis=1)
-            prediction_id = tf.to_int32(tf.argmax(outputs, axis=1))
-            return prediction_id
+        # 计算slot预测值，并再把前两个维度还原
+        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
+        print(self.slot.shape)
+        # batch_size * time
 
-        def next_inputs_fn(time, outputs, state, sample_ids):
-            # 上一个时间节点上的输出类别，获取embedding再作为下一个时间节点的输入
-            pred_embedding = tf.nn.embedding_lookup(self.embeddings, sample_ids)
-            # 输入是h_i+o_{i-1}+c_i
-            next_input = tf.concat((pred_embedding, encoder_outputs[time]), 1)
-            elements_finished = (time >= decoder_lengths)  # this operation produces boolean tensor of [batch_size]
-            all_finished = tf.reduce_all(elements_finished)  # -> boolean scalar
-            next_inputs = tf.cond(all_finished, lambda: pad_step_embedded, lambda: next_input)
-            next_state = state
-            return elements_finished, next_inputs, next_state
 
-        my_helper = tf.contrib.seq2seq.CustomHelper(initial_fn, sample_fn, next_inputs_fn)
-
-        def decode(helper, scope, reuse=None):
-            with tf.variable_scope(scope, reuse=reuse):
-                memory = tf.transpose(encoder_outputs, [1, 0, 2])
-                attention_mechanism = tf.contrib.seq2seq.BahdanauAttention(
-                    num_units=self.hidden_size, memory=memory,
-                    memory_sequence_length=self.encoder_inputs_actual_length)
-                cell = tf.contrib.rnn.LSTMCell(num_units=self.hidden_size * 2)  #隐藏层神经元数量self.hidden_size * 2
-                attn_cell = tf.contrib.seq2seq.AttentionWrapper(
-                    cell, attention_mechanism, attention_layer_size=self.hidden_size)
-                out_cell = tf.contrib.rnn.OutputProjectionWrapper(
-                    attn_cell, self.slot_size, reuse=reuse
-                )
-                decoder = tf.contrib.seq2seq.BasicDecoder(
-                    cell=out_cell, helper=helper,
-                    initial_state=out_cell.zero_state(
-                        dtype=tf.float32, batch_size=self.batch_size))
-                # initial_state=encoder_final_state)
-                final_outputs, final_state, final_sequence_lengths = tf.contrib.seq2seq.dynamic_decode(
-                    decoder=decoder, output_time_major=True,
-                    impute_finished=True, maximum_iterations=self.input_steps
-                )
-                return final_outputs
-
-        outputs = decode(my_helper, 'decode')
-        print("outputs: ", outputs)
-        print("outputs.rnn_output: ", outputs.rnn_output)
-        print("outputs.sample_id: ", outputs.sample_id)
-        # weights = tf.to_float(tf.not_equal(outputs[:, :-1], 0))
-        self.decoder_prediction = outputs.sample_id
-        decoder_max_steps, decoder_batch_size, decoder_dim = tf.unstack(tf.shape(outputs.rnn_output))
-        self.decoder_targets_time_majored = tf.transpose(self.decoder_targets, [1, 0])
-        self.decoder_targets_true_length = self.decoder_targets_time_majored[:decoder_max_steps]
-        print("decoder_targets_true_length: ", self.decoder_targets_true_length)
-        print("outputs.rnn_output: ", self.decoder_targets_true_length)
         # 定义mask，使padding不计入loss计算
-        self.mask = tf.to_float(tf.not_equal(self.decoder_targets_true_length, 0))
+        self.mask = tf.to_float(tf.not_equal(self.inputs_actual_length, 0))
+        print(self.inputs_actual_length.shape)
+        print(self.mask.shape)
         # 定义slot标注的损失
-        loss_slot = tf.contrib.seq2seq.sequence_loss(
-            outputs.rnn_output, self.decoder_targets_true_length, weights=self.mask)
+
+        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(
+            logits=tf.reshape(slot_logits,[self.batch_size, self.input_steps, self.slot_size]),
+            labels=self.slot_targets)
+        # shape = (batch, sentence, nclasses)
+        mask = tf.sequence_mask(self.inputs_actual_length)
+        # apply mask，除去padding
+        losses = tf.boolean_mask(losses, mask)
+        loss_slot = tf.reduce_mean(losses)
+        #槽损失
+
         # 定义intent分类的损失
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
             labels=tf.one_hot(self.intent_targets, depth=self.intent_size, dtype=tf.float32),
@@ -197,16 +160,16 @@ class Model:
         # print(np.shape(unziped[0]), np.shape(unziped[1]),
         #       np.shape(unziped[2]), np.shape(unziped[3]))
         if mode == 'train':
-            output_feeds = [self.train_op, self.loss, self.decoder_prediction,
+            output_feeds = [self.train_op, self.loss, self.slot,
                             self.intent, self.mask, self.slot_W]
             feed_dict = {self.encoder_inputs: np.transpose(unziped[0], [1, 0]),
-                         self.encoder_inputs_actual_length: unziped[1],
-                         self.decoder_targets: unziped[2],
+                         self.inputs_actual_length: unziped[1],
+                         self.slot_targets: unziped[2],
                          self.intent_targets: unziped[3]}
         if mode in ['test']:
-            output_feeds = [self.decoder_prediction, self.intent]
+            output_feeds = [self.slot, self.intent]
             feed_dict = {self.encoder_inputs: np.transpose(unziped[0], [1, 0]),
-                         self.encoder_inputs_actual_length: unziped[1]}
+                         self.inputs_actual_length: unziped[1]}
 
         results = sess.run(output_feeds, feed_dict=feed_dict)   #为tensor赋值
         return results

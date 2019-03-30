@@ -4,14 +4,15 @@ import tensorflow as tf
 from nlpcc.data import *
 from nlpcc import *
 # from model import Model
-from nlpcc.model import Model
+# from nlpcc.model import Model
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
-import copy
+from nlpcc.bilstm import *
+
 
 input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
 embedding_size = 300 # 词向量维度
