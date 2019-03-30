@@ -113,44 +113,31 @@ class Model:
         # batch_size * time
 
 
-        # 定义mask，使padding不计入loss计算
-        self.mask = tf.to_float(tf.not_equal(self.inputs_actual_length, 0))
-        print(self.inputs_actual_length.shape)
-        print(self.mask.shape)
         # 定义slot标注的损失
 
         losses = tf.nn.sparse_softmax_cross_entropy_with_logits(
             logits=tf.reshape(slot_logits,[self.batch_size, self.input_steps, self.slot_size]),
             labels=self.slot_targets)
         # shape = (batch, sentence, nclasses)
-        mask = tf.sequence_mask(self.inputs_actual_length)
+        self.mask = tf.sequence_mask(self.inputs_actual_length)
         # apply mask，除去padding
-        losses = tf.boolean_mask(losses, mask)
+        losses = tf.boolean_mask(losses, self.mask)
         loss_slot = tf.reduce_mean(losses)
         #槽损失
 
         # 定义intent分类的损失
-        cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
-            labels=tf.one_hot(self.intent_targets, depth=self.intent_size, dtype=tf.float32),
-            logits=intent_logits)
-        loss_intent = tf.reduce_mean(cross_entropy)
+        # cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
+        #    labels=tf.one_hot(self.intent_targets, depth=self.intent_size, dtype=tf.float32),
+        #    logits=intent_logits)
+        # loss_intent = tf.reduce_mean(cross_entropy)
         # 二次代价函数
 
         # self.loss = loss_slot + loss_intent
         self.loss = loss_slot
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.0005,name="a_optimizer")
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.001,name="a_optimizer")
+        self.train_op = optimizer.minimize(self.loss)
 
-        self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
-        print("vars for loss function: ", self.vars)
-        self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
-        self.train_op = optimizer.apply_gradients(zip(self.gradients, self.vars))
-        # self.train_op = optimizer.minimize(self.loss)
-        # train_op = layers.optimize_loss(
-        #     loss, tf.train.get_global_step(),
-        #     optimizer=optimizer,
-        #     learning_rate=0.001,
-        #     summaries=['loss', 'learning_rate'])
 
     def step(self, sess, mode, trarin_batch):
         """ perform each batch"""
