@@ -11,7 +11,8 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
-from nlpcc.bilstm import *
+# from nlpcc.bilstm import *
+from nlpcc.bilstm_crf import *
 
 
 input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
