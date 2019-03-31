@@ -111,7 +111,8 @@ class Model:
 
 
         # 计算slot预测值，并再把前两个维度还原
-        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.input_steps, self.batch_size])
+        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
+        self.slot = tf.transpose(self.slot, perm = [1,0])
         print(self.slot.shape)
         # batch_size * time
 
