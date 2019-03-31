@@ -99,7 +99,7 @@ class Model:
         # slot.w:
         # (forward_hidden+backward_hidden) * slot_size
 
-        encoder_outputs = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
+        encoder_outputs = tf.transpose(encoder_outputs, perm=[1, 0, 2])
         # encoder_outputs先转置=>>
         # batch_size * time * (forward_hidden+backward_hidden)
         # 把A的前两个维度展为一个维度
@@ -125,7 +125,7 @@ class Model:
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
         cost = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=self.slot))
-
+        self.loss = cost
         print("cost: ", cost)
         print("acc: ", accuracy)
         tvars = tf.trainable_variables()
@@ -161,7 +161,7 @@ class Model:
         #       np.shape(unziped[2]), np.shape(unziped[3]))
         if mode == 'train':
             output_feeds = [self.train_op, self.loss, self.slot,
-                            self.intent, self.mask, self.slot_W]
+                            self.intent, self.slot_W]
             feed_dict = {self.encoder_inputs: np.transpose(unziped[0], [1, 0]),
                          self.inputs_actual_length: unziped[1],
                          self.slot_targets: unziped[2],
