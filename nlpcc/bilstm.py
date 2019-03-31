@@ -121,10 +121,10 @@ class Model:
 
         # adding extra statistics to monitor
         # y_inputs.shape = [batch_size, timestep_size]
-        correct_prediction = tf.equal(tf.cast(tf.argmax(self.slot, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
+        correct_prediction = tf.equal(tf.cast(tf.argmax(slot_logits, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
         cost = tf.reduce_mean(
-            tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=self.slot))
+            tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=slot_logits))
         self.loss = cost
         print("cost: ", cost)
         print("acc: ", accuracy)

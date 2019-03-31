@@ -22,7 +22,7 @@ batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量�
 vocab_size = 14405  # 共14405个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14405
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12    # 有多少种意图
-epoch_num = 50      # 将所有样本全部训练一次为一个epoch
+epoch_num = 200      # 将所有样本全部训练一次为一个epoch
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
 
@@ -110,7 +110,7 @@ def train(is_debug=False):
             #     print('Average train loss at epoch %d, step %d: %f' % (epoch, i, mean_loss))
             #     mean_loss = 0
         train_loss /= (i + 1)
-        print("[Epoch {}] Average train loss: {}\n".format(epoch, train_loss))
+        print("[Epoch {}] Average train loss: {}\n".format(epoch, loss))
 
         #####################################################################
         ##  运行至此，已经完成一轮（一个epoch=全体数据）的训练
@@ -233,7 +233,7 @@ def train(is_debug=False):
         # print("Intent accuracy for epoch {}: {}".format(epoch, np.average(intent_accs)))
         # 所有batch的intent_acc的平均值与下面的P_right_intent相等
 
-        # print("Slot accuracy for epoch {}: {}".format(epoch, np.average(slot_accs)))
+        print("Slot accuracy for epoch {}: {}".format(epoch, np.average(slot_accs)))
         # slot_acc与P_right_slot不同，前者为   正确的槽数/全部槽数，后者为 槽正确的句子数/全部句子数
 
         # print("Slot F1 score for epoch {}: {}".format(epoch, f1_for_sequence_batch(true_slots_a, pred_slots_a)))
