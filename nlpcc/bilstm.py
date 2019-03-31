@@ -99,6 +99,9 @@ class Model:
         # slot.w:
         # (forward_hidden+backward_hidden) * slot_size
 
+        encoder_outputs = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
+        # encoder_outputs先转置=>>
+        # batch_size * time * (forward_hidden+backward_hidden)
         # 把A的前两个维度展为一个维度
         temp = tf.reshape(encoder_outputs, [-1, self.hidden_size * 2])
 

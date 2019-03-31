@@ -57,6 +57,15 @@ if __name__ == '__main__':
     print(fw.shape)     # (100, 128),前向RNN隐藏层
     print(bw.shape)  # (100, 128)，后向RNN传播隐藏层
 
+    a = [
+        [1,2,3],
+        [4,5,6]
+    ]
+    b = tf.reshape(a,[-1])
+    c = tf.reshape(b,[3,2])
+    sess = tf.Session()
+    print(sess.run(b))
+    print(sess.run(c))
 
 
 
