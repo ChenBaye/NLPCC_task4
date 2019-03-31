@@ -126,6 +126,7 @@ class Model:
         cost = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=slot_logits))
         self.loss = cost
+        self.mask = []
         print("cost: ", cost)
         print("acc: ", accuracy)
         tvars = tf.trainable_variables()
@@ -161,7 +162,7 @@ class Model:
         #       np.shape(unziped[2]), np.shape(unziped[3]))
         if mode == 'train':
             output_feeds = [self.train_op, self.loss, self.slot,
-                            self.intent, self.slot_W]
+                            self.intent, self.mask,self.slot_W]
             feed_dict = {self.encoder_inputs: np.transpose(unziped[0], [1, 0]),
                          self.inputs_actual_length: unziped[1],
                          self.slot_targets: unziped[2],
