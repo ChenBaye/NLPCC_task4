@@ -115,16 +115,24 @@ class Model:
 
         # 定义slot标注的损失
 
-        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(
-            logits=tf.reshape(slot_logits,[self.batch_size, self.input_steps, self.slot_size]),
-            labels=self.slot_targets)
-        # shape = (batch, sentence, nclasses)
-        self.mask = tf.sequence_mask(self.inputs_actual_length)
-        # apply mask，除去padding
-        losses = tf.boolean_mask(losses, self.mask)
-        loss_slot = tf.reduce_mean(losses)
-        print("***loss_slot: ", loss_slot)
-        #槽损失
+
+        # adding extra statistics to monitor
+        # y_inputs.shape = [batch_size, timestep_size]
+        correct_prediction = tf.equal(tf.cast(tf.argmax(self.slot, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
+        accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+        cost = tf.reduce_mean(
+            tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=self.slot))
+
+        print("cost: ", cost)
+        print("acc: ", accuracy)
+        tvars = tf.trainable_variables()
+        # 获取损失函数对于每个参数的梯度
+        grads, _ = tf.clip_by_global_norm(tf.gradients(cost, tvars), 5.0)
+        # 优化器
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.0001)
+        # 梯度下降计算
+        self.train_op = optimizer.apply_gradients(zip(grads, tvars),
+                                             global_step=tf.contrib.framework.get_or_create_global_step())
 
         # 定义intent分类的损失
         # cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
@@ -134,10 +142,10 @@ class Model:
         # 二次代价函数
 
         # self.loss = loss_slot + loss_intent
-        self.loss = loss_slot
+        #self.loss = loss_slot
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.001,name="a_optimizer")
-        self.train_op = optimizer.minimize(self.loss)
+        # optimizer = tf.train.AdamOptimizer(learning_rate=0.001,name="a_optimizer")
+        # self.train_op = optimizer.minimize(self.loss)
 
 
     def step(self, sess, mode, trarin_batch):
