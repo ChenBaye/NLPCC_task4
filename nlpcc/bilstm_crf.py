@@ -109,38 +109,40 @@ class Model:
         slot_logits = tf.add(tf.matmul(temp, self.slot_W), self.slot_b)
         print(slot_logits.shape)
 
-        # 计算slot预测值，并再把前两个维度还原
-        self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
-        self.slot = tf.transpose(self.slot, perm = [1,0])
-        print(self.slot.shape)
-        # batch_size * time
-
 
         # 定义slot标注的损失
         scores = tf.reshape(slot_logits, [-1, self.input_steps, self.slot_size])
+        # #算好分数后，再重新reshape成[batchsize, timesteps, num_class]
 
-        #log_likelihood, transition_params = tf.contrib.crf.crf_log_likelihood(
-        #    scores, self.slot_targets, self.inputs_actual_length)
 
-        #loss = tf.reduce_mean(-log_likelihood)
+        log_likelihood, transition_params = tf.contrib.crf.crf_log_likelihood(
+            scores, self.slot_targets, self.inputs_actual_length)
 
+        loss = tf.reduce_mean(-log_likelihood)
+
+
+        optimizer = tf.train.AdamOptimizer(0.0001)
+        train_op = optimizer.minimize(loss)
+
+        decode_tags, best_score  = tf.contrib.crf.crf_decode(
+            scores, transition_params, self.inputs_actual_length)
+
+
+
+        slot_logits = tf.reshape(slot_logits, [-1, self.slot_size])
         correct_prediction = tf.equal(tf.cast(tf.argmax(slot_logits, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=scores, labels=self.slot_targets)
-        # shape = (batch, sentence, nclasses)
         mask = tf.sequence_mask(self.inputs_actual_length)
-        # apply mask
-        losses = tf.boolean_mask(losses, mask)
 
-        loss = tf.reduce_mean(losses)
+        self.slot = tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
+        self.slot = tf.transpose(self.slot, perm=[1, 0])
+        
         self.loss = loss
         self.mask = mask
 
         print("loss: ", loss)
         print("acc: ", accuracy)
-        optimizer = tf.train.AdamOptimizer(0.0001)
-        self.train_op = optimizer.minimize(self.loss)
 
 
     def step(self, sess, mode, trarin_batch):

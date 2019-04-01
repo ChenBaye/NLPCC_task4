@@ -109,7 +109,6 @@ class Model:
         slot_logits = tf.add(tf.matmul(temp, self.slot_W), self.slot_b)
         print(slot_logits.shape)
 
-
         # 计算slot预测值，并再把前两个维度还原
         self.slot= tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
         self.slot = tf.transpose(self.slot, perm = [1,0])
@@ -118,39 +117,30 @@ class Model:
 
 
         # 定义slot标注的损失
+        scores = tf.reshape(slot_logits, [-1, self.input_steps, self.slot_size])
 
+        #log_likelihood, transition_params = tf.contrib.crf.crf_log_likelihood(
+        #    scores, self.slot_targets, self.inputs_actual_length)
 
-        # adding extra statistics to monitor
-        # y_inputs.shape = [batch_size, timestep_size]
+        #loss = tf.reduce_mean(-log_likelihood)
+
         correct_prediction = tf.equal(tf.cast(tf.argmax(slot_logits, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-        cost = tf.reduce_mean(
-            tf.nn.sparse_softmax_cross_entropy_with_logits(labels=tf.reshape(self.slot_targets, [-1]), logits=slot_logits))
-        self.loss = cost
-        self.mask = []
-        print("cost: ", cost)
+
+        losses = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=scores, labels=self.slot_targets)
+        # shape = (batch, sentence, nclasses)
+        mask = tf.sequence_mask(self.inputs_actual_length)
+        # apply mask
+        losses = tf.boolean_mask(losses, mask)
+
+        loss = tf.reduce_mean(losses)
+        self.loss = loss
+        self.mask = mask
+
+        print("loss: ", loss)
         print("acc: ", accuracy)
-        tvars = tf.trainable_variables()
-        # 获取损失函数对于每个参数的梯度
-        grads, _ = tf.clip_by_global_norm(tf.gradients(cost, tvars), 5.0)
-        # 优化器
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.0001)
-        # 梯度下降计算
-        self.train_op = optimizer.apply_gradients(zip(grads, tvars),
-                                             global_step=tf.contrib.framework.get_or_create_global_step())
-
-        # 定义intent分类的损失
-        # cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
-        #    labels=tf.one_hot(self.intent_targets, depth=self.intent_size, dtype=tf.float32),
-        #    logits=intent_logits)
-        # loss_intent = tf.reduce_mean(cross_entropy)
-        # 二次代价函数
-
-        # self.loss = loss_slot + loss_intent
-        #self.loss = loss_slot
-        # 优化函数、学习率
-        # optimizer = tf.train.AdamOptimizer(learning_rate=0.001,name="a_optimizer")
-        # self.train_op = optimizer.minimize(self.loss)
+        optimizer = tf.train.AdamOptimizer(0.0001)
+        self.train_op = optimizer.minimize(self.loss)
 
 
     def step(self, sess, mode, trarin_batch):
