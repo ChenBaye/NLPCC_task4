@@ -122,7 +122,7 @@ class Model:
 
 
         optimizer = tf.train.AdamOptimizer(0.0001)
-        train_op = optimizer.minimize(loss)
+        self.train_op = optimizer.minimize(loss)
 
         decode_tags, best_score  = tf.contrib.crf.crf_decode(
             scores, transition_params, self.inputs_actual_length)
@@ -137,7 +137,7 @@ class Model:
 
         self.slot = tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
         self.slot = tf.transpose(self.slot, perm=[1, 0])
-        
+
         self.loss = loss
         self.mask = mask
 
