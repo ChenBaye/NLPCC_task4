@@ -122,21 +122,24 @@ class Model:
 
 
         optimizer = tf.train.AdamOptimizer(0.0001)
-        self.train_op = optimizer.minimize(loss)
+        self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
+        print("vars for loss function: ", self.vars)
+        self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
+        self.train_op = optimizer.apply_gradients(zip(self.gradients, self.vars))
 
         decode_tags, best_score  = tf.contrib.crf.crf_decode(
             scores, transition_params, self.inputs_actual_length)
+        # decode_tags大小[batch_size * slot_size]
 
 
 
-        slot_logits = tf.reshape(slot_logits, [-1, self.slot_size])
-        correct_prediction = tf.equal(tf.cast(tf.argmax(slot_logits, 1), tf.int32), tf.reshape(self.slot_targets, [-1]))
+        correct_prediction = tf.equal(decode_tags, tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
         mask = tf.sequence_mask(self.inputs_actual_length)
 
-        self.slot = tf.reshape(tf.argmax(slot_logits, axis=1), [self.batch_size, self.input_steps])
-        self.slot = tf.transpose(self.slot, perm=[1, 0])
+
+        self.slot = tf.transpose(decode_tags, perm=[1, 0])
 
         self.loss = loss
         self.mask = mask

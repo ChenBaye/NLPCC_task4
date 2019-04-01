@@ -140,8 +140,10 @@ class Model:
         print("loss: ", loss)
         print("acc: ", accuracy)
         optimizer = tf.train.AdamOptimizer(0.0001)
-        self.train_op = optimizer.minimize(self.loss)
-
+        self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
+        print("vars for loss function: ", self.vars)
+        self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
+        self.train_op = optimizer.apply_gradients(zip(self.gradients, self.vars))
 
     def step(self, sess, mode, trarin_batch):
         """ perform each batch"""
