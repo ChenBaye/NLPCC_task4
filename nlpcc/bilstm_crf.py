@@ -119,7 +119,7 @@ class Model:
             scores, self.slot_targets, self.inputs_actual_length)
 
         loss = tf.reduce_mean(-log_likelihood)
-
+        self.loss = loss
 
         optimizer = tf.train.AdamOptimizer(0.0001)
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
@@ -131,9 +131,7 @@ class Model:
             scores, transition_params, self.inputs_actual_length)
         # decode_tags大小[batch_size * slot_size]
 
-
-
-        correct_prediction = tf.equal(decode_tags, tf.reshape(self.slot_targets, [-1]))
+        correct_prediction = tf.equal(tf.reshape(decode_tags, [-1]), tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
         mask = tf.sequence_mask(self.inputs_actual_length)
@@ -141,7 +139,6 @@ class Model:
 
         self.slot = tf.transpose(decode_tags, perm=[1, 0])
 
-        self.loss = loss
         self.mask = mask
 
         print("loss: ", loss)
