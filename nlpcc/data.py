@@ -214,8 +214,9 @@ def data_to_file(filename, data):
 
 
 # 用于产生batch
-def getBatch(batch_size, train_data):
-    random.shuffle(train_data)      #将训练集随机排序
+def getBatch(batch_size, train_data, option = "train"):
+    if option=="train":
+        random.shuffle(train_data)      #将训练集随机排序
     sindex = 0
     eindex = batch_size
     while eindex <= len(train_data):

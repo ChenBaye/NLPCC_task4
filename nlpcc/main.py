@@ -4,16 +4,16 @@ import tensorflow as tf
 from nlpcc.data import *
 from nlpcc import *
 # from model import Model
-# from nlpcc.model import Model
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
+from nlpcc.model import Model
 # from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
-from nlpcc.rnn import *
+# from nlpcc.rnn import *
 
 
 input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
@@ -129,7 +129,7 @@ def train(is_debug=False):
         pred_slots = []
         slot_accs = []
         intent_accs = []
-        for j, batch in enumerate(getBatch(batch_size, index_test)):
+        for j, batch in enumerate(getBatch(batch_size, index_test, "test")):
             # 每次循环从标记好的测试集取出一个batch
             # decoder_prediction在此处为 slot_number X batch_size大小的矩阵，
             # 其中slot_number不同的数据结果不同
@@ -270,8 +270,81 @@ def train(is_debug=False):
         P_intent.append(Right_intent / sum)
         P_slot.append(Right_slot / sum)
 
+        #输出结果文件
+        output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
+
     # 输出折线图
     output_picture(P, F1_MACRO, P_intent, P_slot)
+
+
+#输出task结果文件
+def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2intent ,index_test, epoch):
+
+    ALL_SLOT = {'<PAD>': 0, '<UNK>': 1, "O": 2, "B-song": 3, "B-singer": 4, "B-theme": 5,
+                "B-style": 6, "B-age": 7, "B-toplist": 8, "B-emotion": 9, "B-language": 10, "B-instrument": 11,
+                "B-scene": 12, "B-destination": 13, "B-custom_destination": 14, "B-origin": 15,
+                "B-phone_num": 16, "B-contact_name": 17, "I-song": 18, "I-singer": 19, "I-theme": 20,
+                "I-style": 21, "I-age": 22, "I-toplist": 23, "I-emotion": 24, "I-language": 25,
+                "I-instrument": 26, "I-scene": 27, "I-destination": 28, "I-custom_destination": 29,
+                "I-origin": 30, "I-phone_num": 31, "I-contact_name": 32}
+
+    ALL_INTENT = {'<UNK>': 0, "music.play": 1, "music.pause": 2, "music.prev": 3, "music.next": 4,
+                  "navigation.navigation": 5, "navigation.open": 6, "navigation.start_navigation": 7,
+                  "navigation.cancel_navigation": 8, "phone_call.make_a_phone_call": 9, "phone_call.cancel": 10,
+                  "OTHERS": 11}
+    # 储存结果的文件
+    fp = open(path+"\\result\\answer_"+str(epoch),'w',encoding='UTF-8')
+    # 读取前两列
+    data = open(path+"\\result\\corpus.test.nolabel.txt",'r',encoding='UTF-8').readlines()
+
+    data = [t[:-1] for t in data]  # 去掉'\n'
+
+    for i in range(len(data)):      # 将答案一行一行写出
+        intent = index2intent[pred_intents_a[i]]
+        sequence = ""
+        for j in range(index_test[i][2]):   # 语句分词数目
+            if 3 <= pred_slots_a[i][j] <= 17: # 如果是"B-xx"
+                sequence = sequence + "<" + (index2slot[pred_slots_a[i][j]])[2:] + ">"
+                # <slot_name>
+                sequence = sequence + index2word[index_test[i][0][j]]
+                # slot
+                if not(j+1 < index_test[i][2] and       # 未到最后一个
+                       pred_slots_a[i][j+1]>=18 and     # 是“I-xx"
+                       (index2slot[pred_slots_a[i][j]])[2:] == (index2slot[pred_slots_a[i][j+1]])[2:]):
+                    # 如果下一个不是"I-xx"，需要写上</slot_name>
+                    sequence = sequence + "</" + (index2slot[pred_slots_a[i][j]])[2:] + ">"
+
+            elif pred_slots_a[i][j] >= 18:  # 如果是"I-xx"
+                sequence = sequence + index2word[index_test[i][0][j]]
+                # slot
+                if not(j+1 < index_test[i][2] and       # 未到最后一个
+                       pred_slots_a[i][j+1] >= 18 and     # 还是是“I-xx"
+                       (index2slot[pred_slots_a[i][j]])[2:] == (index2slot[pred_slots_a[i][j+1]])[2:]):
+                    # 如果下一个不是"I-xx"，需要写上</slot_name>
+                    sequence = sequence + "</" + (index2slot[pred_slots_a[i][j]])[2:] + ">"
+
+            elif pred_slots_a[i][j] == 2:       # 如果是"O"，直接输出
+                sequence = sequence + index2word[index_test[i][0][j]]
+                # slot
+
+            elif pred_slots_a[i][j] == 0:       # <pad>
+                continue
+            else:       # <unk>
+                sequence = sequence + index2word[index_test[i][0][j]]
+                # slot
+
+        fp.write(data[i]+"\t"+intent+"\t"+sequence+"\n")     #写一行结果
+
+    print("output result...")
+    fp.close()
+
+
+
+
+
+
+
+
 
 
 
