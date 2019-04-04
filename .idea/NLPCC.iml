@@ -2,8 +2,10 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/dataset_process/fasttext" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/query" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/raw_dataset" />
+      <excludeFolder url="file://$MODULE_DIR$/dataset_process/sentence2vec" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/without_blankline" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/word2vec" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/词向量维度结果" />

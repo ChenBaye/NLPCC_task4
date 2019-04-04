@@ -293,7 +293,7 @@ def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2int
                   "navigation.cancel_navigation": 8, "phone_call.make_a_phone_call": 9, "phone_call.cancel": 10,
                   "OTHERS": 11}
     # 储存结果的文件
-    fp = open(path+"\\result\\answer_"+str(epoch),'w',encoding='UTF-8')
+    fp = open(path+"\\result\\answer_"+str(epoch)+".txt",'w',encoding='UTF-8')
     # 读取前两列
     data = open(path+"\\result\\corpus.test.nolabel.txt",'r',encoding='UTF-8').readlines()
 
@@ -302,13 +302,13 @@ def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2int
     for i in range(len(data)):      # 将答案一行一行写出
         intent = index2intent[pred_intents_a[i]]
         sequence = ""
-        for j in range(index_test[i][2]):   # 语句分词数目
+        for j in range(index_test[i][1]):   # 语句分词数目
             if 3 <= pred_slots_a[i][j] <= 17: # 如果是"B-xx"
                 sequence = sequence + "<" + (index2slot[pred_slots_a[i][j]])[2:] + ">"
                 # <slot_name>
                 sequence = sequence + index2word[index_test[i][0][j]]
                 # slot
-                if not(j+1 < index_test[i][2] and       # 未到最后一个
+                if not(j+1 < index_test[i][1] and       # 未到最后一个
                        pred_slots_a[i][j+1]>=18 and     # 是“I-xx"
                        (index2slot[pred_slots_a[i][j]])[2:] == (index2slot[pred_slots_a[i][j+1]])[2:]):
                     # 如果下一个不是"I-xx"，需要写上</slot_name>
@@ -317,7 +317,7 @@ def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2int
             elif pred_slots_a[i][j] >= 18:  # 如果是"I-xx"
                 sequence = sequence + index2word[index_test[i][0][j]]
                 # slot
-                if not(j+1 < index_test[i][2] and       # 未到最后一个
+                if not(j+1 < index_test[i][1] and       # 未到最后一个
                        pred_slots_a[i][j+1] >= 18 and     # 还是是“I-xx"
                        (index2slot[pred_slots_a[i][j]])[2:] == (index2slot[pred_slots_a[i][j+1]])[2:]):
                     # 如果下一个不是"I-xx"，需要写上</slot_name>

@@ -197,6 +197,8 @@ if __name__ == '__main__':
 
     path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  #上上个目录
     # 得到train_labeled.txt 和 train_labeled.txt 两个已经标注好的文件
-    data_handle(train_data,path+"\\nlpcc\\train_test_file\\train_labeled.txt","train")
-    data_handle(test_data,path+"\\nlpcc\\train_test_file\\test_labeled.txt","test")
+    data_handle(train_data, path+"\\nlpcc\\train_test_file\\train_labeled.txt","train")
+    data_handle(test_data, path+"\\nlpcc\\train_test_file\\test_labeled.txt","test")
+    # data_handle(train_data, path + "\\nlpcc\\train_test_file\\no_pad_train.txt", "test")
+
 

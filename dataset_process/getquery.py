@@ -21,6 +21,8 @@ def get_wordfile(filename):
 
     return data_words
 
+
+
 #得到无重复的分词词表
 def get_word_list(data_words):
     word_list = list(set(flatten(data_words)))
@@ -144,6 +146,7 @@ if __name__ == '__main__':
     #取出数据集中每行语句的分词
     train_words = get_wordfile(path+"\\nlpcc\\train_test_file\\train_labeled.txt")
     test_words = get_wordfile(path+"\\nlpcc\\train_test_file\\test_labeled.txt")
+    no_pad_sentences = get_wordfile(path + "\\nlpcc\\train_test_file\\no_pad_train.txt")
 
     # 在train_words.txt中保存train_words
     # save_train_words(train_words)
