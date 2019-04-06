@@ -117,6 +117,8 @@ class Model:
 
         log_likelihood, transition_params = tf.contrib.crf.crf_log_likelihood(
             scores, self.slot_targets, self.inputs_actual_length)
+        print("slot_targets shape: ", self.slot_targets.shape)
+
 
         loss = tf.reduce_mean(-log_likelihood)
         self.loss = loss
@@ -129,6 +131,7 @@ class Model:
 
         decode_tags, best_score  = tf.contrib.crf.crf_decode(
             scores, transition_params, self.inputs_actual_length)
+        print("decode_tags shape: ", decode_tags.shape)
         # decode_tags大小[batch_size * slot_size]
 
         correct_prediction = tf.equal(tf.reshape(decode_tags, [-1]), tf.reshape(self.slot_targets, [-1]))
@@ -138,6 +141,7 @@ class Model:
 
 
         self.slot = tf.transpose(decode_tags, perm=[1, 0])
+        print("self.slot shape: ", self.slot.shape)
 
         self.mask = mask
 

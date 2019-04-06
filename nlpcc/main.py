@@ -10,9 +10,9 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
-from nlpcc.model import Model
+# from nlpcc.model import Model
 # from nlpcc.bilstm import *
-# from nlpcc.bilstm_crf import *
+from nlpcc.bilstm_crf import *
 # from nlpcc.rnn import *
 
 

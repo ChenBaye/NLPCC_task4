@@ -11,6 +11,7 @@ from collections import Counter
 #对会话长度进行pad
 #生成训练文件（未经过数字化）
 #生成测试文件（未经过数字化）
+path = os.path.dirname(os.path.abspath(__file__))  # 上个目录 ...\\dataset_process
 
 flatten = lambda l: [item for sublist in l for item in sublist]  # 二维展成一维
 
@@ -50,11 +51,17 @@ def save_all_sentences(filename1, filename2, option = "no_pad"):
 
 
 def generate_model(min_count, window, size, all_sentences):
-    documents = [TaggedDocument(t[1], [t[0]]) for t in all_sentences]
+    documents = [TaggedDocument(t[1], [i]) for i, t in enumerate(all_sentences)]
     model = Doc2Vec(documents, vector_size=size, window=window, min_count=min_count)
+
 
     path = os.path.dirname(os.path.abspath(__file__))  # 上上个目录
     model.save(path + "\\sentence2vec\\min_count" + str(min_count) + "size" + str(size))
+
+   # print(len(model['浅/浅'.split('/')]))
+    #print(model.infer_vector(['浅','浅']))
+    #print(len(model.infer_vector(['浅', '浅'])))
+
 
     print("sentences2vec over......")
 
@@ -63,8 +70,8 @@ def generate_model(min_count, window, size, all_sentences):
 def generate_datafile(inputname, resultname, length = 30):  # 一个session最多有29轮,留一个空给<EOS>
                                                             # 因此变成30
     # data_list 的每一个元素= [
-    #   [turn1, turn2, ...... '<EOS>', '<PAD>'],
-    #   [intent1, intent2, ..... intent29]
+    #   [turn1, turn2, ......],
+    #   [intent1, intent2, .....]
     # ]
     data_list = []
 
@@ -95,8 +102,8 @@ def generate_datafile(inputname, resultname, length = 30):  # 一个session最�
 
     data_list.append([sentences, intents])  # 加上最后一个session
     # data_list 的每一个元素= [
-    #   [sentence1, sentence2, ...... '<EOS>', '<PAD>'],
-    #   [intent1, intent2, ..... intent29]
+    #   [sentence1, sentence2, ......],
+    #   [intent1, intent2, .....]
     # ]
     # sentence 用"/"分割
 
@@ -134,7 +141,7 @@ def generate_datafile(inputname, resultname, length = 30):  # 一个session最�
             temp = temp[:length]
             temp[-1] = '<EOS>'
         sout.append(temp)
-        data = list(zip(sin, sout, intent))
+        data = list(zip(sin, sout))
 
     print("结尾补上<EOS>+N*<PAD>之后: \n", data[0])
     print("\n")
@@ -146,9 +153,10 @@ def generate_datafile(inputname, resultname, length = 30):  # 一个session最�
 def to_index(data, sentence2index, intent2index):
     # data 的每一个元素= [
     #   [sentence1, sentence2, ...... '<EOS>', '<PAD>'],
-    #   [intent1, intent2, ..... intent29]
+    #   [intent1, intent2, ..... intent30]
     # ]
     # sentence 用"/"分割
+
     new_train = []
     for sin, sout in data:  # 此时数据已经加上pad
 
@@ -161,10 +169,24 @@ def to_index(data, sentence2index, intent2index):
                            sout))
 
         new_train.append([sin_ix, true_length, sout_ix])
+        # 最终每个单元结构为[句子编号list，句子实际长度list，意图list]
 
     return new_train
 
 
+# 用于产生batch
+def getBatch(batch_size, train_data, option="train"):
+    if option == "train":
+        random.shuffle(train_data)  # 将训练集随机排序
+    sindex = 0
+    eindex = batch_size
+    while eindex <= len(train_data):
+        batch = train_data[sindex:eindex]  # 取sindex到eindex-1作为一个batch
+        temp = eindex
+        eindex = eindex + batch_size
+        sindex = temp
+
+        yield batch
 
 
 
@@ -241,17 +263,65 @@ def data_to_file(filename, data):
 
 
 
+
+#随机生成一个长为len，元素在-0.1到0.1的随机list
+def random_list(len):
+    list = []
+    for i in range(len):
+        num1 = np.random.random()/10    # 生成一个[0,0.1)之间的随机数
+        num2 = np.random.random()
+        if num2 >= 0.5:              # 另一个随机数控制正负
+            num1 = num1 * (-1)
+        list.append(num1)
+    # print("list: ",list)
+    return list
+
+
+# 读取模型，并返回一个句向量list， 与sentence2index字典对应
+def get_vector(modelname, sentence2index = eval(open(os.path.dirname(path)+"\\nlpcc\\dic\\sentence2index.txt", 'r', encoding='UTF-8').read())):
+    model = Doc2Vec.load(modelname)
+    sentence_number = len(sentence2index)   # 共有多少个句子
+    vec_size = model.vector_size    # 每个句向量的维度
+    sentence_vector = []                # 存储句向量
+
+
+    # 先随机生成一个句向量列表
+    for i in range(sentence_number):
+        sentence_vector.append(random_list(vec_size))
+
+    print(len(sentence_vector))
+    nothing = 0
+    #for key in sentence2index:
+    #    try:
+    #       vector = model.infer_vector([key.split("/")])
+    #       sentence_vector[sentence2index[key]] = vector
+    #    except: # 发生异常什么都不做
+    #        nothing = nothing + 1
+    #    else:
+    #        continue
+    print("缺少",nothing,"个词向量")
+    print(len(sentence_vector))
+
+
+
+    return sentence_vector
+
+
+
 if __name__ == '__main__':
     path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
     all_sentences = save_all_sentences(path+"\\nlpcc\\train_test_file\\no_pad_train.txt",
                        path + "\\nlpcc\\train_test_file\\test_labeled.txt",
                        option="no_pad")
-    # generate_model(1, 5, 300, all_sentences)
+    generate_model(1, 5, 300, all_sentences)
 
-    generate_dic(all_sentences)
+    #generate_dic(all_sentences)
 
-    generate_datafile(inputname=path+"\\nlpcc\\train_test_file\\no_pad_train.txt",
-                      resultname=path+"\\nlpcc\\train_test_file\\train_sentence_list.npy")
+    #生成训练文件
+    #generate_datafile(inputname=path+"\\nlpcc\\train_test_file\\no_pad_train.txt",
+     #                 resultname=path+"\\nlpcc\\data_list\\train_sentence_list.npy")
+    #生成测试文件
+    #generate_datafile(inputname=path + "\\nlpcc\\train_test_file\\test_labeled.txt",
+     #                 resultname=path+"\\nlpcc\\data_list\\test_sentence_list.npy")
 
-    generate_datafile(inputname=path + "\\nlpcc\\train_test_file\\test_labeled.txt",
-                      resultname=path+"\\nlpcc\\train_test_file\\test_sentence_list.npy.txt")
+    get_vector(path+"\\dataset_process\\sentence2vec\\min_count1size300")
