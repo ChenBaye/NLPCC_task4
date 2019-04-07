@@ -3,6 +3,7 @@ import os
 import random
 import numpy as np
 from collections import Counter
+from gensim.models import Word2Vec
 
 #本文件作用
 #生成句子向量
@@ -299,6 +300,16 @@ def get_vector(modelname, sentence2index = eval(open(os.path.dirname(path)+"\\nl
     #        nothing = nothing + 1
     #    else:
     #        continue
+    i = 0
+    for key in sentence2index:
+        if i<2:
+            continue
+        else:
+            vector = model.infer_vector([key.split("/")])
+            sentence_vector[sentence2index[key]] = vector
+        i = i + 1
+
+
     print("缺少",nothing,"个词向量")
     print(len(sentence_vector))
 
