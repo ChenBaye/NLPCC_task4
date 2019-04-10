@@ -72,6 +72,8 @@ class Model:
             self.out_drop = tf.nn.dropout(output, keep_prob=0.5)
 
         with tf.name_scope('output'):
+            self.slot_W = []
+            self.slot = []
             w = tf.Variable(tf.truncated_normal([self.hidden_size, self.intent_size], stddev=0.1), name='w')
             b = tf.Variable(tf.constant(0.1, shape=[self.intent_size]), name='b')
             self.logits = tf.matmul(self.out_drop, w) + b
@@ -81,6 +83,7 @@ class Model:
 
             self.intent = tf.argmax(tf.nn.softmax(self.logits), 1, name='predict')
             print(self.intent.shape)
+            self.mask = []
 
         with tf.name_scope('loss'):
 
