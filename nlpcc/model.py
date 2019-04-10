@@ -175,7 +175,7 @@ class Model:
 
         self.loss = loss_slot + loss_intent
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.0005,name="a_optimizer")
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.0001,name="a_optimizer")
 
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)

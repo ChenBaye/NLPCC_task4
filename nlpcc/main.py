@@ -421,10 +421,17 @@ def output_picture(P, F1_MACRO, P_intent, P_slot):
     plt.xlabel("epoch")  # 横坐标为轮数
     plt.savefig(path+"\\result\\result.jpg")
 
+
+
 #加入基于规则的模型,针对music.prev、music.next（在训练集中，凡是这两个意图，均无槽)
 # 数据格式
 # index_test 每个单元 = [分词list、分词数目、槽list、意图]
 # def rule_based_model(index_test, pred_intents_a, pred_slots):
+
+
+
+#slot更正模块
+def slot_correct():
 
 
 
