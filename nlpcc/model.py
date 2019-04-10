@@ -39,7 +39,7 @@ class Model:
         #self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
         #                                               -0.1, 0.1), dtype=tf.float32, name="embedding")
 
-        self.embeddings = tf.Variable(self.load_word_embeding(option="fasttext"))
+        self.embeddings = tf.Variable(self.load_word_embeding())
         # 随机生成vocab_size*embedding_size大小的矩阵，元素介于-0.1到0.1
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)

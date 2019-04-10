@@ -3,7 +3,7 @@
 import tensorflow as tf
 from nlpcc.data import *
 from nlpcc import *
-# from nlpcc.model import Model
+from nlpcc.model import Model
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
@@ -13,7 +13,7 @@ import os
 # from nlpcc.model import Model
 # from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
-from nlpcc.rnn import *
+# from nlpcc.rnn import *
 
 
 input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
@@ -138,7 +138,7 @@ def train(is_debug=False):
 
             #print(decoder_prediction)
 
-            #decoder_prediction = np.transpose(decoder_prediction, [1, 0])
+            decoder_prediction = np.transpose(decoder_prediction, [1, 0])
             # 此处将decoder_prediction转置
             #print(decoder_prediction)
 
@@ -157,10 +157,10 @@ def train(is_debug=False):
                 # print("Slot Prediction       : ", index_seq2slot(decoder_prediction[index], index2slot)[:sen_len])
                 # print("Intent Truth          : ", index2intent[batch[index][3]])
                 # print("Intent Prediction     : ", index2intent[intent[index]])
-                #if operator.eq(index_seq2slot(batch[index][2], index2slot)[:sen_len],
-                 #              index_seq2slot(decoder_prediction[index], index2slot)[:sen_len]):
-                 #   Right_slot = Right_slot + 1
-                 #   temp = temp + 1
+                if operator.eq(index_seq2slot(batch[index][2], index2slot)[:sen_len],
+                               index_seq2slot(decoder_prediction[index], index2slot)[:sen_len]):
+                    Right_slot = Right_slot + 1
+                    temp = temp + 1
 
                 # print(batch[index][3])
                 # print(intent[index])
@@ -179,7 +179,7 @@ def train(is_debug=False):
 
             pred_intents.append(intent)
             # 将各个 batch 预测出的 intent 列入 pred_intents
-            decoder_prediction = np.array((list(zip(*batch))[2]))
+
             # 此处因为转置decoder_prediction为 batch_size X slot_number大小的矩阵，
             slot_pred_length = list(np.shape(decoder_prediction))[1]    # 得到slot_number
             pred_padded = np.lib.pad(decoder_prediction, ((0, 0), (0, input_steps-slot_pred_length)),
