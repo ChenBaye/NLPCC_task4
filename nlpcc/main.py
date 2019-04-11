@@ -3,6 +3,7 @@
 import tensorflow as tf
 from nlpcc.data import *
 from nlpcc import *
+from nlpcc.correct_slot import *
 from nlpcc.model import Model
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
@@ -279,7 +280,7 @@ def train(is_debug=False):
 
 
 def calculate_result():
-    answer = open(path + "\\result\\right_answer.txt", 'r', encoding='UTF-8')
+    answer = open(path + "\\result\\right_answer.txt", 'r', encoding='UTF-8').readlines()
     answer = [m[:-1] for m in answer]  # 去掉'\n'，读入每一行
     answer_list = [[
                     t.split("\t")[2],  # 第三部分 意图
@@ -290,7 +291,7 @@ def calculate_result():
     P_intent_list = []
     P_all_list = []
     for i in range(epoch_num):
-        result = open(path + "\\result\\answer_" + str(i) + ".txt", 'r', encoding='UTF-8')
+        result = open(path + "\\result\\answer_" + str(i) + ".txt", 'r', encoding='UTF-8').readlines()
         result = [t[:-1] for t in result]  # 去掉'\n'，读入每一行
 
         result_list = [[
@@ -328,6 +329,51 @@ def calculate_result():
     print("epoch",P_intent_list.index(max(P_intent_list)),"意图")
     print("epoch", P_slot_list.index(max(P_slot_list)), "槽")
     print("epoch", P_all_list.index(max(P_all_list)), "语句")
+
+
+def calculate_onefile(filename):
+    answer = open(path + "\\result\\right_answer.txt", 'r', encoding='UTF-8').readlines()
+    answer = [m[:-1] for m in answer]  # 去掉'\n'，读入每一行
+    answer_list = [[
+        t.split("\t")[2],  # 第三部分 意图
+        t.split("\t")[3]]  # 第四部分 序列（未标注）
+        for t in answer]
+
+
+    result = open(filename, 'r', encoding='UTF-8').readlines()
+    result = [t[:-1] for t in result]  # 去掉'\n'，读入每一行
+
+    result_list = [[
+        t.split("\t")[2],              # 第三部分 意图
+        t.split("\t")[3]]              # 第四部分 序列（r未标注）
+        for t in result]
+
+
+    slot_right = 0
+    intent_right = 0
+    all_right = 0
+    for j in range(len(result)):
+
+        all = True
+        if result_list[j][0] == answer_list[j][0]:   #意图正确
+            intent_right = intent_right + 1
+        else:
+            all = False
+
+        if result_list[j][1] == answer_list[j][1]:   #槽正确
+            slot_right = slot_right + 1
+        else:
+            all = False
+            print(result_list[j][1])
+            print(answer_list[j][1])
+            print(j)
+
+        if all == True:
+            all_right = all_right + 1
+
+    print("意图: ", intent_right/len(result))
+    print("槽: ", slot_right/len(result))
+    print("语句: ", all_right/len(result))
 
 
 
@@ -430,10 +476,6 @@ def output_picture(P, F1_MACRO, P_intent, P_slot):
 
 
 
-#slot更正模块
-def slot_correct():
-
-
 
 
 
@@ -471,5 +513,9 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    train()
+    #train()
+    #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
 
+    calculate_onefile(path+"\\result\\answer_0.txt")
+    calculate_onefile(path+"\\result\\rule_result.txt")
+    #calculate_onefile(path + "\\result\\dic_result.txt")

@@ -8,7 +8,7 @@ import copy
 
 #只有如下槽
 slot=["song","singer","theme","style","age","toplist","emotion","language","instrument","scene",
-      "destination","custom_destination","phone_num","contact_name"]
+      "destination","custom_destination","origin","phone_num","contact_name"]
 #只有如下意图
 intent=["music.play", "music.pause", "music.prev", "music.next", "navigation.navigation"
     , "navigation.open", "navigation.start_navigation", "navigation.cancel_navigation",

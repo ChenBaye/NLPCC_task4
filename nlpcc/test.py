@@ -44,7 +44,7 @@ if __name__ == '__main__':
     print(seg_char("*请帮我100放,t一首1*2the well, in the best girls run and run"))
     print(seg_char("*11 text"))
 
-
+    '''
     fw_cell = tf.nn.rnn_cell.BasicRNNCell(128)
     bw_cell = tf.nn.rnn_cell.BasicRNNCell(256)
     inputs = tf.Variable(tf.random_normal([100, 40, 300]))  # [batch_size,timestep,embedding_dim]
@@ -66,7 +66,27 @@ if __name__ == '__main__':
     sess = tf.Session()
     print(sess.run(b))
     print(sess.run(c))
+    '''
+    slot_category = ["age", "custom_destination", "emotion", "instrument", "language",
+                     "scene", "singer", "song", "style", "theme", "toplist"]
+    str = "放一首<singer>罗大佑</singer>的<song>皇后</song><singer>大</singer><song>道东</song>"
+    slot_list = re.findall("[<]" + slot_category[6] + "[>].*?[<]/" + slot_category[6] + "[>]", str)  # 提取尖括号中内容
+    print(slot_list)
+    i = str.index(">")
+    j = str.index("</")
+    print(str.index(">"))
+    print(str.index("</"))
+    print(str[i+1:j])
 
+    temp_str = "播放一首我们不一样asdf"
+    value = "我们不一样"
+    index_start = temp_str.index(value)
+    index_end = index_start + len(value)
+    print(index_start)
+    print(index_end)
+    print(temp_str[:index_start])
+    print(temp_str[index_start:index_end])
+    print(temp_str[index_end:])
 
 
 
