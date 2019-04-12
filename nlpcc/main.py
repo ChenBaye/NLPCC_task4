@@ -153,18 +153,12 @@ def train(is_debug=False):
                 sum = sum + 1
                 sen_len = batch[index][1]
                 temp = 0
-                # print("Input Sentence        : ", index_seq2word(batch[index][0], index2word)[:sen_len])
-                # print("Slot Truth            : ", index_seq2slot(batch[index][2], index2slot)[:sen_len])
-                # print("Slot Prediction       : ", index_seq2slot(decoder_prediction[index], index2slot)[:sen_len])
-                # print("Intent Truth          : ", index2intent[batch[index][3]])
-                # print("Intent Prediction     : ", index2intent[intent[index]])
+
                 if operator.eq(index_seq2slot(batch[index][2], index2slot)[:sen_len],
                                index_seq2slot(decoder_prediction[index], index2slot)[:sen_len]):
                     Right_slot = Right_slot + 1
                     temp = temp + 1
 
-                # print(batch[index][3])
-                # print(intent[index])
 
                 if operator.eq(index2intent[batch[index][3]],
                                index2intent[intent[index]]):
@@ -275,7 +269,7 @@ def train(is_debug=False):
         output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
 
     # 输出折线图
-    output_picture(P, F1_MACRO, P_intent, P_slot)
+    # output_picture(P, F1_MACRO, P_intent, P_slot)
     calculate_result()
 
 
@@ -514,7 +508,7 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    #train()
+    train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
 
     calculate_onefile(path+"\\result\\answer_0.txt")
