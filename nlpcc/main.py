@@ -267,8 +267,10 @@ def train(is_debug=False):
 
 
         #输出结果文件（包括编码形式和文字形式)
-        result = [pred_intents_a, pred_slots_a]
-        np.save(path + "\\result\\result_"+epoch, np.array(result))
+
+        np.save(path + "\\result\\pred_slots_"+str(epoch), np.array(pred_slots_a))
+
+        np.save(path + "\\result\\pred_intents_" + str(epoch), np.array(pred_intents_a))
 
         output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
 
@@ -442,10 +444,10 @@ def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2int
 
 
 # 与槽字典的预测结果合并
-def use_dic(resultfile):
-    result = np.load(resultfile).tolist()
-    pre_slot = result[0]        #模型训练出的结果
-    pre_intent = result[1]      #模型训练出的结果
+def use_dic(slotfile, intentfile):
+
+    pre_slot = np.load(slotfile).tolist()       #模型训练出的结果
+    pre_intent = np.load(intentfile).tolist()      #模型训练出的结果
     dic_slot = np.load(path + "\\slot-dictionaries\\dic_slot.npy").tolist()     #使用槽字典得出的结果
     dic_intent = np.load(path + "\\slot-dictionaries\\dic_intent.npy").tolist()
 
