@@ -3,7 +3,7 @@
 import tensorflow as tf
 from nlpcc.data import *
 from nlpcc import *
-from nlpcc.correct_slot import *
+# from nlpcc.correct_slot import *
 from nlpcc.model import Model
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
@@ -17,12 +17,12 @@ import os
 # from nlpcc.rnn import *
 
 
-input_steps = 40    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
+input_steps = 45    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
 embedding_size = 300 # 词向量维度
 hidden_size = 100   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
-vocab_size = 14405  # 共14405个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14405
+vocab_size = 4329  # 共14405个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14405
 slot_size = 33      # 有多少种slot_tag
 intent_size = 12    # 有多少种意图
 epoch_num = 50      # 将所有样本全部训练一次为一个epoch
@@ -347,6 +347,7 @@ def calculate_onefile(filename):
         t.split("\t")[2],              # 第三部分 意图
         t.split("\t")[3]]              # 第四部分 序列（r未标注）
         for t in result]
+    print(result_list[647])
 
 
     slot_right = 0
@@ -518,4 +519,4 @@ if __name__ == '__main__':
 
     calculate_onefile(path+"\\result\\answer_0.txt")
     calculate_onefile(path+"\\result\\rule_result.txt")
-    #calculate_onefile(path + "\\result\\dic_result.txt")
+    calculate_onefile(path + "\\result\\dic_result.txt")

@@ -5,86 +5,7 @@ import Levenshtein
 
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
-# 结合字典进行槽识别
-def combine_dic(result_file):
-    dic_list = np.load(path + "\\slot-dictionaries\\11_slot_dics.npy").tolist()
-    slot_category = ["age", "custom_destination", "emotion", "instrument", "language",
-                     "scene", "singer", "song", "style", "theme", "toplist"]
 
-    # 读取训练结果
-    data = open(result_file, 'r', encoding='UTF-8').readlines()
-    data = [m[:-1] for m in data]  # 去掉'\n'，读入每一行
-
-    data = [[t.split("\t")[0],  # 第一部分 数字不变
-             t.split("\t")[1],  # 第二部分 分出中文字、英文、数字
-             t.split("\t")[2],  # 第三部分 意图
-             t.split("\t")[3]]  # 第四部分 序列（未标注）
-            for t in data]
-
-    dic_slot = []  # 经过DIC预处理得到的一批槽
-    intent = []  # 经过DIC预处理的到的意图
-    for i in range(len(data)):
-        dic_slot.append([0] * 40)       #新建Time_steps大的数组
-        #temp_str = data[i][1]
-        for j in range(len(slot_category)):
-            value = ""
-            for m in range(len(dic_list[j])):
-                if m == 1:      # 不匹配custom_destination类型的槽
-                    continue
-                if(dic_list[j][m] in data[i][1]) and len(dic_list[j][m]) > len(value):
-                    value =  dic_list[j][m]
-
-            if (len(value)>=1 and j==6 and value!="高飞"):                        #singer
-                data[i][2] = "music.play"
-                print(i," ",value," ",j)
-            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要"):     #song
-                data[i][2] = "music.play"
-                print(i, " ", value, " ", j)
-            elif (j!=6 and j!=7 and len(value)>=3):
-                data[i][2] = "music.play"
-                print(i, " ", value, " ", j)
-            else:
-                continue
-
-
-            #类似于给  播放一首我们不一样 打上<song>标记
-            # temp_str = "播放一首我们不一样"
-            # value = "我们不一样"
-
-            #temp_str = insert_slot(value, temp_str, slot_category[j])
-
-        #data[i][3] = temp_str
-
-
-
-    fp = open(path + "\\result\\dic_result.txt", 'w', encoding='UTF-8')
-
-    for i in range(len(data)):
-        fp.write(data[i][0])  # 写语句数字编号（如：188126）
-        fp.write("\t")
-
-        fp.write(data[i][1])
-
-        fp.write("\t")
-
-        fp.write(data[i][2])
-
-        fp.write("\t")  # 此处用空tab隔开
-        fp.write(data[i][3])  # 最后写 意图（如：OTHERS）
-
-        fp.write("\n")
-
-    fp.close()
-
-# 类似于给  播放一首我们不一样 打上<song>标记
-# temp_str = "播放一首我们不一样"
-# value = "我们不一样"
-def insert_slot(value, temp_str, slot_str):
-    # 找到value的起始、结束位置
-    index_start = temp_str.index(value)
-    index_end = index_start + len(value)
-
-    return temp_str[:index_start]+"<"+slot_str+">"+temp_str[index_start:index_end]+"</"+slot_str+">"+temp_str[index_end:]
 
 
 
@@ -256,6 +177,8 @@ def correct(slot, slot_list):   # 在dic中
         return slot_list[edit_distance.index(min(edit_distance))]
 
 '''
+# 汉字转拼音
+# "天空" ==>"tian1kong1"
 def pinyin_str(str):
     print(str)
     return ''.join(pinyin(str, style=Style.TONE3))
@@ -263,6 +186,5 @@ def pinyin_str(str):
 
 
 if __name__ == '__main__':
-    combine_dic(path + "\\result\\answer_0.txt")
     #slot_correct(path + "\\result\\blstm_crf_slot.txt")
     rule_based(path + "\\result\\dic_result.txt")
