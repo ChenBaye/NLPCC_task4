@@ -48,9 +48,9 @@ def combine_dic():
 
             dic_intent[i] = "music.play"
             dic_slot[i] = change_slot(value, data[i][2], dic_slot[i], slot_category[j], slot2index)
-            #print(data[i][2])
-            #print(value)
-            #print(dic_slot[i])
+            print(data[i][2])
+            print(value)
+            print(dic_slot[i])
 
     np.save(path + "\\slot-dictionaries\\dic_slot", np.array(dic_slot))
     np.save(path + "\\slot-dictionaries\\dic_intent", np.array(dic_intent))

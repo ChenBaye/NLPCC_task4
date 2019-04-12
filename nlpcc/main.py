@@ -534,6 +534,6 @@ if __name__ == '__main__':
     train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
 
-    calculate_onefile(path+"\\result\\answer_0.txt")
-    calculate_onefile(path+"\\result\\rule_result.txt")
-    calculate_onefile(path + "\\result\\dic_result.txt")
+    #calculate_onefile(path+"\\result\\answer_0.txt")
+    #calculate_onefile(path+"\\result\\rule_result.txt")
+    #calculate_onefile(path + "\\result\\dic_result.txt")
