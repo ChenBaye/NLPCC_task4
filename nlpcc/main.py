@@ -265,7 +265,11 @@ def train(is_debug=False):
         P_intent.append(Right_intent / sum)
         P_slot.append(Right_slot / sum)
 
-        #输出结果文件
+
+        #输出结果文件（包括编码形式和文字形式)
+        result = [pred_intents_a, pred_slots_a]
+        np.save(path + "\\result\\result_"+epoch, np.array(result))
+
         output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
 
     # 输出折线图
@@ -324,7 +328,7 @@ def calculate_result():
     print("epoch", P_slot_list.index(max(P_slot_list)), "槽")
     print("epoch", P_all_list.index(max(P_all_list)), "语句")
 
-
+# 单独计算一个文件的结果
 def calculate_onefile(filename):
     answer = open(path + "\\result\\right_answer.txt", 'r', encoding='UTF-8').readlines()
     answer = [m[:-1] for m in answer]  # 去掉'\n'，读入每一行
@@ -374,7 +378,7 @@ def calculate_onefile(filename):
 
 
 #输出task结果文件
-def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2intent ,index_test, epoch):
+def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2intent ,index_test, epoch="test"):
 
     ALL_SLOT = {'<PAD>': 0, '<UNK>': 1, "O": 2, "B-song": 3, "B-singer": 4, "B-theme": 5,
                 "B-style": 6, "B-age": 7, "B-toplist": 8, "B-emotion": 9, "B-language": 10, "B-instrument": 11,
@@ -437,6 +441,25 @@ def output_result(pred_intents_a, pred_slots_a, index2word, index2slot,index2int
 
 
 
+# 与槽字典的预测结果合并
+def use_dic(resultfile):
+    result = np.load(resultfile).tolist()
+    pre_slot = result[0]        #模型训练出的结果
+    pre_intent = result[1]      #模型训练出的结果
+    dic_slot = np.load(path + "\\slot-dictionaries\\dic_slot.npy").tolist()     #使用槽字典得出的结果
+    dic_intent = np.load(path + "\\slot-dictionaries\\dic_intent.npy").tolist()
+
+    for i in range(len(pre_slot)):
+        for j in range(len(pre_slot[i])):
+            if dic_slot[i][j]!=0:
+                pre_slot[i][j] = dic_slot[i][j]
+
+    for i in range(len(pre_intent)):
+        if dic_intent[i] != 0:
+            pre_intent[i] = dic_intent[i]
+
+
+    return pre_slot, pre_intent
 
 
 
