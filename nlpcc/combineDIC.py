@@ -46,7 +46,7 @@ def combine_dic():
             else:
                 continue
 
-            dic_intent[i] = "music.play"
+            dic_intent[i] = 1 # "music.play"
             dic_slot[i] = change_slot(value, data[i][2], dic_slot[i], slot_category[j], slot2index)
             print(data[i][2])
             print(value)

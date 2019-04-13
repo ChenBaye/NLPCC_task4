@@ -533,9 +533,23 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    train()
+    #train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
 
-    #calculate_onefile(path+"\\result\\answer_0.txt")
-    #calculate_onefile(path+"\\result\\rule_result.txt")
-    #calculate_onefile(path + "\\result\\dic_result.txt")
+    word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
+    index2word = file_to_dictionary(path + "\\dic\\index2word.txt")
+    slot2index = file_to_dictionary(path + "\\dic\\slot2index.txt")
+    index2slot = file_to_dictionary(path + "\\dic\\index2slot.txt")
+    intent2index = file_to_dictionary(path + "\\dic\\intent2index.txt")
+    index2intent = file_to_dictionary(path + "\\dic\\index2intent.txt")
+    test_data_ed = file_to_list(path + "\\data_list\\test_list.npy")
+    index_test = to_index(test_data_ed, word2index, slot2index, intent2index)
+
+    calculate_onefile(path+"\\result\\model_result.txt")
+    pre_slot, pre_intent = use_dic(path+"\\result\\pred_slots_model.npy",
+                                   path + "\\result\\pred_intents_model.npy")
+
+
+    output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 99)
+
+    calculate_onefile(path + "\\result\\answer_99.txt")
