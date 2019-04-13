@@ -37,20 +37,32 @@ def combine_dic():
                 if(dic_list[j][m] in data[i][1]) and (len(dic_list[j][m]) > len(value)):
                     value = dic_list[j][m]
 
-            if (len(value)>=1 and j==6 and value!="高飞"):                        #singer
+            if (len(value)>=1 and j==6 and value!="高飞"):                        # singer6
                 print(i," ",value," ",j)
-            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要"):     #song
+            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要"):     # song7
+                print(i, " ", value, " ", j)
+            elif (j==8 and len(value) >= 1):                        # style8
+                print(i, " ", value, " ", j)
+            elif (j==4 and len(value) >= 1 and value!="外国"):                        # language4
+                print(i, " ", value, " ", j)
+            elif (j==3 and len(value) >= 1):                        # instrument3
+                print(i, " ", value, " ", j)
+            elif (j==2 and len(value) >= 1):                      # emotion2
+                print(i, " ", value, " ", j)
+            elif (j == 9 and (len(value) >= 3)):                      # theme9
+                print(i, " ", value, " ", j)
+            elif (j == 10 and (len(value) >= 3)):                      # toplist10
                 print(i, " ", value, " ", j)
             elif (j!=6 and j!=7 and len(value)>=3):                             #other slot
-                print(i, " ", value, " ", 3)
+                print(i, " ", value, " ", j)
             else:
                 continue
 
-            dic_intent[i] = 1 # "music.play"
+            dic_intent[i] = "music.play"
             dic_slot[i] = change_slot(value, data[i][2], dic_slot[i], slot_category[j], slot2index)
-            print(data[i][2])
+            print(data[i][1])
             print(value)
-            print(dic_slot[i])
+            #print(dic_slot[i])
 
     np.save(path + "\\slot-dictionaries\\dic_slot", np.array(dic_slot))
     np.save(path + "\\slot-dictionaries\\dic_intent", np.array(dic_intent))
