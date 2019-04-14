@@ -49,8 +49,8 @@ class Model:
         # 使用单个LSTM cell
         encoder_f_cell_0 = LSTMCell(self.hidden_size)
         encoder_b_cell_0 = LSTMCell(self.hidden_size)
-        encoder_f_cell = DropoutWrapper(encoder_f_cell_0,output_keep_prob=0.5)
-        encoder_b_cell = DropoutWrapper(encoder_b_cell_0,output_keep_prob=0.5)
+        encoder_f_cell = DropoutWrapper(encoder_f_cell_0,output_keep_prob=0.2)
+        encoder_b_cell = DropoutWrapper(encoder_b_cell_0,output_keep_prob=0.2)
         #防止过拟合
 
         # encoder_inputs_time_major = tf.transpose(self.encoder_inputs_embedded, perm=[1, 0, 2])
@@ -175,7 +175,7 @@ class Model:
 
         self.loss = loss_slot + loss_intent
         # 优化函数、学习率
-        optimizer = tf.train.AdamOptimizer(learning_rate=0.0001,name="a_optimizer")
+        optimizer = tf.train.AdamOptimizer(learning_rate=0.001,name="a_optimizer")
 
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
