@@ -491,15 +491,32 @@ def output_picture(P, F1_MACRO, P_intent, P_slot):
     plt.savefig(path+"\\result\\result.jpg")
 
 
+# 输出task2的文件
+def output_task2(resultfile):
+    data = open(resultfile, 'r', encoding='UTF-8').readlines()
+    data = [m[:-1] for m in data]  # 去掉'\n'，读入每一行
 
-#加入基于规则的模型,针对music.prev、music.next（在训练集中，凡是这两个意图，均无槽)
-# 数据格式
-# index_test 每个单元 = [分词list、分词数目、槽list、意图]
-# def rule_based_model(index_test, pred_intents_a, pred_slots):
+    data = [[t.split("\t")[0],  # 第一部分 数字不变
+             t.split("\t")[1],  # 第二部分 分出中文字、英文、数字
+             t.split("\t")[2],  # 第三部分 意图
+             ]
+            for t in data]
 
+    fp = open(resultfile+"_task2.txt", 'w', encoding='UTF-8')
 
+    for i in range(len(data)):
+        fp.write(data[i][0])  # 写语句数字编号（如：188126）
+        fp.write("\t")
 
+        fp.write(data[i][1])
 
+        fp.write("\t")
+
+        fp.write(data[i][2])
+
+        fp.write("\n")
+
+    fp.close()
 
 
 
