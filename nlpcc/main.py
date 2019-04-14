@@ -536,9 +536,9 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    #train()
+    train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
-
+    '''
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
     index2word = file_to_dictionary(path + "\\dic\\index2word.txt")
     slot2index = file_to_dictionary(path + "\\dic\\slot2index.txt")
@@ -558,3 +558,4 @@ if __name__ == '__main__':
     calculate_onefile(path + "\\result\\answer_99.txt")
     rule_based(path + "\\result\\answer_99.txt")
     calculate_onefile(path + "\\result\\rule_result.txt")
+    '''
