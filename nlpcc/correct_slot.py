@@ -90,9 +90,11 @@ def rule_based(result_file):
              t.split("\t")[3]]  # 第四部分 序列（未标注）
             for t in data]
 
+    num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    call_token =["呼叫", "拨打", "电话", "打给"]  # 含有打电话含义的字符串
     cancel_token = ["取消", "退出", "放弃", "结束", "不用", "没需要", "停止", "关闭"]
     start_token = ["开始", "继续", "恢复", "切换"]
-    for i in range(len(data)):  # 针对"取消"采取基于规则的方法
+    for i in range(len(data)):  # 采取基于规则的方法
 
         # 开始导航、继续导航、恢复导航、切换导航、导航    ==>navigation.start_navigation
         if (data[i][1] == "导航") or(token_in_str(start_token, data[i][1]) and ("导航" in data[i][1])):
@@ -131,6 +133,26 @@ def rule_based(result_file):
             data[i][2] = "music.prev"
             data[i][3] = data[i][1]     # 该意图无槽
 
+        elif(token_in_str(num, data[i][1])): # 针对电话号码采用基于规则的方法
+            char_list = seg_char(data[i][1])    # 先分字
+            if (len(char_list) == 1) and isphonenum(char_list[0]) and len(char_list[0]) == 11:
+                # 只出现了电话号码，查看上一轮意图 ,及电话号码长度
+                if("phone_call" in data[i-1][2]):
+                    data[i][3] = "<phone_num>" + data[i][1] + "</phone_num>"
+                    data[i][2] = "phone_call.make_a_phone_call"
+
+            elif token_in_str(call_token, data[i][1]):      # 出现了电话相关字符串
+                data[i][3] = ""
+                for t in char_list:
+                    if isphonenum(t):    # 如果是电话号码，加上槽标记
+                        data[i][3] = data[i][3] + "<phone_num>" + t + "</phone_num>"
+                    else:                   # 如果不是，直接复制
+                        data[i][3] = data[i][3] + t
+                data[i][2] = "phone_call.make_a_phone_call"
+
+
+
+
 
 
 
@@ -153,6 +175,15 @@ def rule_based(result_file):
 
     fp.close()
 
+# 判断一个字符串是不是全是数字
+def isphonenum(str):
+    num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    for i in range(len(str)):
+        if not(str[i] in num):
+            return False
+
+    return True
+
 
 # token列表中的元素是否在str中
 def token_in_str(token, str):
@@ -163,6 +194,13 @@ def token_in_str(token, str):
     return False
 
 
+
+#把句子按字分开，不破坏英文、数字结构
+def seg_char(sent):
+    pattern = re.compile(r'([\u4e00-\u9fa5])')
+    chars = pattern.split(sent)
+    chars = [w for w in chars if len(w.strip())>0]
+    return chars
 
 
 # 输入slot 和 slot字典，纠正slot

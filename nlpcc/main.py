@@ -2,6 +2,7 @@
 # @author: cer
 import tensorflow as tf
 from nlpcc.data import *
+from nlpcc.correct_slot import *
 from nlpcc import *
 # from nlpcc.correct_slot import *
 from nlpcc.model import Model
@@ -11,6 +12,8 @@ import numpy as np
 import operator
 import matplotlib.pyplot as plt
 import os
+
+
 # from nlpcc.model import Model
 # from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
@@ -553,3 +556,5 @@ if __name__ == '__main__':
     output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 99)
 
     calculate_onefile(path + "\\result\\answer_99.txt")
+    rule_based(path + "\\result\\answer_99.txt")
+    calculate_onefile(path + "\\result\\rule_result.txt")

@@ -29,7 +29,7 @@ if __name__ == '__main__':
     t=" ".join(seg_list)
     print(t)
 
-    seg_list = jieba.cut("请帮我放一首the well in the best girls run and run", HMM=True)  # 使用HMM模型
+    seg_list = jieba.cut("播放风情万的歌曲", HMM=True)  # 使用HMM模型
     print("~".join(seg_list).split('~'))
     print("请帮我放一首the well in the best girls run and run".split(" "))
     print(list(jieba.cut("请帮我放一首the well in the best girls run and run", HMM=True)))

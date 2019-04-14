@@ -39,7 +39,7 @@ def combine_dic():
 
             if (len(value)>=1 and j==6 and value!="高飞"):                        # singer6
                 print(i," ",value," ",j)
-            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要"):     # song7
+            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要" and value!="80000"):     # song7
                 print(i, " ", value, " ", j)
             elif (j==8 and len(value) >= 1):                        # style8
                 print(i, " ", value, " ", j)
@@ -51,14 +51,14 @@ def combine_dic():
                 print(i, " ", value, " ", j)
             elif (j == 9 and (len(value) >= 3)):                      # theme9
                 print(i, " ", value, " ", j)
-            elif (j == 10 and (len(value) >= 3)):                      # toplist10
+            elif (j == 10 and (len(value) >= 2)):                      # toplist10
                 print(i, " ", value, " ", j)
             elif (j!=6 and j!=7 and len(value)>=3):                             #other slot
                 print(i, " ", value, " ", j)
             else:
                 continue
 
-            dic_intent[i] = "music.play"
+            dic_intent[i] = 1
             dic_slot[i] = change_slot(value, data[i][2], dic_slot[i], slot_category[j], slot2index)
             print(data[i][1])
             print(value)
