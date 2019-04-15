@@ -5,7 +5,7 @@ from nlpcc.data import *
 from nlpcc.correct_slot import *
 from nlpcc import *
 # from nlpcc.correct_slot import *
-from nlpcc.model import Model
+
 from nlpcc.my_metrics import *
 from tensorflow.python import debug as tf_debug
 import numpy as np
@@ -13,9 +13,9 @@ import operator
 import matplotlib.pyplot as plt
 import os
 
-
 # from nlpcc.model import Model
-# from nlpcc.bilstm import *
+# from nlpcc.model import Model
+from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
 # from nlpcc.rnn import *
 
@@ -275,6 +275,7 @@ def train(is_debug=False):
 
         np.save(path + "\\result\\pred_intents_" + str(epoch), np.array(pred_intents_a))
 
+        pred_intents_a = [1]*5350
         output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
 
     # 输出折线图

@@ -139,7 +139,7 @@ class Model:
 
         print("loss: ", loss)
         print("acc: ", accuracy)
-        optimizer = tf.train.AdamOptimizer(0.0001)
+        optimizer = tf.train.AdamOptimizer(0.001)
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
         self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
