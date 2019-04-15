@@ -141,7 +141,7 @@ class Model:
         grads_and_vars = optimizer.compute_gradients(self.loss)
         self.train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 
-        self.slot = []
+        self.slot = tf.Variable(tf.constant(2, shape=[self.input_steps, self.batch_size]))
         self.mask = []
         self.slot_W = []
 

@@ -73,7 +73,8 @@ class Model:
 
         with tf.name_scope('output'):
             self.slot_W = []
-            self.slot = []
+            self.slot = tf.Variable(tf.constant(2, shape=[self.input_steps, self.batch_size]))
+
             w = tf.Variable(tf.truncated_normal([self.hidden_size, self.intent_size], stddev=0.1), name='w')
             b = tf.Variable(tf.constant(0.1, shape=[self.intent_size]), name='b')
             self.logits = tf.matmul(self.out_drop, w) + b
@@ -95,7 +96,7 @@ class Model:
             print("loss: ", self.loss)
 
         with tf.name_scope('optimizer'):
-            optimizer = tf.train.AdamOptimizer(0.0001)
+            optimizer = tf.train.AdamOptimizer(0.001)
             gradients, variables = zip(*optimizer.compute_gradients(self.loss))  # 计算变量梯度，得到梯度值,变量
             gradients, _ = tf.clip_by_global_norm(gradients, 5)
             # 对g进行l2正则化计算，比较其与clip的值，如果l2后的值更大，让梯度*(clip/l2_g),得到新梯度

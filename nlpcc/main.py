@@ -16,8 +16,8 @@ import os
 # from nlpcc.model import Model
 # from nlpcc.model import Model
 # from nlpcc.bilstm import *
-from nlpcc.bilstm_crf import *
-# from nlpcc.rnn import *
+# from nlpcc.bilstm_crf import *
+from nlpcc.rnn import *
 
 
 input_steps = 45    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
@@ -140,7 +140,6 @@ def train(is_debug=False):
             # intent为   1 X batch_size 大小的矩阵
             decoder_prediction, intent = model.step(sess, "test", batch)
 
-            #print(decoder_prediction)
 
             decoder_prediction = np.transpose(decoder_prediction, [1, 0])
             # 此处将decoder_prediction转置
@@ -198,6 +197,7 @@ def train(is_debug=False):
 
             true_slot = true_slot[:, :slot_pred_length]
             # 此处将batch的slot截取成和decoder_prediction一样的长度（slot_pred_length）
+
 
             slot_acc = accuracy_score(true_slot, decoder_prediction, true_length)
             # 计算槽准确率，此时true_slot与decoder_prediction单个向量长度均为slot_pred_length
@@ -275,7 +275,6 @@ def train(is_debug=False):
 
         np.save(path + "\\result\\pred_intents_" + str(epoch), np.array(pred_intents_a))
 
-        pred_intents_a = [1]*5350
         output_result(pred_intents_a, pred_slots_a, index2word, index2slot, index2intent, index_test, epoch)
 
     # 输出折线图
@@ -577,3 +576,8 @@ if __name__ == '__main__':
     rule_based(path + "\\result\\answer_99.txt")
     calculate_onefile(path + "\\result\\rule_result.txt")
     '''
+    #calculate_onefile(path + "\\result\\jointmodel_result.txt")
+    #calculate_onefile(path + "\\result\\blstmcrf_result.txt")
+    #calculate_onefile(path + "\\result\\blstm_result.txt")
+    #output_task2(path + "\\result\\jointmodel_result.txt")
+    #output_task2(path + "\\result\\rnn_result.txt")
