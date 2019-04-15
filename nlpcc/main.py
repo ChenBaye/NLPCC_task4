@@ -17,7 +17,8 @@ import os
 # from nlpcc.model import Model
 # from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
-from nlpcc.rnn import *
+# from nlpcc.rnn import *
+from nlpcc.rnn2 import *
 
 
 input_steps = 45    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
