@@ -11,7 +11,6 @@
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/词向量维度结果" />
       <excludeFolder url="file://$MODULE_DIR$/nlpcc/data_list" />
       <excludeFolder url="file://$MODULE_DIR$/nlpcc/dic" />
-      <excludeFolder url="file://$MODULE_DIR$/nlpcc/result" />
       <excludeFolder url="file://$MODULE_DIR$/nlpcc/slot-dictionaries" />
       <excludeFolder url="file://$MODULE_DIR$/nlpcc/train_test_file" />
     </content>
