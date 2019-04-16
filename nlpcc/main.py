@@ -18,7 +18,8 @@ import os
 # from nlpcc.bilstm import *
 # from nlpcc.bilstm_crf import *
 # from nlpcc.rnn import *
-from nlpcc.rnn2 import *
+# from nlpcc.rnn2 import *
+from nlpcc.AttentionRNN import *
 
 
 input_steps = 45    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
@@ -557,7 +558,7 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    # train()
+    train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
 
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
@@ -597,6 +598,6 @@ if __name__ == '__main__':
 
     #output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 1024)
 
-    rule_based(path + "\\result\\answer_1024.txt")
-    calculate_onefile(path + "\\result\\rule_result.txt")
-    output_task2(path + "\\result\\rule_result.txt")
+    #rule_based(path + "\\result\\answer_1024.txt")
+    #calculate_onefile(path + "\\result\\rule_result.txt")
+    #output_task2(path + "\\result\\rule_result.txt")

@@ -61,6 +61,7 @@ class Model:
             print(output.shape)
             # output:[seq_length, batch_size, hidden_dim]
             output = tf.transpose(output, [1,0,2])
+            # output:[batch_size, seq_length, hidden_dim]
             print(output.shape)
 
             output = tf.reduce_sum(output, axis=1)
