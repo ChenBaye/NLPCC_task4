@@ -57,6 +57,7 @@ def slot_correct(result_file):
     slot_category = ["age", "custom_destination", "emotion", "instrument", "language",
                      "scene", "singer", "song", "style", "theme", "toplist"]
 
+
     # 读取训练结果
     data = open(result_file, 'r', encoding='UTF-8').readlines()
     data = [m[:-1] for m in data]  # 去掉'\n'，读入每一行
@@ -94,6 +95,10 @@ def rule_based(result_file):
     call_token =["呼叫", "拨打", "电话", "打给"]  # 含有打电话含义的字符串
     cancel_token = ["取消", "退出", "放弃", "结束", "不用", "没需要", "停止", "关闭"]
     start_token = ["开始", "继续", "恢复", "切换"]
+
+    # 读取姓氏表
+    family_name = open(path + "\\slot-dictionaries\\family_name.txt", 'r', encoding='UTF-8').readlines()
+    family_name = [m[:-1] for m in family_name]  # 去掉'\n'，读入每一行
     for i in range(len(data)):  # 采取基于规则的方法
 
         # 开始导航、继续导航、恢复导航、切换导航、导航    ==>navigation.start_navigation
@@ -106,7 +111,7 @@ def rule_based(result_file):
             data[i][2] = "phone_call.cancel"
             data[i][3] = data[i][1]  # 该意图无槽
 
-        elif data[i][1] in cancel_token:
+        elif data[i][1] in cancel_token:        # 只有取消、退出等动词
             data[i][3] = data[i][1]  # 该意图无槽
             session = data[i][0]
             if session != data[i-1][0]:         # 是对话开头
@@ -135,13 +140,18 @@ def rule_based(result_file):
 
         elif(token_in_str(num, data[i][1])): # 针对电话号码采用基于规则的方法
             char_list = seg_char(data[i][1])    # 先分字
+            # 11位数字单独出现标记成电话号码
             if (len(char_list) == 1) and isphonenum(char_list[0]) and len(char_list[0]) == 11:
+                data[i][3] = "<phone_num>" + data[i][1] + "</phone_num>"
+                data[i][2] = "phone_call.make_a_phone_call"
+            # 不是11位数字单独出现必须在3位以上且有上文
+            elif (len(char_list) == 1) and isphonenum(char_list[0]) and len(char_list[0]) >= 3:
                 # 只出现了电话号码，查看上一轮意图 ,及电话号码长度
                 if("phone_call" in data[i-1][2]):
                     data[i][3] = "<phone_num>" + data[i][1] + "</phone_num>"
                     data[i][2] = "phone_call.make_a_phone_call"
 
-            elif token_in_str(call_token, data[i][1]):      # 出现了电话相关字符串
+            elif token_in_str(call_token, data[i][1]):      # 出现了打电话相关字符串
                 data[i][3] = ""
                 for t in char_list:
                     if isphonenum(t):    # 如果是电话号码，加上槽标记
@@ -149,6 +159,16 @@ def rule_based(result_file):
                     else:                   # 如果不是，直接复制
                         data[i][3] = data[i][3] + t
                 data[i][2] = "phone_call.make_a_phone_call"
+
+        # 长度在2、3，可能是人名，单独出现的人名（不是歌手）只可能为
+        elif(2<len(data[i][1])<=3):
+            if data[i][1][0] in family_name:    #如果开头是姓氏
+                if data[i-1][0] == data[i-1][0] and "phone_call" in data[i-1][2]:
+                    #如果上文为同一个session且为phone_call领域
+                    data[i][2] = "phone_call.make_a_phone_call"
+                    data[i][3] = "<contact_name>" + data[i][1] + "</contact_name>"
+
+
 
 
 

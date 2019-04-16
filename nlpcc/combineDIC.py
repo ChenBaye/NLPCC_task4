@@ -34,7 +34,7 @@ def combine_dic():
                 continue
             value = ""
             for m in range(len(dic_list[j])):
-                if(dic_list[j][m] in data[i][1]) and (len(dic_list[j][m]) > len(value)):
+                if(dic_list[j][m] in data[i][1]) and (len(dic_list[j][m]) >= len(value)):
                     value = dic_list[j][m]
 
             if (len(value)>=1 and j==6 and value!="高飞"):                        # singer6
