@@ -77,7 +77,13 @@ class Model(object):
                     logits=self.logits,
                     labels=self.intent_targets
                 ))
-            self.train_op = tf.train.AdamOptimizer(0.001).minimize(self.loss, global_step=self.global_step)
+
+            optimizer = tf.train.AdamOptimizer(0.001)
+            gradients, variables = zip(*optimizer.compute_gradients(self.loss))  # 计算变量梯度，得到梯度值,变量
+            gradients, _ = tf.clip_by_global_norm(gradients, 5)
+            # 对g进行l2正则化计算，比较其与clip的值，如果l2后的值更大，让梯度*(clip/l2_g),得到新梯度
+            self.train_op = optimizer.apply_gradients(zip(gradients, variables), global_step=self.global_step)
+            # global_step 自动+1
 
         with tf.name_scope("accuracy"):
             correct_predictions = tf.equal(self.predictions, self.intent_targets)
