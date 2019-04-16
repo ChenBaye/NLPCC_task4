@@ -63,8 +63,12 @@ class Model:
             print(output.shape)
             # output:[seq_length, batch_size, hidden_dim]
 
+            temp_output = tf.placeholder(tf.int32, [self.input_steps, self.batch_size, self.hidden_size])
+            for i in range(self.inputs_actual_length):
+                temp = output[self.inputs_actual_length[i]][i]
+                temp_output.append(temp)
 
-            output = output[-1]
+            output = temp_output
             # batch_size * hidden_size
             print(output.shape)
 
