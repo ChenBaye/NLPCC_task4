@@ -560,7 +560,7 @@ if __name__ == '__main__':
     #calculate_result()
     train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
-
+    '''
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
     index2word = file_to_dictionary(path + "\\dic\\index2word.txt")
     slot2index = file_to_dictionary(path + "\\dic\\slot2index.txt")
@@ -569,7 +569,7 @@ if __name__ == '__main__':
     index2intent = file_to_dictionary(path + "\\dic\\index2intent.txt")
     test_data_ed = file_to_list(path + "\\data_list\\test_list.npy")
     index_test = to_index(test_data_ed, word2index, slot2index, intent2index)
-    '''
+    
     calculate_onefile(path+"\\result\\model_result.txt")
     pre_slot, pre_intent = use_dic(path+"\\result\\pred_slots_model.npy",
                                    path + "\\result\\pred_intents_model.npy")
