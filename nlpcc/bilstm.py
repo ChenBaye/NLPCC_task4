@@ -83,14 +83,9 @@ class Model:
         self.slot_W = tf.Variable(tf.random_uniform([self.hidden_size * 2, self.slot_size], -1, 1),
                              dtype=tf.float32, name="slot_W")
         self.slot_b = tf.Variable(tf.zeros([self.slot_size]), dtype=tf.float32, name="slot_b")
-        intent_W = tf.Variable(tf.random_uniform([self.hidden_size * 2, self.intent_size], -0.1, 0.1),
-                               dtype=tf.float32, name="intent_W")
-        intent_b = tf.Variable(tf.zeros([self.intent_size]), dtype=tf.float32, name="intent_b")
 
-        # 求intent
-        intent_logits = tf.add(tf.matmul(encoder_final_state_h, intent_W), intent_b)
-        # intent_prob = tf.nn.softmax(intent_logits)
-        self.intent = tf.argmax(intent_logits, axis=1)
+
+        self.intent = tf.Variable(tf.zeros([self.batch_size]), dtype=tf.float32, name="slot_b")
         #返回最大值对应索引，即最可能的意图
 
         # 求slot

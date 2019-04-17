@@ -83,15 +83,7 @@ class Model:
         self.slot_W = tf.Variable(tf.random_uniform([self.hidden_size * 2, self.slot_size], -1, 1),
                              dtype=tf.float32, name="slot_W")
         self.slot_b = tf.Variable(tf.zeros([self.slot_size]), dtype=tf.float32, name="slot_b")
-        intent_W = tf.Variable(tf.random_uniform([self.hidden_size * 2, self.intent_size], -0.1, 0.1),
-                               dtype=tf.float32, name="intent_W")
-        intent_b = tf.Variable(tf.zeros([self.intent_size]), dtype=tf.float32, name="intent_b")
 
-        # 求intent
-        intent_logits = tf.add(tf.matmul(encoder_final_state_h, intent_W), intent_b)
-        # intent_prob = tf.nn.softmax(intent_logits)
-        self.intent = tf.argmax(intent_logits, axis=1)
-        #返回最大值对应索引，即最可能的意图
 
         # 求slot
         # encoder_outputs:
@@ -123,7 +115,7 @@ class Model:
         loss = tf.reduce_mean(-log_likelihood)
         self.loss = loss
 
-        optimizer = tf.train.AdamOptimizer(0.0001)
+        optimizer = tf.train.AdamOptimizer(0.001)
         self.grads, self.vars = zip(*optimizer.compute_gradients(self.loss))
         print("vars for loss function: ", self.vars)
         self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
@@ -144,6 +136,7 @@ class Model:
         print("self.slot shape: ", self.slot.shape)
 
         self.mask = mask
+        self.intent = tf.Variable(tf.constant(2, shape=[self.batch_size]))
 
         print("loss: ", loss)
         print("acc: ", accuracy)
