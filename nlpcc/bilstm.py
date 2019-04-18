@@ -84,8 +84,7 @@ class Model:
                              dtype=tf.float32, name="slot_W")
         self.slot_b = tf.Variable(tf.zeros([self.slot_size]), dtype=tf.float32, name="slot_b")
 
-
-        self.intent = tf.Variable(tf.zeros([self.batch_size]), dtype=tf.float32, name="slot_b")
+        self.intent = tf.Variable(tf.constant(2, shape=[self.batch_size]))
         #返回最大值对应索引，即最可能的意图
 
         # 求slot
