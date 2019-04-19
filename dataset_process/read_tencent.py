@@ -43,7 +43,7 @@ def load_vectors(tencenttext, word2index = eval(open(os.path.dirname(path)+"\\nl
 
 # 读取挑选过词向量
 def get_vector():
-    f = open(path+"\\fasttext\\word_vector.txt", 'r', encoding='UTF-8')
+    f = open(path+"\\tencent\\word_vector.txt", 'r', encoding='UTF-8')
     data = eval(f.read())
     f.close()
     return data
