@@ -96,11 +96,14 @@ def rule_based(result_file):
     cancel_token = ["取消", "退出", "放弃", "结束", "不用", "没需要", "停止", "关闭"]
     start_token = ["开始", "继续", "恢复", "切换"]
 
+    slot2index = file_to_dictionary(path + "\\dic\\slot2index.txt")
+    dic_list = np.load(path + "\\slot-dictionaries\\11_slot_dics.npy").tolist()
+    slot_category = ["age", "custom_destination", "emotion", "instrument", "language",
+                     "scene", "singer", "song", "style", "theme", "toplist"]
     # 读取姓氏表
     family_name = open(path + "\\slot-dictionaries\\family_name.txt", 'r', encoding='UTF-8').readlines()
     family_name = [m[:-1] for m in family_name]  # 去掉'\n'，读入每一行
     for i in range(len(data)):  # 采取基于规则的方法
-
         # 开始导航、继续导航、恢复导航、切换导航、导航    ==>navigation.start_navigation
         if (data[i][1] == "导航") or(token_in_str(start_token, data[i][1]) and ("导航" in data[i][1])):
             data[i][2] = "navigation.start_navigation"
@@ -160,13 +163,32 @@ def rule_based(result_file):
                         data[i][3] = data[i][3] + t
                 data[i][2] = "phone_call.make_a_phone_call"
 
-        # 长度在2、3，可能是人名，单独出现的人名（不是歌手）只可能为
-        elif(2<len(data[i][1])<=3):
-            if data[i][1][0] in family_name:    #如果开头是姓氏
-                if data[i-1][0] == data[i-1][0] and "phone_call" in data[i-1][2]:
+        # 长度在2、3，可能是单独出现的人名(或singer)
+        elif(2 <= len(data[i][1]) <= 3):
+            if data[i][1][0] in family_name:    #如果开头是姓氏，确定为人名
+                if data[i-1][0] == data[i-1][0]:    #上文为同一个session
+                    if "phone_call" in data[i-1][2]:
                     #如果上文为同一个session且为phone_call领域
-                    data[i][2] = "phone_call.make_a_phone_call"
-                    data[i][3] = "<contact_name>" + data[i][1] + "</contact_name>"
+                        data[i][2] = "phone_call.make_a_phone_call"
+                        data[i][3] = "<contact_name>" + data[i][1] + "</contact_name>"
+                    #elif ("music" in data[i-1][2]):
+                     #   data[i][2] = "music.play"
+                     #   data[i][3] = "<singer>" + data[i][1] + "</singer>"
+                     #   data[i][3] = "<singer>" + data[i][1] + "</singer>"
+                #else:
+                    #if not(data[i][1] in dic_list[6]):
+                    #如果没有上一轮，标为OTHERS
+                    #data[i][2] = "OTHERS"
+                    #data[i][3] =  data[i][1]
+
+        if data[i][2] == "OTHERS":      #整理OTHERS类的输出
+            data[i][3] = data[i][1]
+
+        # 还可添加若intent = OTHERS 则无槽
+        # 还可添加 使用 hanlp进行词性分析如果只有名词或动词...
+
+
+
 
 
 
@@ -234,6 +256,16 @@ def correct(slot, slot_list):   # 在dic中
         print(slot, "改为", slot_list[edit_distance.index(min(edit_distance))])
         return slot_list[edit_distance.index(min(edit_distance))]
 
+# 从file中读取数据（字典）
+def file_to_dictionary(filename):
+    print("ready to get dictionary:",filename,"............\n")
+    f = open(filename, 'r', encoding='UTF-8')
+    data = eval(f.read())
+    f.close()
+
+    return data
+
+
 '''
 # 汉字转拼音
 # "天空" ==>"tian1kong1"
@@ -245,4 +277,6 @@ def pinyin_str(str):
 
 if __name__ == '__main__':
     #slot_correct(path + "\\result\\blstm_crf_slot.txt")
-    rule_based(path + "\\result\\dic_result.txt")
+    #rule_based(path + "\\result\\dic_result.txt")
+
+    rule_based(path + "\\result\\answer_1025.txt")

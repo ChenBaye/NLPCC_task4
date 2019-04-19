@@ -6,6 +6,7 @@ import sys
 import os
 from dataset_process import word_embeding
 from dataset_process import read_fasttext
+from dataset_process import read_tencent
 
 class Model(object):
     def __init__(self, input_steps, embedding_size, hidden_size, vocab_size, slot_size,
@@ -121,7 +122,10 @@ class Model(object):
         if option == "word2vec":
             path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
             list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count1size300")  # 生成向量
-        else:
+        elif option == "fasttext":
             print("get fasttext word_vector...")
             list = read_fasttext.get_vector()       #读取fastext的词向量
+        elif option == "tencent":
+            print("get tencent word_vector")        #读取tencent词向量
+            list = read_tencent.get_vector()
         return list

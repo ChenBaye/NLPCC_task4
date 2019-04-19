@@ -365,17 +365,19 @@ def calculate_onefile(filename):
             intent_right = intent_right + 1
         else:
             all = False
-            print(result_list[j][0])
-            print(answer_list[j][0])
-            print(j)
+            # print(j)
+            #print(result_list[j][0])
+            #print(answer_list[j][0])
+
 
         if result_list[j][1] == answer_list[j][1]:   #槽正确
             slot_right = slot_right + 1
         else:
             all = False
-            #print(result_list[j][1])
-            #print(answer_list[j][1])
-            #print(j)
+            print(j)
+            print(result_list[j][1])
+            print(answer_list[j][1])
+
 
         if all == True:
             all_right = all_right + 1
@@ -558,7 +560,7 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    train()
+    #train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
     '''
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
@@ -593,13 +595,13 @@ if __name__ == '__main__':
     #calculate_onefile(path + "\\result\\answer_1024.txt")
     #output_task2(path + "\\result\\answer_1024.txt")
 
-    #pre_slot, pre_intent = use_dic(path + "\\result\\pred_slots_jointmodel.npy",
+    #pre_slot, pre_intent = use_dic(path + "\\result\\pred_slots_blstmcrf.npy",
     #                               path + "\\result\\pred_intents_jointmodel.npy")
 
-    #output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 1024)
-
-    #rule_based(path + "\\result\\answer_1024.txt")
-    #calculate_onefile(path + "\\result\\rule_result.txt")
+    #output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 1025)
+    #calculate_onefile(path + "\\result\\answer_1025.txt")
+    #output_task2(path + "\\result\\answer_1025.txt")
+    #rule_based(path + "\\result\\answer_1025.txt")
     #output_task2(path + "\\result\\rule_result.txt")
-    #calculate_onefile(path + "\\result\\crf_result.txt")
-    #calculate_onefile(path + "\\result\\answer_4.txt")
+    calculate_onefile(path + "\\result\\answer_1025.txt")
+    calculate_onefile(path + "\\result\\rule_result.txt")

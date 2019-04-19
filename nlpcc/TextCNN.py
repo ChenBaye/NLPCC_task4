@@ -8,6 +8,7 @@ import sys
 import os
 from dataset_process import word_embeding
 from dataset_process import read_fasttext
+from dataset_process import read_tencent
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
