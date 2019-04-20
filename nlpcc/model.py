@@ -66,6 +66,7 @@ class Model:
 
         encoder_final_state_c = tf.concat(
             (encoder_fw_final_state.c, encoder_bw_final_state.c), 1)
+        # xxx.c和xxx.h指的是最后一个时间步的c和h
 
         encoder_final_state_h = tf.concat(
             (encoder_fw_final_state.h, encoder_bw_final_state.h), 1)

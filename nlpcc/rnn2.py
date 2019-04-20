@@ -57,20 +57,14 @@ class Model:
             # hidden一层 输入是[seq_length ,batch_size, embendding_dim]
             # hidden二层 输入是[seq_length ,batch_size, 2*hidden_dim]
             # 2*hidden_dim = embendding_dim + hidden_dim
-            output, _ = tf.nn.dynamic_rnn(cell=Cell,
+            _, final_states = tf.nn.dynamic_rnn(cell=Cell,
                                           inputs=self.encoder_inputs_embedded,
                                           sequence_length=self.inputs_actual_length,
                                           dtype=tf.float32, time_major=True)
-            print(output.shape)
-            # output:[seq_length, batch_size, hidden_dim]
+            # final_states = [(c,h)...(c,h)]  一共num_layer个
 
-            temp_output = tf.placeholder(tf.int32, [self.input_steps, self.batch_size, self.hidden_size])
-            for i in range(self.inputs_actual_length):
-                temp = output[self.inputs_actual_length[i]][i]
-                temp_output.append(temp)
-
-            output = temp_output
-            # batch_size * hidden_size
+            output = tf.concat((final_states[0].h, final_states[1].h), 1)
+            # [batch_size ,2* hidden_size]
             print(output.shape)
 
 
@@ -81,7 +75,7 @@ class Model:
             self.slot_W = []
             self.slot = tf.Variable(tf.constant(2, shape=[self.input_steps, self.batch_size]))
 
-            w = tf.Variable(tf.truncated_normal([self.hidden_size, self.intent_size], stddev=0.1), name='w')
+            w = tf.Variable(tf.truncated_normal([self.hidden_size * 2, self.intent_size], stddev=0.1), name='w')
             b = tf.Variable(tf.constant(0.1, shape=[self.intent_size]), name='b')
             self.logits = tf.matmul(self.out_drop, w) + b
             # batch_size * intent_size
