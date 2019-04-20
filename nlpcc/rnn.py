@@ -39,7 +39,7 @@ class Model:
 
     def build(self):
 
-        self.embeddings = tf.Variable(self.load_word_embeding())
+        self.embeddings = tf.Variable(self.load_word_embeding(option = "tencent"))
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 

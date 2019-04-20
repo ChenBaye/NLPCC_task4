@@ -31,7 +31,7 @@ class Model(object):
 
     def build(self):
         with tf.name_scope("embedding"):
-            self.embeddings = tf.Variable(self.load_word_embeding())
+            self.embeddings = tf.Variable(self.load_word_embeding(option = "tencent"))
             self.x_emb = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 
         with tf.name_scope("birnn"):

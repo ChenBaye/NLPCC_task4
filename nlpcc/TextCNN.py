@@ -52,7 +52,7 @@ class Model:
 
         self.W = tf.Variable(
             # 它将词汇表的词索引映射到低维向量表示。它基本上是我们从数据中学习到的lookup table
-            tf.Variable(self.load_word_embeding()),
+            tf.Variable(self.load_word_embeding(option = "tencent")),
             name="W")
         # 创建实际的embedding操作。embedding操作的结果是形状为 [None, sequence_length, embedding_size] 的3维张量积
         self.embedded_chars = tf.nn.embedding_lookup(self.W, self.encoder_inputs)
@@ -169,12 +169,16 @@ class Model:
         results = sess.run(output_feeds, feed_dict=feed_dict)   #为tensor赋值
         return results
 
+
     # 装载词向量
     def load_word_embeding(self, option = "word2vec"):
         if option == "word2vec":
             path1 = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # 上上个目录
             list = word_embeding.get_vector(path1 + "\\dataset_process\\word2vec\\min_count1size300")  # 生成向量
-        else:
+        elif option == "fasttext":
             print("get fasttext word_vector...")
             list = read_fasttext.get_vector()       #读取fastext的词向量
+        elif option == "tencent":
+            print("get tencent word_vector")        #读取tencent词向量
+            list = read_tencent.get_vector()
         return list

@@ -14,17 +14,17 @@ import matplotlib.pyplot as plt
 import os
 
 # from nlpcc.model import Model
-# from nlpcc.model import Model
 # from nlpcc.bilstm import *
-from nlpcc.bilstm_crf import *
+# from nlpcc.bilstm_crf import *
 # from nlpcc.rnn import *
 # from nlpcc.rnn2 import *
-# from nlpcc.AttentionRNN import *
+from nlpcc.AttentionRNN import *
+# from nlpcc.TextCNN import *
 
 
 input_steps = 45    # 每一条数据设置为input_steps长度（input_steps个槽、词），一句最长实际上为40
 embedding_size = 200 # 词向量维度
-hidden_size = 256   # 隐藏层的节点数
+hidden_size = 128   # 隐藏层的节点数
 n_layers = 2        # lstm层数
 batch_size = 25     # 批大小，每次训练给神经网络喂入的数据量大小
 vocab_size = 4330  # 共14405个不同词，，在编程中又加入了<PAD> <UNK> <EOS>，变成14405
@@ -560,7 +560,7 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    train()
+    #train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
     '''
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
@@ -586,14 +586,14 @@ if __name__ == '__main__':
     #calculate_onefile(path + "\\result\\jointmodel_result.txt")
     #calculate_onefile(path + "\\result\\blstmcrf_result.txt")
     #calculate_onefile(path + "\\result\\blstm_result.txt")
-    #output_task2(path + "\\result\\jointmodel_result.txt")
-    #output_task2(path + "\\result\\rnn_result.txt")
+    #output_task2(path + "\\result\\jointmodel_ai_result.txt")
+    #output_task2(path + "\\result\\TextCNN_ai_result.txt")
 
     #pre_slot = np.load(path+"\\result\\pred_slots_blstmcrf.npy").tolist()  # 模型训练出的结果
     #pre_intent = np.load(path + "\\result\\pred_intents_jointmodel.npy").tolist()  # 模型训练出的结果
     #output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 1024)
     #calculate_onefile(path + "\\result\\answer_1024.txt")
-    #output_task2(path + "\\result\\answer_1024.txt")
+    output_task2(path + "\\result\\AttentionRNN_ai_result.txt")
 
     #pre_slot, pre_intent = use_dic(path + "\\result\\pred_slots_blstmcrf.npy",
     #                               path + "\\result\\pred_intents_jointmodel.npy")
