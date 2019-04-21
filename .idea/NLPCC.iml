@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/fasttext" />
+      <excludeFolder url="file://$MODULE_DIR$/dataset_process/feature" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/query" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/raw_dataset" />
       <excludeFolder url="file://$MODULE_DIR$/dataset_process/sentence2vec" />
