@@ -15,11 +15,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class Model:
     def __init__(self, input_steps, embedding_size, hidden_size, vocab_size, slot_size,
-                 intent_size, epoch_num, batch_size=16, n_layers=1):
+                 intent_size, epoch_num, batch_size=16, n_layers=1, feature=False):
         self.input_steps = input_steps
         self.embedding_size = embedding_size
         self.hidden_size = hidden_size
         self.n_layers = n_layers
+        self.feature = feature      #是否使用特征向量
         self.batch_size = batch_size
         self.vocab_size = vocab_size
         self.slot_size = slot_size
@@ -37,11 +38,15 @@ class Model:
 
     def build(self):
 
-        #self.embeddings = tf.Variable(tf.random_uniform([self.vocab_size, self.embedding_size],
-        #                                               -0.1, 0.1), dtype=tf.float32, name="embedding")
-        # 随机生成vocab_size*embedding_size大小的矩阵，元素介于-0.1到0.1
+
         self.embeddings = tf.Variable(self.load_word_embeding(option = "tencent"))
 
+        if self.feature == True:
+            feature_vector = self.load_feature()
+            feature_vector = tf.constant(feature_vector)
+            self.feature = tf.layers.dense(feature_vector, self.embedding_size)
+            self.embeddings = tf.concat((self.feature, self.embeddings), 1)
+            self.embedding_size = 2 * self.embedding_size
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
 
@@ -180,3 +185,10 @@ class Model:
             print("get tencent word_vector")        #读取tencent词向量
             list = read_tencent.get_vector()
         return list
+
+    # 读取特征向量
+    def load_feature(self):
+        path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # 上上个目录
+        combine_vector = np.load(path + "\\dataset_process\\feature\\feature_vector.npy").tolist()
+        return combine_vector
