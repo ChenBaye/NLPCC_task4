@@ -15,9 +15,9 @@ import os
 
 # from nlpcc.model import Model
 # from nlpcc.bilstm import *
-# from nlpcc.bilstm_crf import *
+from nlpcc.bilstm_crf import *
 # from nlpcc.rnn import *
-from nlpcc.rnn2 import *
+# from nlpcc.rnn2 import *
 # from nlpcc.AttentionRNN import *
 # from nlpcc.TextCNN import *
 
@@ -559,9 +559,9 @@ if __name__ == '__main__':
     #train(is_debug=True)
     #test_data()
     #calculate_result()
-    #train()
+    train()
     #calculate_onefile(path + "\\result\\blstm_crf_slot.txt")
-
+    '''
     word2index = file_to_dictionary(path + "\\dic\\word2index.txt")
     index2word = file_to_dictionary(path + "\\dic\\index2word.txt")
     slot2index = file_to_dictionary(path + "\\dic\\slot2index.txt")
@@ -570,7 +570,7 @@ if __name__ == '__main__':
     index2intent = file_to_dictionary(path + "\\dic\\index2intent.txt")
     test_data_ed = file_to_list(path + "\\data_list\\test_list.npy")
     index_test = to_index(test_data_ed, word2index, slot2index, intent2index)
-    '''
+    
     calculate_onefile(path+"\\result\\model_result.txt")
     pre_slot, pre_intent = use_dic(path+"\\result\\pred_slots_model.npy",
                                    path + "\\result\\pred_intents_model.npy")
@@ -588,6 +588,7 @@ if __name__ == '__main__':
     #output_task2(path + "\\result\\jointmodel_ai_result.txt")
     #output_task2(path + "\\result\\TextCNN_ai_result.txt")
 
+    '''
     pre_slot = np.load(path+"\\result\\pred_slots_blstmcrf_ai.npy").tolist()  # 模型训练出的结果
     pre_intent = np.load(path + "\\result\\pred_intents_jointmodel_ai.npy").tolist()  # 模型训练出的结果
     output_result(pre_intent, pre_slot, index2word, index2slot, index2intent, index_test, 1024)
@@ -603,3 +604,4 @@ if __name__ == '__main__':
     rule_based(path + "\\result\\answer_1025.txt")
     calculate_onefile(path + "\\result\\rule_result.txt")
     output_task2(path + "\\result\\rule_result.txt")
+    '''

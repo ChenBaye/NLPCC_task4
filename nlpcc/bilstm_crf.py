@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class Model:
     def __init__(self, input_steps, embedding_size, hidden_size, vocab_size, slot_size,
-                 intent_size, epoch_num, batch_size=16, n_layers=1, feature=False):
+                 intent_size, epoch_num, batch_size=16, n_layers=1, feature=True):
         self.input_steps = input_steps
         self.embedding_size = embedding_size
         self.hidden_size = hidden_size
@@ -49,7 +49,7 @@ class Model:
             self.embedding_size = 2 * self.embedding_size
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
-
+        print("embeddings :",self.embeddings.shape)
         # Encoder
 
         # 使用单个LSTM cell
