@@ -41,6 +41,7 @@ class Model:
 
         self.embeddings = tf.Variable(self.load_word_embeding(option = "tencent"))
 
+        # 拼接特征向量和词向量
         if self.feature == True:
             feature_vector = self.load_feature()
             feature_vector = tf.constant(feature_vector)
