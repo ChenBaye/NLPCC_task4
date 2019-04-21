@@ -2,7 +2,7 @@
 import jieba
 import re
 import os
-import tensorflow as tf
+import jieba.posseg as psg
 
 
 
@@ -87,6 +87,14 @@ if __name__ == '__main__':
     print(temp_str[:index_start])
     print(temp_str[index_start:index_end])
     print(temp_str[index_end:])
+
+    for x in psg.cut("我们不一样"):
+        print(x.word, x.flag)
+        print(type(x.flag))
+        print(len("我们不一样"))
+
+
+
 
 
 
