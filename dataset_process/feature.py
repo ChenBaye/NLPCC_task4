@@ -211,17 +211,19 @@ def seg_char(sent):
 
 
 if __name__ == '__main__':
-    '''
+
     post_vector = post_feature()        # 词性特征向量
     domain_vector = domain_feature()    # 领域特征向量
-    combine_vector =np.hstack((post_vector, domain_vector)) # 合并特征向量
+    #combine_vector =np.hstack((post_vector, domain_vector)) # 合并特征向量
+    ''' 
     print(len(combine_vector))
     print(len(combine_vector[0]))
     print(combine_vector[66])
     print(combine_vector[100][24])
-    # 储存特征向
-    np.save(path + "\\feature\\feature_vector", np.array(combine_vector))
     '''
+    # 储存特征向
+    np.save(path + "\\feature\\feature_vector", np.array(domain_vector))
+
     combine_vector = np.load(path + "\\feature\\feature_vector.npy").tolist()
     print(len(combine_vector))
     print(len(combine_vector[0]))

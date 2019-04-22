@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class Model:
     def __init__(self, input_steps, embedding_size, hidden_size, vocab_size, slot_size,
-                 intent_size, epoch_num, batch_size=16, n_layers=1, feature=True):
+                 intent_size, epoch_num, batch_size=16, n_layers=1, feature=False):
         self.input_steps = input_steps
         self.embedding_size = embedding_size
         self.hidden_size = hidden_size
@@ -40,14 +40,21 @@ class Model:
 
 
         self.embeddings = tf.Variable(self.load_word_embeding(option = "tencent"))
-
+        '''
         # 拼接特征向量和词向量
         if self.feature == True:
             feature_vector = self.load_feature()
             feature_vector = tf.constant(feature_vector)
-            self.feature = tf.layers.dense(feature_vector, self.embedding_size)
-            self.embeddings = tf.concat((self.feature, self.embeddings), 1)
-            self.embedding_size = 2 * self.embedding_size
+            #W = tf.Variable(tf.random_uniform([84, 100], -1, 1),
+            #                dtype=tf.float32, name="slot_W")
+
+            #b = tf.Variable(tf.zeros([100]), dtype=tf.float32)
+            #self.feature = tf.add(tf.matmul(feature_vector, W), b)
+
+            self.feature = tf.layers.dense(feature_vector, 30)
+            self.embeddings = tf.concat((self.embeddings, self.feature), 1)
+            self.embedding_size = 230
+        '''
 
         self.encoder_inputs_embedded = tf.nn.embedding_lookup(self.embeddings, self.encoder_inputs)
         print("embeddings :",self.embeddings.shape)
@@ -185,6 +192,8 @@ class Model:
         elif option == "tencent":
             print("get tencent word_vector")        #读取tencent词向量
             list = read_tencent.get_vector()
+
+        #list = (np.array(list)[:,0:100]).tolist()                        #取前100维
         return list
 
     # 读取特征向量
