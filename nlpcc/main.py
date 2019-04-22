@@ -605,4 +605,4 @@ if __name__ == '__main__':
     calculate_onefile(path + "\\result\\rule_result.txt")
     output_task2(path + "\\result\\rule_result.txt")
     '''
-    calculate_onefile(path + "\\result\\answer_5.txt")
+    calculate_onefile(path + "\\result\\answer_7.txt")

@@ -35,6 +35,7 @@ class Model:
                                               name='slot_targets')
         self.intent_targets = tf.placeholder(tf.int32, [batch_size],
                                              name='intent_targets')
+        self.option = "train"
 
     def build(self):
 
@@ -120,17 +121,12 @@ class Model:
         scores = tf.reshape(slot_logits, [-1, self.input_steps, self.slot_size])
         # #算好分数后，再重新reshape成[batchsize, timesteps, num_class]
 
-        self.crf_params = tf.get_variable("crf", [self.slot_size, self.slot_size], dtype=tf.float32)
+        #self.crf_params = tf.get_variable("crf", [self.slot_size, self.slot_size], dtype=tf.float32)
 
 
         log_likelihood, self.crf_params = tf.contrib.crf.crf_log_likelihood(
-            scores, self.slot_targets, self.inputs_actual_length, self.crf_params)
+            scores, self.slot_targets, self.inputs_actual_length)
         print("slot_targets shape: ", self.slot_targets.shape)
-
-        decode_tags, best_score = tf.contrib.crf.crf_decode(
-            scores, self.crf_params, self.inputs_actual_length)
-        print("decode_tags shape: ", decode_tags.shape)
-        # decode_tags大小[batch_size * slot_size]
 
 
         loss = tf.reduce_mean(-log_likelihood)
@@ -141,6 +137,11 @@ class Model:
         print("vars for loss function: ", self.vars)
         self.gradients, _ = tf.clip_by_global_norm(self.grads, 5)  # clip gradients
         self.train_op = optimizer.apply_gradients(zip(self.gradients, self.vars))
+
+        decode_tags, best_score = tf.contrib.crf.crf_decode(
+            scores, self.crf_params, self.inputs_actual_length)
+        print("decode_tags shape: ", decode_tags.shape)
+        # decode_tags大小[batch_size * slot_size]
 
         correct_prediction = tf.equal(tf.reshape(decode_tags, [-1]), tf.reshape(self.slot_targets, [-1]))
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
@@ -196,9 +197,11 @@ class Model:
         #list = (np.array(list)[:,0:100]).tolist()                        #取前100维
         return list
 
+    '''    
     # 读取特征向量
     def load_feature(self):
         path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         # 上上个目录
         combine_vector = np.load(path + "\\dataset_process\\feature\\feature_vector.npy").tolist()
         return combine_vector
+    '''
