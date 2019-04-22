@@ -2,6 +2,7 @@ import os
 import re
 import numpy as np
 import Levenshtein
+import jieba.posseg as psg
 
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
@@ -187,6 +188,96 @@ def rule_based(result_file):
         # 还可添加若intent = OTHERS 则无槽
         # 还可添加 使用 hanlp进行词性分析如果只有名词或动词...
 
+        if data[i][2] == "navigation.navigation":        #可能有起始地和目的地2种槽
+            char_list = list(psg.cut(data[i][1]))      # 分词并得到词性
+
+            if all_n(char_list):                    # 如果整个query都是名词、量词
+                if data[i][1] in dic_list[1]:
+                    data[i][3] = "<custom_destination>" + data[i][1] + "</custom_destination>"
+                else:
+                    data[i][3] = "<destination>" + data[i][1] + "</destination>"
+
+            elif (("从" in data[i][1]) and ("到" in data[i][1])):     # ...从xxx到xxx
+                index1 = data[i][1].index("从")
+                index2 = data[i][1].index("到")
+                if index2<index1:
+                    continue
+
+                str1 = data[i][1][ : index1]
+                str2 = data[i][1][index1+1 : index2]            # str2和str3必须都为名词量词
+                str3 = data[i][1][index2+1 : ]
+                if all_n(list(psg.cut(str2))) and all_n(list(psg.cut(str3))):
+
+                    if str3 in dic_list[1]:
+                        data[i][3] = str1 + "从" + "<origin>" + str2 + "</origin>" + "到" + "<custom_destination>" + str3 + "</custom_destination>"
+                    else:
+                        data[i][3] = str1 + "从" + "<origin>" + str2 + "</origin>" + "到" + "<destination>" + str3 + "</destination>"
+
+
+
+            elif (("从" in data[i][1]) and ("去" in data[i][1])):  # ...从xxx去xxx
+                index1 = data[i][1].index("从")
+                index2 = data[i][1].index("去")
+                if index2 < index1:
+                    continue
+                str1 = data[i][1][: index1]
+                str2 = data[i][1][index1 + 1: index2]  # str2和str3必须都为名词量词
+                str3 = data[i][1][index2 + 1:]
+                if all_n(list(psg.cut(str2))) and all_n(list(psg.cut(str3))):
+                    if str3 in dic_list[1]:
+                        data[i][3] = str1 + "从" + "<origin>" + str2 + "</origin>" + "去" + "<custom_destination>" + str3 + "</custom_destination>"
+                    else:
+                        data[i][3] = str1 + "从" + "<origin>" + str2 + "</origin>" + "去" + "<destination>" + str3 + "</destination>"
+
+
+            elif ("从" in data[i][1]) and (index != len(data[i][1]) - 1):# 如果有“...从xxx”的句式
+                index = data[i][1].index("从")
+                left_str = data[i][1][:index]           # “从”左侧字符串
+                right_str = data[i][1][index + 1:]      # “从”右侧字符串
+                if all_n(list(psg.cut(right_str))): # 右侧全为名词、量词
+                    data[i][3] = left_str + "从" + "<origin>" + right_str + "</origin>"
+
+
+
+            elif "到" in data[i][1]:  # 有"...到xxx"这样的句式
+                index = data[i][1].index("到")
+                left_str = data[i][1][:index]  # “到”左侧字符串
+                right_str = data[i][1][index + 1:]  # “到”右侧字符串
+                if index != len(data[i][1]) - 1:  # “到”不是最后一个字
+                    if all_n(list(psg.cut(right_str))):  # 右侧全为名词、量词
+                        if right_str in dic_list[1]:
+                            right_str = "<custom_destination>" + right_str + "</custom_destination>"
+                        else:
+                            right_str = "<destination>" + right_str + "</destination>"
+                        data[i][3] = left_str + "到" + right_str
+
+
+            elif "去" in data[i][1]:             # 有"...去xxx"这样的句式
+                index = data[i][1].index("去")
+                left_str = data[i][1][:index]       # “去”左侧字符串
+                right_str = data[i][1][index+1:]    # “去”右侧字符串
+
+                if index!=len(data[i][1])-1:    # “去”不是最后一个字
+                    if all_n(list(psg.cut(right_str))):   # 右侧全为名词、量词
+                        if right_str in dic_list[1]:
+                            right_str = "<custom_destination>" + right_str + "</custom_destination>"
+                        else:
+                            right_str = "<destination>" + right_str + "</destination>"
+                        data[i][3] = left_str + "去" + right_str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -264,6 +355,13 @@ def file_to_dictionary(filename):
     f.close()
 
     return data
+
+# list中全为名词
+def all_n(list):
+    for t in list:
+        if t.flag[0] != "n" and t.flag[0] != "m":
+            return False
+    return True
 
 
 '''

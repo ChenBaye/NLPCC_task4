@@ -79,19 +79,18 @@ if __name__ == '__main__':
     print(str[i+1:j])
 
     temp_str = "播放一首我们不一样asdf"
-    value = "我们不一样"
+    value = "我"
     index_start = temp_str.index(value)
     index_end = index_start + len(value)
     print(index_start)
     print(index_end)
-    print(temp_str[:index_start])
-    print(temp_str[index_start:index_end])
-    print(temp_str[index_end:])
+    #print(temp_str[:index_start])
+    print(temp_str[index_start+1:])
+    #print(temp_str[index_end:])
 
-    for x in psg.cut("我们不一样"):
+    for x in psg.cut("静宁"):
         print(x.word, x.flag)
-        print(type(x.flag))
-        print(len("我们不一样"))
+
 
 
 
