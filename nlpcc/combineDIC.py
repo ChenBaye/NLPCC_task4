@@ -49,7 +49,7 @@ def combine_dic():
                 print(i, " ", value, " ", j)
             elif (j==2 and len(value) >= 1):                      # emotion2
                 print(i, " ", value, " ", j)
-            elif (j == 9 and (len(value) >= 3) and value!= "幼儿园"):                      # theme9
+            elif (j == 9 and (len(value) >= 3) and value!= "幼儿园" and value!="军旅"):                      # theme9
                 print(i, " ", value, " ", j)
             elif (j == 10 and (len(value) >= 2)):                      # toplist10
                 print(i, " ", value, " ", j)

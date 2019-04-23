@@ -167,7 +167,7 @@ def rule_based(result_file):
         # 长度在2、3，可能是单独出现的人名(或singer)
         elif(2 <= len(data[i][1]) <= 3):
             if data[i][1][0] in family_name:    #如果开头是姓氏，确定为人名
-                if data[i-1][0] == data[i-1][0]:    #上文为同一个session
+                if data[i-1][0] == data[i][0]:    #上文为同一个session
                     if "phone_call" in data[i-1][2]:
                     #如果上文为同一个session且为phone_call领域
                         data[i][2] = "phone_call.make_a_phone_call"
