@@ -591,5 +591,8 @@ if __name__ == '__main__':
     '''
     #calculate_onefile(path + "\\result\\answer_1024.txt")
     #calculate_onefile(path + "\\result\\answer_1025.txt")
-    rule_based(path + "\\result\\answer_1025.txt")
-    calculate_onefile(path + "\\result\\rule_result.txt")
+    #rule_based(path + "\\result\\answer_1025.txt")
+    #calculate_onefile(path + "\\result\\rule_result.txt")
+    calculate_onefile(path + "\\result\\feature_result.txt")
+
+

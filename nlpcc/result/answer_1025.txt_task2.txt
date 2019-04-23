@@ -76,7 +76,7 @@
 112196113	一路上有你	music.play
 112196113	结束导航	navigation.cancel_navigation
 112196113	声音稍微调大一点点	OTHERS
-119197573	肇庆附设外国语学校	navigation.navigation
+119197573	肇庆附设外国语学校	music.play
 119197573	打电话给766	phone_call.make_a_phone_call
 119197573	打电话给34383	phone_call.make_a_phone_call
 116194540	叮当你好	OTHERS
@@ -458,11 +458,11 @@
 112198525	禾夕	OTHERS
 112198525	取消	phone_call.cancel
 112199922	取消	phone_call.cancel
-112199922	导航到广花国际电子电器采购中心	music.play
-112199922	导航到广花国际电子电器采购中心	music.play
+112199922	导航到广花国际电子电器采购中心	navigation.navigation
+112199922	导航到广花国际电子电器采购中心	navigation.navigation
 122199144	到滨州康鑫大药房	navigation.navigation
 122199144	到滨州康泉	navigation.navigation
-122199144	打电话接电话	OTHERS
+122199144	打电话接电话	music.play
 112198028	我要打电话	phone_call.make_a_phone_call
 112198028	导航南城富民步行街	navigation.navigation
 112198028	导航东莞市中孚大厦	navigation.navigation
@@ -868,7 +868,7 @@
 117195288	请播放一首歌曲	music.play
 117195288	今晚播放一首歌曲	music.play
 117195288	小云这个名字他她的名字就叫小云对话就行了请播放一首歌曲	music.play
-111198447	打电话接电话	OTHERS
+111198447	打电话接电话	music.play
 111198447	王宁	music.play
 111198447	市人民医院	navigation.navigation
 118197305	我要去云南	navigation.navigation
@@ -1091,7 +1091,7 @@
 118198162	圈圈	OTHERS
 118198162	你去完成的那个轨迹啊不说违法亲自教的终究是会坚持	OTHERS
 118198162	马斌	music.play
-118198162	打电话男朋友在家	phone_call.make_a_phone_call
+118198162	打电话男朋友在家	music.play
 118198162	中卫市宾河城市花园	navigation.navigation
 118198162	中卫宾河城市花园	navigation.navigation
 115198990	无敌	OTHERS
@@ -1269,7 +1269,7 @@
 189100	铁溪街与新建路交汇	navigation.navigation
 189100	铁西街与清源路交汇	navigation.navigation
 189100	那我就在这呆着等你了	OTHERS
-189100	我对面是我对这是个什么函数的中国中车呀那个上面有几个字	music.play
+189100	我对面是我对这是个什么函数的中国中车呀那个上面有几个字	OTHERS
 189100	啊我就在t t恤街头上呢	OTHERS
 189100	取消	phone_call.cancel
 118198764	一个英雄打电话	phone_call.make_a_phone_call
@@ -2280,7 +2280,7 @@
 117198525	我要去初村镇	navigation.navigation
 117198525	万宇	OTHERS
 117198525	可以	OTHERS
-116198442	太华路福星电子	music.play
+116198442	太华路福星电子	navigation.navigation
 116198442	打电话	phone_call.make_a_phone_call
 119199889	馆陶邮局	navigation.navigation
 119199889	播放音乐	music.play
@@ -2367,7 +2367,7 @@
 189020	给我找凤凰传奇的歌	music.play
 189020	传鹰	OTHERS
 118197156	我要去第一集	navigation.navigation
-118197156	电话也不打你们有没有要求说什么都不给客户打电话的没有吧	OTHERS
+118197156	电话也不打你们有没有要求说什么都不给客户打电话的没有吧	music.play
 118197156	她总是浪费时间你知道吗我发现这很有问题	OTHERS
 118197156	嘉华鑫城	navigation.navigation
 119198660	导航到	navigation.navigation
@@ -2494,7 +2494,7 @@
 118198876	打开导航	navigation.open
 118198876	导航到大邑县	navigation.navigation
 118198876	放一首酒醉酒醒	music.play
-118198876	关闭电子狗	music.play
+118198876	关闭电子狗	OTHERS
 118198876	拨打5555	phone_call.make_a_phone_call
 119194574	红尘情歌	music.play
 119194574	刘畅	OTHERS
@@ -2677,9 +2677,9 @@
 118198549	你管得拦了回来了	OTHERS
 118198549	导一下永兴镇	navigation.navigation
 118198549	找一下永兴镇镇政府	navigation.navigation
-111197175	中国农业银行西山支行	music.play
+111197175	中国农业银行西山支行	navigation.navigation
 111197175	一	OTHERS
-111197175	中国农业银行无锡市锡山支行	music.play
+111197175	中国农业银行无锡市锡山支行	navigation.navigation
 111197175	13900009233	OTHERS
 111197175	关闭	phone_call.cancel
 112195489	播放暴风一族	music.play
@@ -3145,7 +3145,7 @@
 118197758	的导航	navigation.start_navigation
 118197758	关闭导航	navigation.cancel_navigation
 111198246	导航去通盈中心	navigation.navigation
-111198246	一大哥打电话是有好消息吗还是一大哥钱啦我以为你给我的钱呢	OTHERS
+111198246	一大哥打电话是有好消息吗还是一大哥钱啦我以为你给我的钱呢	music.play
 111198246	哎复制办公室刚从车上出来	OTHERS
 111198246	买来的洋你们家的跑商三好养的呢谢谢谢	OTHERS
 111198246	王佳	music.play
@@ -3262,7 +3262,7 @@
 111199959	中山三角镇	navigation.navigation
 111199959	取消	phone_call.cancel
 111198544	去羊台山	navigation.navigation
-111198544	打电话你们在那里	phone_call.make_a_phone_call
+111198544	打电话你们在那里	music.play
 111198544	andy	OTHERS
 111198544	循环	OTHERS
 111198544	打电话	phone_call.make_a_phone_call
@@ -3400,7 +3400,7 @@
 111198396	二	OTHERS
 111198396	17646	OTHERS
 111198396	你好叮当	OTHERS
-115198195	我要去中国石化	music.play
+115198195	我要去中国石化	navigation.navigation
 115198195	我要去剑桥城	navigation.navigation
 115198195	打电话给68080	phone_call.make_a_phone_call
 111197701	打电话	phone_call.make_a_phone_call
@@ -3973,7 +3973,7 @@
 119198864	滕腾	OTHERS
 119198864	打电话给我吧	phone_call.make_a_phone_call
 119198864	打开行车记录仪	OTHERS
-119198864	打开电子狗	music.play
+119198864	打开电子狗	OTHERS
 119198864	我要去昆明长水机场	navigation.navigation
 119198864	我要听刘德华的歌	music.play
 117196955	血腥爱情故事	music.play
@@ -4519,14 +4519,14 @@
 187096	关掉蓝牙	OTHERS
 187096	京广桥	navigation.navigation
 187096	去黄桥	navigation.navigation
-187096	电子狗	music.play
+187096	电子狗	OTHERS
 187096	关闭导航仪	navigation.cancel_navigation
 118197228	枣强县人民法院	navigation.navigation
 118197228	取消	phone_call.cancel
 118197228	给我来首筷子兄弟	music.play
 186175	导航结束	navigation.cancel_navigation
 186175	打电话	phone_call.make_a_phone_call
-186175	她跟我打电话说而是你们说要不管能强迫能不能在一起还分两兵器啊	music.play
+186175	她跟我打电话说而是你们说要不管能强迫能不能在一起还分两兵器啊	OTHERS
 186175	你们现在过来接你	OTHERS
 186021	开始播放歌曲	music.play
 186021	开始播放歌曲	music.play
@@ -4554,8 +4554,8 @@
 116196307	你好啊	OTHERS
 116196307	请播放一首十五的月亮	music.play
 116196307	音乐播放器	OTHERS
-118199549	中国建设银行	music.play
-118199549	导航到中国一建设银行	music.play
+118199549	中国建设银行	navigation.navigation
+118199549	导航到中国一建设银行	navigation.navigation
 118199549	取消	phone_call.cancel
 119199775	蓝牙音乐	music.play
 119199775	蓝牙	OTHERS
@@ -4865,7 +4865,7 @@
 111197624	音乐	music.play
 111197624	宝贝习付打电话	phone_call.make_a_phone_call
 111197624	放大地图	OTHERS
-118198293	中国工商银行	music.play
+118198293	中国工商银行	navigation.navigation
 118198293	打电话去了吗	phone_call.make_a_phone_call
 118198293	何婕	OTHERS
 122194860	来一首爱到死心塌地	music.play
@@ -5272,8 +5272,8 @@
 111199338	打电话给760	phone_call.make_a_phone_call
 111199338	王七医院	navigation.navigation
 111199338	王旗步行街	navigation.navigation
-117199518	电子6路	music.play
-117199518	电子6路西段	music.play
+117199518	电子6路	navigation.navigation
+117199518	电子6路西段	navigation.navigation
 117199518	常志	OTHERS
 117199518	取消	phone_call.cancel
 186070	动不了	OTHERS
