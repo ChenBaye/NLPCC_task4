@@ -17,37 +17,26 @@ def slot_correct(result_file):
     '''
     age = open(path + "\\slot-dictionaries\\age.txt", 'r', encoding='UTF-8').readlines()
     age = [m[:-1] for m in age]  # 去掉'\n'，读入每一行
-
     custom_destination = open(path + "\\slot-dictionaries\\custom_destination.txt", 'r', encoding='UTF-8').readlines()
     custom_destination = [m[:-1] for m in custom_destination]  # 去掉'\n'，读入每一行
-
     emotion = open(path + "\\slot-dictionaries\\emotion.txt", 'r', encoding='UTF-8').readlines()
     emotion = [m[:-1] for m in emotion]  # 去掉'\n'，读入每一行
-
     instrument = open(path + "\\slot-dictionaries\\instrument.txt", 'r', encoding='UTF-8').readlines()
     instrument = [m[:-1] for m in instrument]  # 去掉'\n'，读入每一行
-
     language = open(path + "\\slot-dictionaries\\language.txt", 'r', encoding='UTF-8').readlines()
     language = [m[:-1] for m in language]  # 去掉'\n'，读入每一行
-
     scene = open(path + "\\slot-dictionaries\\scene.txt", 'r', encoding='UTF-8').readlines()
     scene = [m[:-1] for m in scene]  # 去掉'\n'，读入每一行
-
     singer = open(path + "\\slot-dictionaries\\singer.txt", 'r', encoding='UTF-8').readlines()
     singer = [m[:-1] for m in singer]  # 去掉'\n'，读入每一行
-
     song = open(path + "\\slot-dictionaries\\song.txt", 'r', encoding='UTF-8').readlines()
     song = [m[:-1] for m in song]  # 去掉'\n'，读入每一行
-
     style = open(path + "\\slot-dictionaries\\style.txt", 'r', encoding='UTF-8').readlines()
     style = [m[:-1] for m in style]  # 去掉'\n'，读入每一行
-
     theme = open(path + "\\slot-dictionaries\\theme.txt", 'r', encoding='UTF-8').readlines()
     theme = [m[:-1] for m in theme]  # 去掉'\n'，读入每一行
-
     toplist = open(path + "\\slot-dictionaries\\toplist.txt", 'r', encoding='UTF-8').readlines()
     toplist = [m[:-1] for m in toplist]  # 去掉'\n'，读入每一行
-
     # 所有字典变成数组
     dic_list = [age, custom_destination, emotion, instrument, language,
                 scene, singer, song, style, theme, toplist]
