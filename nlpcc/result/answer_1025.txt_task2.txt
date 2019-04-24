@@ -4877,7 +4877,7 @@
 118196867	第一个好别动了	music.play
 118196867	麻雀	navigation.navigation
 118196867	李悦	OTHERS
-118196867	这不久就恋爱了吗	music.play
+118196867	这不久就恋爱了吗	OTHERS
 118196867	那你给他播放音乐咱们试试啊	OTHERS
 118196867	放首音乐	music.play
 118196867	放首音乐	music.play
@@ -5070,7 +5070,7 @@
 118198723	德峨怎么走	navigation.navigation
 118198723	我要看武打电影	OTHERS
 118198723	那该怎么办呢	OTHERS
-118198723	什么东西呀	music.play
+118198723	什么东西呀	OTHERS
 118198723	你妈滚你妈的去你妈	OTHERS
 118198723	逗子	OTHERS
 118198723	打电话给狗子	phone_call.make_a_phone_call

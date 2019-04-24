@@ -25,10 +25,11 @@ def combine_dic():
 
     dic_slot = []           # 存储经过DIC预处理得到的一批槽
     dic_intent = [0] *5350  # 存储经过DIC预处理的到的意图
-
+    dic_assert =[0]*5350
     for i in range(len(data)):
-        dic_slot.append([0] * 45)       #新建Time_steps大的数组
-        #temp_str = data[i][1]
+        dic_slot.append([2] * 45)       #新建Time_steps大的数组默认槽标记为"O"
+        #temp_str = data[i][1]\
+        value_list = []
         for j in range(len(slot_category)):
             if j == 1:  # 不匹配custom_destination类型的槽
                 continue
@@ -36,18 +37,23 @@ def combine_dic():
             for m in range(len(dic_list[j])):
                 if(dic_list[j][m] in data[i][1]) and (len(dic_list[j][m]) >= len(value)):
                     value = dic_list[j][m]
+                    if str_in_list(value, value_list):
+                        # 如果当前找到的槽，是已经找出的槽的子串，则跳过
+                        continue
+                    else:
+                        value_list.append(value)
 
             if (len(value)>=1 and j==6 and value!="高飞"):                        # singer6
                 print(i," ",value," ",j)
-            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要" and value!="80000"):     # song7
+            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要" and value!="80000" and value!="什么东西" and value!="恋爱了"):     # song7
                 print(i, " ", value, " ", j)
-            elif (j==8 and len(value) >= 1 and value!="电子"):                        # style8
+            elif (j==8 and len(value) >= 1 and value!="电子" and value!="大草原"):                        # style8
                 print(i, " ", value, " ", j)
             elif (j==4 and len(value) >= 1 and value!="外国" and value!="中国"):                        # language4
                 print(i, " ", value, " ", j)
             elif (j==3 and len(value) >= 1):                        # instrument3无需修改
                 print(i, " ", value, " ", j)
-            elif (j==2 and len(value) >= 1):                      # emotion2
+            elif (j==2 and len(value) >= 1 and value!="相思"):                      # emotion2
                 print(i, " ", value, " ", j)
             elif (j == 9 and (len(value) >= 3) and value!= "幼儿园"):   # theme9
                 print(i, " ", value, " ", j)
@@ -63,12 +69,24 @@ def combine_dic():
             print(data[i][1])
             print(value)
             #print(dic_slot[i])
+            if (value == data[i][1]):  # 如果全句为一个槽，则不需要结合模型训练的结果
+                dic_assert[i] = 1
+                break
 
     np.save(path + "\\slot-dictionaries\\dic_slot", np.array(dic_slot))
     np.save(path + "\\slot-dictionaries\\dic_intent", np.array(dic_intent))
+    np.save(path + "\\slot-dictionaries\\dic_assert", np.array(dic_assert))
 
 
-
+# 判断str是不是list中元素的子串
+def str_in_list(str, list):
+    if len(list) == 0:
+        return False
+    else:
+        for t in list:
+            if str in t:
+                return True
+    return False
 
 
 # 类似于给  播放一首我们不一样 打上<song>标记

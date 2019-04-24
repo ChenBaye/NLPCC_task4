@@ -459,10 +459,13 @@ def use_dic(slotfile, intentfile):
     pre_intent = np.load(intentfile).tolist()      #模型训练出的结果
     dic_slot = np.load(path + "\\slot-dictionaries\\dic_slot.npy").tolist()     #使用槽字典得出的结果
     dic_intent = np.load(path + "\\slot-dictionaries\\dic_intent.npy").tolist()
-
+    dic_assert = np.load(path + "\\slot-dictionaries\\dic_assert.npy").tolist()
     for i in range(len(pre_slot)):
+        if dic_assert[i] == 1:      #不结合模型结果
+            pre_slot[i] = dic_slot[i]
+            continue
         for j in range(len(pre_slot[i])):
-            if dic_slot[i][j]!=0:
+            if dic_slot[i][j]!=2:
                 pre_slot[i][j] = dic_slot[i][j]
 
     for i in range(len(pre_intent)):

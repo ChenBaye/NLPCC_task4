@@ -170,12 +170,11 @@ def rule_based(result_file):
                     #elif ("music" in data[i-1][2]):
                      #   data[i][2] = "music.play"
                      #   data[i][3] = "<singer>" + data[i][1] + "</singer>"
-                     #   data[i][3] = "<singer>" + data[i][1] + "</singer>"
-                #else:
-                    #if not(data[i][1] in dic_list[6]):
+                else:
+                    if not(data[i][1] in dic_list[6]):
                     #如果没有上一轮，标为OTHERS
-                    #data[i][2] = "OTHERS"
-                    #data[i][3] =  data[i][1]
+                        data[i][2] = "OTHERS"
+                        data[i][3] =  data[i][1]
 
         if data[i][2] == "OTHERS":      #整理OTHERS类的输出
             data[i][3] = data[i][1]
