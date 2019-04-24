@@ -88,7 +88,7 @@ if __name__ == '__main__':
     print(temp_str[index_start+1:])
     #print(temp_str[index_end:])
 
-    for x in psg.cut("淮阳县四通镇"):
+    for x in psg.cut("堤口路水果市场"):
         print(x.word, x.flag)
 
 

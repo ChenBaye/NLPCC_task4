@@ -90,12 +90,18 @@ def rule_based(result_file):
     dic_list = np.load(path + "\\slot-dictionaries\\11_slot_dics.npy").tolist()
     slot_category = ["age", "custom_destination", "emotion", "instrument", "language",
                      "scene", "singer", "song", "style", "theme", "toplist"]
+    navigation_open = ["打开导航", "显示导航", "我要导航", "开启导航", "给我导航", "帮我导航", "导航过去"]
+
     # 读取姓氏表
     family_name = open(path + "\\slot-dictionaries\\family_name.txt", 'r', encoding='UTF-8').readlines()
     family_name = [m[:-1] for m in family_name]  # 去掉'\n'，读入每一行
     for i in range(len(data)):  # 采取基于规则的方法
-        # 开始导航、继续导航、恢复导航、切换导航、导航    ==>navigation.start_navigation
-        if (data[i][1] == "导航") or(token_in_str(start_token, data[i][1]) and ("导航" in data[i][1])):
+        if (data[i][1] in  navigation_open):
+            data[i][2] = "navigation.open"
+            data[i][3] = data[i][1]  # 该意图无槽
+
+        # 开始导航、继续导航、恢复导航、切换导航    ==>navigation.start_navigation
+        elif token_in_str(start_token, data[i][1]) and ("导航" in data[i][1]):
             data[i][2] = "navigation.start_navigation"
             data[i][3] = data[i][1]     # 该意图无槽
 
@@ -333,6 +339,7 @@ def correct(slot, slot_list):   # 在dic中
     else:
 
         edit_distance = [Levenshtein.distance(slot, t) for t in slot_list]
+        #if (min(edit_distance)>1 or )
         print(slot, "改为", slot_list[edit_distance.index(min(edit_distance))])
         return slot_list[edit_distance.index(min(edit_distance))]
 

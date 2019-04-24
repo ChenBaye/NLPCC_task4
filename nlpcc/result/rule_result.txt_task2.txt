@@ -44,9 +44,9 @@
 117199900	大王	OTHERS
 117199900	打电话	phone_call.make_a_phone_call
 117199900	王菲的妻子	music.play
-117199900	黄花园	navigation.navigation
-117199900	融化了	OTHERS
-117199900	花匠	OTHERS
+117199900	黄花园	music.play
+117199900	融化了	music.play
+117199900	花匠	music.play
 117199900	这个问题我不会你会啥了	OTHERS
 117199900	哦	OTHERS
 117199900	他是在这买来的	OTHERS
@@ -109,12 +109,12 @@
 186150	去奥莱城	navigation.navigation
 186142	去扶余县蔡家沟镇	navigation.navigation
 186142	我要去扶余县蔡家沟镇	navigation.navigation
-186142	导航	navigation.start_navigation
-186142	导航	navigation.start_navigation
+186142	导航	navigation.open
+186142	导航	navigation.open
 186142	导航结束	navigation.cancel_navigation
 186142	你好啊	OTHERS
 186142	撤销导航	navigation.open
-186142	导航	navigation.start_navigation
+186142	导航	navigation.open
 112194524	降央卓玛的歌曲	music.play
 112194524	成龙演唱的天天同进	music.play
 112194524	陈思思成龙演唱的天天重庆	music.play
@@ -194,7 +194,7 @@
 118194338	不做你幸福的玫瑰歌曲	music.play
 118194338	歌曲不做你幸福的玫瑰	music.play
 118194338	歌曲兵哥哥	music.play
-122196957	杜十娘	music.play
+122196957	杜十娘	OTHERS
 122196957	想着你的好	music.play
 122196957	祁隆演唱的想着你的好	music.play
 122196957	退出音乐	music.pause
@@ -202,10 +202,10 @@
 192182	播放歌曲	music.play
 192182	秘书巷1号	navigation.navigation
 192182	英语	music.play
-192182	吴限	OTHERS
-192182	张帆	OTHERS
-192182	张帆	OTHERS
-192182	张帆	OTHERS
+192182	吴限	music.play
+192182	张帆	music.play
+192182	张帆	music.play
+192182	张帆	music.play
 192182	讲个笑话	OTHERS
 192182	再讲个笑话	OTHERS
 192182	再讲个笑话	OTHERS
@@ -278,7 +278,7 @@
 116197224	晟焕	OTHERS
 116197224	阿翔	OTHERS
 116197224	导航地铁黄渠站	navigation.navigation
-116197224	导航	navigation.start_navigation
+116197224	导航	navigation.open
 116197224	一路平安	music.play
 116197224	百脑汇	navigation.navigation
 116197224	刚打电话	OTHERS
@@ -328,7 +328,7 @@
 119196052	没啥	OTHERS
 119196052	吃饭没有	OTHERS
 119196052	继续播放音乐	music.play
-115197859	导航	navigation.start_navigation
+115197859	导航	navigation.open
 115197859	重庆市九龙坡区至港大道珠江花园	navigation.navigation
 115197859	杜伯年	OTHERS
 115197859	那你吃了五个单位	OTHERS
@@ -366,7 +366,7 @@
 122198055	我到江阴文林海瑞仓服装厂	navigation.navigation
 122198055	张一文宁海锐服装厂	navigation.navigation
 122198055	打电话给662	phone_call.make_a_phone_call
-112199751	平罗县	navigation.navigation
+112199751	平罗县	OTHERS
 112199751	东方大酒店	navigation.navigation
 112199751	137	OTHERS
 116199294	现在多少度	OTHERS
@@ -488,8 +488,8 @@
 115198902	请打电话给15000000099	phone_call.make_a_phone_call
 115198902	你能打电话吗	phone_call.make_a_phone_call
 115198902	前任三电影今天在几点到几点	music.play
-115198902	姜欧	phone_call.make_a_phone_call
-115198902	关掉	phone_call.make_a_phone_call
+115198902	姜欧	music.play
+115198902	关掉	music.play
 115198902	今天天气怎么样	OTHERS
 115198902	昭通	OTHERS
 118196672	帮助的话	OTHERS
@@ -510,7 +510,7 @@
 112198766	导航结束	navigation.cancel_navigation
 122196029	那首任贤齐的一个人	music.play
 122196029	求任贤齐的赶不走	music.play
-122196029	萧生	OTHERS
+122196029	萧生	music.play
 122196029	给我放一首任贤齐的一个人住	music.play
 122198170	打电话给526	phone_call.make_a_phone_call
 122198170	导航到黑河市政府	navigation.navigation
@@ -534,7 +534,7 @@
 190144	打电话给8523	phone_call.make_a_phone_call
 190144	打电话给8523	phone_call.make_a_phone_call
 190144	来个韩红的歌曲	music.play
-190144	王晔	OTHERS
+190144	王晔	music.play
 190144	导航到盛世名苑	navigation.navigation
 118199184	今天限行情况	OTHERS
 118199184	冷漠的歌曲	music.play
@@ -646,7 +646,7 @@
 117199668	浙江中景绿化	navigation.navigation
 112198974	路况这个调不过来我也不敢走了具体的位置	OTHERS
 112198974	二伟号4176的乘客现在去太原24中东门情人节前后牌安全带平安到家只对爱你的人最好的承诺	music.play
-112198974	王旭	OTHERS
+112198974	王旭	music.play
 112198974	导航结束	navigation.cancel_navigation
 112198974	9420	music.play
 112198974	放这首歌	music.play
@@ -663,7 +663,7 @@
 115195641	播放儿童音乐	music.play
 115195641	播放儿童音乐	music.play
 115195641	播放儿歌	music.play
-117199280	广东	navigation.navigation
+117199280	广东	OTHERS
 117199280	老公赚钱老婆花歌曲	music.play
 117199280	叮当你好	OTHERS
 117199280	好的	OTHERS
@@ -757,7 +757,7 @@
 116199200	晨曦小区	navigation.navigation
 118199260	别用你打电话的	OTHERS
 118199260	乐言的歌	music.play
-118199260	王群	phone_call.make_a_phone_call
+118199260	王群	music.play
 118199260	导航到秦南镇	navigation.navigation
 187142	打开导航	navigation.open
 187142	那英	music.play
@@ -783,7 +783,7 @@
 186161	规划成功	music.play
 186161	打电话来	phone_call.make_a_phone_call
 116194599	好好	OTHERS
-116194599	导航	navigation.start_navigation
+116194599	导航	navigation.open
 116194599	牛振华	OTHERS
 116194599	播放音乐	music.play
 116194599	播放音乐	music.play
@@ -818,7 +818,7 @@
 111198786	打电话	phone_call.make_a_phone_call
 111198786	沧州市天鲜阁	navigation.navigation
 111198786	沧州市南湖公园	navigation.navigation
-119197938	导航	navigation.start_navigation
+119197938	导航	navigation.open
 119197938	聊城	navigation.navigation
 119197938	你好叮当	OTHERS
 119197938	麻烦你帮我打个电话	phone_call.make_a_phone_call
@@ -838,7 +838,7 @@
 112198630	我到莲湖小区	navigation.navigation
 119199978	王绎龙的歌	music.play
 119199978	打电话说的多切到切水果	music.play
-119199978	文庙	navigation.navigation
+119199978	文庙	music.play
 119199086	取消导航	navigation.cancel_navigation
 119199086	我要打电话	phone_call.make_a_phone_call
 119199086	打开fm	OTHERS
@@ -901,7 +901,7 @@
 111199327	请帮我导一下兰考服务区	navigation.navigation
 111199327	请帮我导航	navigation.open
 111199327	请帮我退出	OTHERS
-111197969	导航	navigation.start_navigation
+111197969	导航	navigation.open
 111197969	到渭塘镇政府	navigation.navigation
 111197969	打电话给妈	phone_call.make_a_phone_call
 118199921	取消但是我自己觉得这个	OTHERS
@@ -1010,7 +1010,7 @@
 190185	不是那么黑	OTHERS
 190185	取消	OTHERS
 112197232	有没有游戏机	music.play
-112197232	云道	OTHERS
+112197232	云道	music.play
 112197232	梁咏琪的夏天	music.play
 112197232	宁夏	music.play
 112197232	夏天	music.play
@@ -1124,7 +1124,7 @@
 117195203	王滨	music.play
 117195203	歌曲王妃	music.play
 117195203	萧敬腾	music.play
-117195203	柏西	OTHERS
+117195203	柏西	music.play
 117195203	我想听苏有朋的歌	music.play
 116196919	我想听成都dj版	music.play
 116196919	我想听差一步dj版我想听charlie puth dj版	music.play
@@ -1141,7 +1141,7 @@
 111196226	3月3下扬州舞曲	music.play
 111196226	歌曲爱拼才会赢	music.play
 119199887	取消	OTHERS
-119199887	导航	navigation.start_navigation
+119199887	导航	navigation.open
 119199887	老虎滩海洋公园	phone_call.make_a_phone_call
 117199965	打电话给老妈	phone_call.make_a_phone_call
 117199965	广乐	phone_call.make_a_phone_call
@@ -1235,7 +1235,7 @@
 116195287	请播放存在	music.play
 117197802	打电话	phone_call.make_a_phone_call
 117197802	导航东汽水箱厂	navigation.navigation
-117197802	导航	navigation.start_navigation
+117197802	导航	navigation.open
 117197802	退出导航	navigation.cancel_navigation
 118198553	导航到新华街	navigation.navigation
 118198553	帮我呼叫15700009139	phone_call.make_a_phone_call
@@ -1313,7 +1313,7 @@
 112199310	东方尊峪	navigation.navigation
 112199310	取消导航需要导航	navigation.cancel_navigation
 118196863	两只老虎	music.play
-118196863	能能	OTHERS
+118196863	能能	music.play
 118196863	帮我播放一下吗回来了就要回来啊回来了我就来喽	music.play
 118196863	播放一下远走高飞	music.play
 116194458	播放我就静静地听着你装b	OTHERS
@@ -1332,7 +1332,7 @@
 118198737	回家	phone_call.make_a_phone_call
 111194974	放松散就散	music.play
 111194974	播放说散就散的歌曲	music.play
-111194974	乐文	OTHERS
+111194974	乐文	music.play
 111194974	小雨你好	music.play
 111194974	播放再见陌生人	music.play
 111196974	我讲话视频听不懂啊	OTHERS
@@ -1352,7 +1352,7 @@
 190067	渡红尘	music.play
 190067	来一首渡红尘	music.play
 190067	我的好兄弟	music.play
-190067	方位	OTHERS
+190067	方位	music.play
 190067	花桥流水	music.play
 190067	微笑	OTHERS
 190067	关屏	OTHERS
@@ -1612,9 +1612,9 @@
 122199474	取消	navigation.cancel_navigation
 122199474	结束导航	navigation.cancel_navigation
 122199474	彭浩	OTHERS
-122198456	导航	navigation.start_navigation
+122198456	导航	navigation.open
 122198456	江南立交	OTHERS
-122198456	导航	navigation.start_navigation
+122198456	导航	navigation.open
 122198456	江南立交	OTHERS
 122198456	我要打电话	phone_call.make_a_phone_call
 122198456	求好运	OTHERS
@@ -1834,7 +1834,7 @@
 112197575	打电话不干	OTHERS
 112197575	沈沉	OTHERS
 111199740	放一首郑智化的爱到疯	music.play
-111199740	回公司	navigation.navigation
+111199740	回公司	music.play
 111199740	打电话差不多吧	OTHERS
 111195414	请给我放张宇的歌曲	music.play
 111195414	我要听李宗盛的歌曲	music.play
@@ -1885,7 +1885,7 @@
 189146	曹顺五	OTHERS
 189146	说话也有错	OTHERS
 189146	喜欢你	music.play
-189146	许戈辉	OTHERS
+189146	许戈辉	music.play
 189146	呀呀	OTHERS
 189146	唱歌	music.play
 190091	你说你在干活这是什么话呀	OTHERS
@@ -1906,7 +1906,7 @@
 117197707	未未	OTHERS
 117197707	丁浩	OTHERS
 119197333	我在滑雪场	music.play
-119197333	高穴村	navigation.navigation
+119197333	高穴村	music.play
 119197333	理工大学	navigation.navigation
 119197333	大学城	navigation.navigation
 119197333	呼叫6604	phone_call.make_a_phone_call
@@ -2022,7 +2022,7 @@
 119194326	听黑的歌曲绣荷包	music.play
 119194326	请听歌曲石修	music.play
 189068	请播放刘德华的歌曲	music.play
-189068	简宁	navigation.navigation
+189068	简宁	music.play
 189068	叉叉	OTHERS
 122199191	双向入口驶离赤峰	OTHERS
 122199191	到安徽省长丰县	navigation.navigation
@@ -2053,7 +2053,7 @@
 111199872	播放樱樱播放刘鹏	music.play
 111199872	播放u盘	OTHERS
 111199872	取消	music.pause
-111199872	景谷县	navigation.navigation
+111199872	景谷县	music.play
 116199095	射阳县人民政府	navigation.navigation
 116199095	沭阳县人民政府	navigation.navigation
 116199095	打个电话	phone_call.make_a_phone_call
@@ -2082,8 +2082,8 @@
 116199197	拦下了一辆中型的夜班公交车	music.play
 122196124	我要听我的好兄弟	music.play
 122196124	我要听我的好兄弟	music.play
-122196124	以陌	OTHERS
-122196124	房鹤迪	OTHERS
+122196124	以陌	music.play
+122196124	房鹤迪	music.play
 122196124	我的好兄弟	music.play
 122196124	二	OTHERS
 122196124	没事退出	OTHERS
@@ -2113,7 +2113,7 @@
 111194964	播放风真大	music.play
 111194964	播放	music.play
 111194964	来一首风筝	music.play
-111194964	翁森套	OTHERS
+111194964	翁森套	music.play
 118197099	播放成都	music.play
 118197099	电话566	phone_call.make_a_phone_call
 118197099	到广元	navigation.navigation
@@ -2125,7 +2125,7 @@
 111196174	我想听红歌	music.play
 119198697	打电话	phone_call.make_a_phone_call
 119198697	葡萄	music.play
-119198697	赵平	phone_call.make_a_phone_call
+119198697	赵平	music.play
 119198697	老歌吗	music.play
 119198697	丰田4s店	navigation.navigation
 116198124	快速公交枢纽站	navigation.navigation
@@ -2154,7 +2154,7 @@
 118199706	沈涛	phone_call.make_a_phone_call
 118199706	帮我放一首狐狸	music.play
 118199706	福利	OTHERS
-112199458	萧山	navigation.navigation
+112199458	萧山	OTHERS
 112199458	没有啦拜拜	OTHERS
 112199458	导航到山东省德州市市政府	navigation.navigation
 112199458	取消	navigation.cancel_navigation
@@ -2215,7 +2215,7 @@
 115196394	歌曲徘徊	music.play
 115196394	我要听徘徊	music.play
 115196394	播放歌曲	music.play
-116198007	江南	music.play
+116198007	江南	OTHERS
 116198007	我在外边呢会三天来啦数据流量也不是无线网	OTHERS
 116198007	这个办法	OTHERS
 116198007	打个电话	phone_call.make_a_phone_call
@@ -2264,7 +2264,7 @@
 116197248	取消	navigation.cancel_navigation
 122198945	拨号	phone_call.make_a_phone_call
 122198945	拨打电话号3000000	phone_call.make_a_phone_call
-122198945	导航	navigation.start_navigation
+122198945	导航	navigation.open
 117198502	大陆	music.play
 117198502	进入中南大道	OTHERS
 117198502	是的	OTHERS
@@ -2301,12 +2301,12 @@
 115196253	骚哥	OTHERS
 115196253	李思思	OTHERS
 115196253	我要听下一个路口再见	music.play
-115196253	焦宝如	phone_call.make_a_phone_call
-115196253	王群	phone_call.make_a_phone_call
-112199367	曹杨	navigation.navigation
+115196253	焦宝如	music.play
+115196253	王群	music.play
+112199367	曹杨	OTHERS
 112199367	猫	OTHERS
 112199367	你笑什么	OTHERS
-112199367	取消	navigation.cancel_navigation
+112199367	取消	OTHERS
 112199367	放累不累	music.play
 122196648	我要听唐古拉的音乐	music.play
 122196648	我要听宋祖英的歌曲	music.play
@@ -2360,7 +2360,7 @@
 116195528	社会摇	music.play
 189020	阿杜的歌	music.play
 189020	阿杜的歌	music.play
-189020	姚莉	phone_call.make_a_phone_call
+189020	姚莉	music.play
 189020	阿逗	OTHERS
 189020	我做阿杜的歌	music.play
 189020	刘若英的歌	music.play
@@ -2461,7 +2461,7 @@
 112197986	顾铭	phone_call.make_a_phone_call
 112197986	请导航到安宁的刘家卜	navigation.navigation
 112197986	请导航到雁滩派出所	navigation.navigation
-111197779	双桥	navigation.navigation
+111197779	双桥	OTHERS
 111197779	廊坊安次区	navigation.navigation
 111197779	取消	navigation.cancel_navigation
 112197477	导航到彩虹路	navigation.navigation
@@ -2497,7 +2497,7 @@
 118198876	关闭电子狗	OTHERS
 118198876	拨打5555	phone_call.make_a_phone_call
 119194574	红尘情歌	music.play
-119194574	刘畅	OTHERS
+119194574	刘畅	music.play
 119194574	心太软	music.play
 122199404	导航到枫坑口村	navigation.navigation
 122199404	显示地图	OTHERS
@@ -2510,7 +2510,7 @@
 190159	我现在的位置是请设置为家的位置	OTHERS
 190159	不正确	OTHERS
 190159	把现在的位置设置为家的位置	OTHERS
-187162	成都	music.play
+187162	成都	OTHERS
 187162	家芮	OTHERS
 187162	把人	OTHERS
 187162	打电话	phone_call.make_a_phone_call
@@ -2544,7 +2544,7 @@
 112196841	播放歌曲老婆和老妈	music.play
 112196841	播放音乐	music.play
 112196841	播放音乐	music.play
-112196841	鲁蛇	OTHERS
+112196841	鲁蛇	music.play
 115195061	一首世上只有妈妈好你这个瓜和咱们一块儿一样	music.play
 115195061	唱一首小燕子	music.play
 115195061	那只有妈妈好儿歌	music.play
@@ -2575,7 +2575,7 @@
 118197609	辽宁省凤城市同元古镇	navigation.navigation
 118197609	辽宁省凤城市	navigation.navigation
 112199414	开往路	OTHERS
-112199414	导航	navigation.start_navigation
+112199414	导航	navigation.open
 112199414	杭州市滨江区	navigation.navigation
 112199414	打电话给	phone_call.make_a_phone_call
 112199414	林雨	phone_call.make_a_phone_call
@@ -2589,7 +2589,7 @@
 118199964	组团	OTHERS
 118199964	打电话给661	phone_call.make_a_phone_call
 190130	微微一笑很倾城	music.play
-190130	方向	OTHERS
+190130	方向	music.play
 190130	微微一笑很倾城	music.play
 190130	你那个微微都没说清楚	OTHERS
 190130	播放一首	music.play
@@ -2597,7 +2597,7 @@
 190130	他吧	OTHERS
 190130	播放一曲	music.play
 190130	播放一曲随他吧	music.play
-190130	唐棣	OTHERS
+190130	唐棣	music.play
 190130	桶豆	OTHERS
 190130	播放一首冲动	music.play
 190130	播放一曲怒放的青春	music.play
@@ -2618,9 +2618,9 @@
 119199642	再大一点，他是傻*	OTHERS
 119199642	打开导航	navigation.open
 119199642	大哈	OTHERS
-119199642	导航	navigation.start_navigation
+119199642	导航	navigation.open
 119199642	晋宁县	navigation.navigation
-119199642	导航	navigation.start_navigation
+119199642	导航	navigation.open
 119199642	甘肃静宁	navigation.navigation
 118198974	恒大绿洲洛阳	navigation.navigation
 118198974	打电话给	phone_call.make_a_phone_call
@@ -2873,7 +2873,7 @@
 116198550	到湖北新洲中路振兴	navigation.navigation
 116198550	到湖北新洲政务中心	navigation.navigation
 116198550	请给我呼叫556	phone_call.make_a_phone_call
-116198434	导航	navigation.start_navigation
+116198434	导航	navigation.open
 116198434	53中学	navigation.navigation
 116198434	打电话都不给	phone_call.make_a_phone_call
 116198434	石头	phone_call.make_a_phone_call
@@ -2898,7 +2898,7 @@
 111195950	收音	music.pause
 116199132	兆鸿门业	navigation.navigation
 116199132	临朐兆鸿门业	navigation.navigation
-116199132	导航	navigation.start_navigation
+116199132	导航	navigation.open
 116199132	打电话	phone_call.make_a_phone_call
 119197172	打个电话	phone_call.make_a_phone_call
 119197172	打电话在哪里买啊	OTHERS
@@ -2937,7 +2937,7 @@
 122195325	播放张韶涵传世之爱	music.play
 122195325	播放张韶涵传世之爱	music.play
 122195325	梁静茹的勇气	music.play
-115194935	蓝调	music.play
+115194935	蓝调	OTHERS
 115194935	谢华	OTHERS
 115194935	郑绪岚的歌	music.play
 115194935	郭兰英的歌	music.play
@@ -2950,7 +2950,7 @@
 118199944	时安	navigation.navigation
 118199944	刘啸	music.play
 118199944	取消导航	navigation.cancel_navigation
-111198327	导航	navigation.start_navigation
+111198327	导航	navigation.open
 111198327	盛融青城	navigation.navigation
 111198327	关闭音乐	music.pause
 111198327	就是现在这个如果从这个	OTHERS
@@ -2987,7 +2987,7 @@
 191097	打电话给	phone_call.make_a_phone_call
 191097	导航去江苏去金坛	navigation.navigation
 191097	青田北站	navigation.navigation
-191097	导航	navigation.start_navigation
+191097	导航	navigation.open
 191097	金坛北站	navigation.navigation
 115199927	打电话	phone_call.make_a_phone_call
 115199927	晟焕	OTHERS
@@ -3084,7 +3084,7 @@
 115199138	民歌	music.play
 115199138	打电话给665	phone_call.make_a_phone_call
 117198571	你叫什么名字	music.play
-117198571	导航	navigation.start_navigation
+117198571	导航	navigation.open
 117198571	风语	OTHERS
 117198571	播放汪峰的歌	music.play
 117198571	打开导航	navigation.open
@@ -3156,7 +3156,7 @@
 116199544	瓦房店市九龙	navigation.navigation
 116199544	再见吧的	music.play
 116199544	取消吧	music.pause
-190093	路太远	music.play
+190093	路太远	OTHERS
 190093	拥抱着你离去	music.play
 190093	拥抱你离去	music.play
 190093	而那我是你爸爸	OTHERS
@@ -3206,8 +3206,8 @@
 111195260	我不一样	music.play
 117194071	歌曲	music.play
 117194071	打开的歌曲	music.play
-117194071	杜平	navigation.navigation
-117194071	关滨	OTHERS
+117194071	杜平	music.play
+117194071	关滨	music.play
 117194071	我要听你妈了逼	music.play
 117197307	那不是你爸	music.play
 117197307	你不会就累了	OTHERS
@@ -3305,7 +3305,7 @@
 190194	播放兵变	music.play
 190194	播放兵变	music.play
 190194	播放兵变	music.play
-190194	从二零	OTHERS
+190194	从二零	music.play
 190194	9420	music.play
 190194	播放	music.play
 190194	播放全部都是你	music.play
@@ -3352,12 +3352,12 @@
 111195249	我想听的见你	music.play
 111195249	播放刚好遇见你	music.play
 111195249	的音乐	music.play
-192165	苏珊	phone_call.make_a_phone_call
-192165	广播	phone_call.make_a_phone_call
+192165	苏珊	OTHERS
+192165	广播	OTHERS
 192165	恢复导航到花面	navigation.start_navigation
 192165	叮当你好	OTHERS
 192165	好可惜	music.play
-192165	取消	phone_call.cancel
+192165	取消	navigation.cancel_navigation
 111196523	傲然	OTHERS
 111196523	王楠	music.play
 111196523	冷漠的歌曲	music.play
@@ -3366,7 +3366,7 @@
 111196523	榜单	music.play
 111196523	放冷漠的歌曲	music.play
 118194089	阿果	music.play
-118194089	郭冰	OTHERS
+118194089	郭冰	music.play
 118194089	听放歌曲	music.play
 122196955	周杰伦等你下课	music.play
 122196955	音乐周杰伦等你下课	music.play
@@ -3472,7 +3472,7 @@
 111195627	我们要找一个歌在飞	music.play
 111195627	麻烦帮我找歌在飞	music.play
 111195627	找一个歌在飞歌曲歌在飞	music.play
-115195020	毛家菜	music.play
+115195020	毛家菜	OTHERS
 115195020	我要去白云桥的毛家菜	navigation.navigation
 115195020	我想听志玲妹妹唱的歌	music.play
 115195020	我要回家	navigation.navigation
@@ -3504,7 +3504,7 @@
 111197707	拨打	phone_call.make_a_phone_call
 111197707	播放成都歌曲	music.play
 111197707	桐庐分水镇	navigation.navigation
-111198804	江阴市	navigation.navigation
+111198804	江阴市	OTHERS
 111198804	呼叫13900009641	phone_call.make_a_phone_call
 111198804	呼叫13900009641	phone_call.make_a_phone_call
 191101	导航结束	navigation.cancel_navigation
@@ -3517,7 +3517,7 @@
 191101	不是散的是咱这个黄色电影	OTHERS
 191101	放aqua的念	music.play
 191101	丑八怪我要听一首勉为其难	music.play
-191101	关机	OTHERS
+191101	关机	music.play
 122198978	停止导航	navigation.cancel_navigation
 122198978	请播放我们不一样	music.play
 122198978	酷我音乐怎么不可以下载mv	OTHERS
@@ -3683,12 +3683,12 @@
 117194223	张杰的歌	music.play
 117194223	演员	music.play
 117194223	演员	music.play
-117194223	鱼乐	OTHERS
+117194223	鱼乐	music.play
 186000	想听我的好兄弟	music.play
 186000	想听秦杨尘缘	music.play
-186000	陈旸	OTHERS
-186000	陈旸	OTHERS
-186000	陈旸	OTHERS
+186000	陈旸	music.play
+186000	陈旸	music.play
+186000	陈旸	music.play
 116196797	电话	phone_call.make_a_phone_call
 116196797	发微信给老婆	OTHERS
 116196797	导航结束	navigation.cancel_navigation
@@ -3812,8 +3812,8 @@
 189104	我想去丁罗让隆巴	navigation.navigation
 190123	新村修炼手册青春修炼手册	music.play
 190123	青春修炼手册	music.play
-190123	伊泽	OTHERS
-190123	沈沉	OTHERS
+190123	伊泽	music.play
+190123	沈沉	music.play
 190123	我要去遵义市	navigation.navigation
 190123	可可	OTHERS
 190123	给妈打电话猪你的两只耳朵一只猪	OTHERS
@@ -3980,7 +3980,7 @@
 117196955	血腥爱情故事	music.play
 117196955	血腥爱情故事	music.play
 119195014	播放孙露的歌曲	music.play
-119195014	胡亮	OTHERS
+119195014	胡亮	music.play
 119195014	播放孙露的歌曲	music.play
 119195014	打开mv	OTHERS
 119195014	打开	OTHERS
@@ -3992,7 +3992,7 @@
 119195462	播放于文文的体面	music.play
 119195462	我想听前任三插曲体面	music.play
 119195462	我想听情人山插曲	music.play
-111198917	步行街	navigation.navigation
+111198917	步行街	OTHERS
 111198917	打电话给666	phone_call.make_a_phone_call
 111198917	打电话给666	phone_call.make_a_phone_call
 115197262	我要去河北新河	navigation.navigation
@@ -4013,7 +4013,7 @@
 118197220	取消	OTHERS
 118197220	闻鸣	OTHERS
 118197220	我要听	music.play
-118197220	金刚	OTHERS
+118197220	金刚	music.play
 118197220	解落个脚不是是姐姐但是现在好久没那么努力也没那么严重	OTHERS
 118197220	我知道	OTHERS
 118197220	湖北	navigation.navigation
@@ -4134,7 +4134,7 @@
 119199040	导航去郑州	navigation.navigation
 119199040	点一首汪峰的歌	music.play
 119199040	拨打	phone_call.make_a_phone_call
-187176	但歌曲	music.play
+187176	但歌曲	OTHERS
 187176	播放歌曲	music.play
 187176	导航去上海	navigation.navigation
 187176	fm发射	OTHERS
@@ -4174,7 +4174,7 @@
 122198952	去	OTHERS
 122198952	换一首	music.next
 122198952	广东爱情故事	music.play
-119198042	红旗路	navigation.navigation
+119198042	红旗路	OTHERS
 119198042	红旗路政六街	navigation.navigation
 119198042	打电话	phone_call.make_a_phone_call
 119198042	要打电话来这儿	phone_call.make_a_phone_call
@@ -4494,7 +4494,7 @@
 112194590	播放音乐	music.play
 112194590	请唱落花	music.play
 112194590	播放轻轻的告诉你	music.play
-116198960	导航	navigation.start_navigation
+116198960	导航	navigation.open
 116198960	平安银行慈溪支行	navigation.navigation
 116198960	1380000468	OTHERS
 117195348	请播放数鸭子叔叔叔叔叔叔呀呀呀	music.play
@@ -4558,7 +4558,7 @@
 118199549	导航到中国一建设银行	navigation.navigation
 118199549	取消	navigation.cancel_navigation
 119199775	蓝牙音乐	music.play
-119199775	蓝牙	OTHERS
+119199775	蓝牙	music.play
 119199775	打电话10086	phone_call.make_a_phone_call
 119199775	导航到陆良县马街镇	navigation.navigation
 119199775	导航到陆良县马街镇马街村	navigation.navigation
@@ -4685,7 +4685,7 @@
 111196962	帮我放月半小夜曲	music.play
 116195833	伍佰的挪威的森林	music.play
 116195833	放一曲挪威的森林	music.play
-116195833	周琪	OTHERS
+116195833	周琪	music.play
 116195833	把音乐关闭	music.pause
 116195833	把音乐退出	music.pause
 187117	导航到顺诚4s店福特顺诚4s店	navigation.navigation
@@ -4813,7 +4813,7 @@
 187157	不要给华打电话	phone_call.make_a_phone_call
 187157	我要给华打电话	phone_call.make_a_phone_call
 187157	我要给华打电话	phone_call.make_a_phone_call
-118194894	蓝莲花	music.play
+118194894	蓝莲花	OTHERS
 118194894	我们一样	music.play
 118194894	别怕我伤心咯	music.play
 118194894	别怕我伤心歌词	music.play
@@ -4826,11 +4826,11 @@
 115198054	江南	music.play
 115198054	海天	OTHERS
 115198054	江南殡仪馆	navigation.navigation
-111199421	导航	navigation.start_navigation
+111199421	导航	navigation.open
 111199421	齐齐哈尔百脑汇	navigation.navigation
 111199421	普通话不够标准	music.play
 111199421	维也纳的冬天qq音乐	music.play
-111199421	关机	OTHERS
+111199421	关机	music.play
 111199421	打电话	phone_call.make_a_phone_call
 189150	帮我左转驶入深圳路	OTHERS
 189150	她说你有点傻	OTHERS
@@ -4843,7 +4843,7 @@
 115198985	打电话给	phone_call.make_a_phone_call
 115198985	导航天下第一石城第一的红绿灯路口	music.play
 115198985	导航天下第一石城	navigation.navigation
-117198265	金山	navigation.navigation
+117198265	金山	OTHERS
 117198265	去深圳	navigation.navigation
 117198265	善尼电台	OTHERS
 117198265	取消	navigation.cancel_navigation
@@ -4857,11 +4857,11 @@
 112198878	机场	navigation.navigation
 111195574	让我们荡起双桨	music.play
 111195574	呼伦贝尔大草原	music.play
-111195574	沈政	navigation.navigation
+111195574	沈政	music.play
 111195574	呼伦贝尔大草原	music.play
 116198017	拨打662	phone_call.make_a_phone_call
 116198017	拨打662	phone_call.make_a_phone_call
-116198017	导航	navigation.start_navigation
+116198017	导航	navigation.open
 111197624	音乐	music.play
 111197624	宝贝习付打电话	phone_call.make_a_phone_call
 111197624	放大地图	OTHERS
@@ -4875,8 +4875,8 @@
 119195706	播放从题目的歌曲	music.play
 119195706	播放风停没的歌曲	music.play
 118196867	第一个好别动了	music.play
-118196867	麻雀	navigation.navigation
-118196867	李悦	OTHERS
+118196867	麻雀	music.play
+118196867	李悦	music.play
 118196867	这不久就恋爱了吗	music.play
 118196867	那你给他播放音乐咱们试试啊	OTHERS
 118196867	放首音乐	music.play
@@ -5053,7 +5053,7 @@
 118199016	可以	OTHERS
 118199016	点个歌	music.play
 119196847	给我点一首世上只有妈妈好	music.play
-119196847	唐棣	OTHERS
+119196847	唐棣	music.play
 119196847	我是五月了	OTHERS
 119196847	朱世能	OTHERS
 119196847	回	OTHERS
@@ -5118,7 +5118,7 @@
 116198140	打电话	phone_call.make_a_phone_call
 116198140	六二	OTHERS
 116198140	有序空间	music.play
-116198140	一群人	OTHERS
+116198140	一群人	music.play
 116198140	一群人红花	music.play
 116198140	的音乐	music.play
 191100	更换路线	OTHERS
@@ -5185,7 +5185,7 @@
 122194995	好好	OTHERS
 122194995	能放点英文歌	music.play
 122194995	给我放dj	music.play
-122194995	家芮	OTHERS
+122194995	家芮	music.play
 122194995	呵呵呵	OTHERS
 118196903	音乐	music.play
 118196903	音乐	music.play
@@ -5252,7 +5252,7 @@
 111194670	我想听歌	music.play
 111194670	听歌	music.play
 111194670	想听蓝莲花	music.play
-116199372	广东	navigation.navigation
+116199372	广东	OTHERS
 116199372	拨打电话来	phone_call.make_a_phone_call
 116199372	打电话给10086	phone_call.make_a_phone_call
 116199372	关注视频	OTHERS
