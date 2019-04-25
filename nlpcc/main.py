@@ -93,36 +93,18 @@ def train(is_debug=False):
         for i, batch in enumerate(getBatch(batch_size, index_train)):#此处已经生成了所有batch
             # 执行一个batch的训练
             _, loss, decoder_prediction, intent, mask, slot_W = model.step(sess, "train", batch)
-            # if i == 0:
-            #     index = 0
-            #     print("training debug:")
-            #     print("input:", list(zip(*batch))[0][index])
-            #     print("length:", list(zip(*batch))[1][index])
-            #     print("mask:", mask[index])
-            #     print("target:", list(zip(*batch))[2][index])
-            #     # print("decoder_targets_one_hot:")
-            #     # for one in decoder_targets_one_hot[index]:
-            #     #     print(" ".join(map(str, one)))
-            #     print("decoder_logits: ")
-            #     for one in decoder_logits[index]:
-            #         print(" ".join(map(str, one)))
-            #     print("slot_W:", slot_W)
-            #     print("decoder_prediction:", decoder_prediction[index])
-            #     print("intent:", list(zip(*batch))[3][index])
-            # mean_loss += loss
-            # train_loss += loss
-            # if i % 10 == 0:
-            #     if i > 0:
-            #         mean_loss = mean_loss / 10.0
-            #     print('Average train loss at epoch %d, step %d: %f' % (epoch, i, mean_loss))
-            #     mean_loss = 0
+
+
         train_loss /= (i + 1)
         print("[Epoch {}] Average train loss: {}\n".format(epoch, loss))
 
         #####################################################################
         ##  运行至此，已经完成一轮（一个epoch=全体数据）的训练
         #####################################################################
-
+        if epoch <= 50: #保存模型
+            saver = tf.train.Saver()
+            saver.save(sess, 'RNN2_model'+str(epoch))
+        #####################################################################
 
         # 每训一个epoch，测试一次（针对整个测试集测试，得到F1、Accurate、P）
         Right_intent = 0        #正确识别意图

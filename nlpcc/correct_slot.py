@@ -3,6 +3,7 @@ import re
 import numpy as np
 import Levenshtein
 import jieba.posseg as psg
+from pypinyin import pinyin, Style
 
 path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
@@ -12,7 +13,7 @@ path = os.path.abspath(os.path.dirname(__file__))   #path = ...\nlpcc
 
 # slot更正模块
 def slot_correct(result_file):
-    # 读取槽，针对以下11种槽进行更正（一共有15种槽）
+    # 读取槽，针对以下11种槽进行更正（一共有15种槽），实际只更正了singer和song两个槽
 
     '''
     age = open(path + "\\slot-dictionaries\\age.txt", 'r', encoding='UTF-8').readlines()
@@ -54,12 +55,13 @@ def slot_correct(result_file):
 
     for t in data:
         for i in range(len(slot_category)):
-            if not(i==6 or i==7):
+            if not(slot_category[i]=="singer" or slot_category[i]=="song"):
                 continue
             # 匹配 <slot>...</slot>形式的字符串
             slot_list = re.findall("[<]"+slot_category[i]+"[>].*?[<]/"+slot_category[i]+"[>]", ''.join(t.split("\t")[3]))  # 提取尖括号中内容
             # print(slot_list)
-            real_slot_list =[]
+            real_slot_list =[]          # 存储了一个一个的槽["xx","xxx"....]
+            correct_slot_list = []      # 存储了一个一个的更正后的槽["xx","xxx"....]
             for str in slot_list:       # 取出真正的槽值
                 index_start = str.index(">")
                 index_end = str.index("</")
@@ -67,6 +69,25 @@ def slot_correct(result_file):
                                         # 槽值是否在dic中
             for j in range(len(real_slot_list)):
                 real_slot_list[j] = correct(real_slot_list[j], dic_list[i]) #进行槽值更正
+
+    fp = open(path + "\\result\\correct_result.txt", 'w', encoding='UTF-8')
+
+    for i in range(len(data)):
+        fp.write(data[i][0])  # 写语句数字编号（如：188126）
+        fp.write("\t")
+
+        fp.write(data[i][1])
+
+        fp.write("\t")
+
+        fp.write(data[i][2])
+
+        fp.write("\t")  # 此处用空tab隔开
+        fp.write(data[i][3])  # 最后写 意图（如：OTHERS）
+
+        fp.write("\n")
+
+    fp.close()
 
 
 # 部分语句采用基于规则的方法
@@ -263,26 +284,6 @@ def rule_based(result_file):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     fp = open(path + "\\result\\rule_result.txt", 'w', encoding='UTF-8')
 
     for i in range(len(data)):
@@ -359,17 +360,16 @@ def all_n(list):
     return True
 
 
-'''
+
 # 汉字转拼音
 # "天空" ==>"tian1kong1"
 def pinyin_str(str):
     print(str)
     return ''.join(pinyin(str, style=Style.TONE3))
-'''
 
 
 if __name__ == '__main__':
-    #slot_correct(path + "\\result\\blstm_crf_slot.txt")
-    #rule_based(path + "\\result\\dic_result.txt")
+    #slot_correct(path + "\\result\\rule_result.txt")
+    #rule_based(path + "\\result\\answer_1025.txt")
 
-    rule_based(path + "\\result\\answer_1025.txt")
+    
