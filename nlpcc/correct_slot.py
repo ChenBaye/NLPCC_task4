@@ -52,13 +52,19 @@ def slot_correct(result_file):
     # 读取训练结果
     data = open(result_file, 'r', encoding='UTF-8').readlines()
     data = [m[:-1] for m in data]  # 去掉'\n'，读入每一行
+    data = [[t.split("\t")[0],  # 第一部分 数字不变
+             t.split("\t")[1],  # 第二部分 分出中文字、英文、数字
+             t.split("\t")[2],  # 第三部分 意图
+             t.split("\t")[3]]  # 第四部分 序列（未标注）
+            for t in data]
 
-    for t in data:
+
+    for j in range(len(data)):
         for i in range(len(slot_category)):
             if not(slot_category[i]=="singer" or slot_category[i]=="song"):
                 continue
             # 匹配 <slot>...</slot>形式的字符串
-            slot_list = re.findall("[<]"+slot_category[i]+"[>].*?[<]/"+slot_category[i]+"[>]", ''.join(t.split("\t")[3]))  # 提取尖括号中内容
+            slot_list = re.findall("[<]"+slot_category[i]+"[>].*?[<]/"+slot_category[i]+"[>]", data[j][3])  # 提取尖括号中内容
             # print(slot_list)
             real_slot_list =[]          # 存储了一个一个的槽["xx","xxx"....]
             correct_slot_list = []      # 存储了一个一个的更正后的槽["xx","xxx"....]
@@ -67,8 +73,13 @@ def slot_correct(result_file):
                 index_end = str.index("</")
                 real_slot_list.append(str [index_start+1 : index_end])
                                         # 槽值是否在dic中
-            for j in range(len(real_slot_list)):
-                real_slot_list[j] = correct(real_slot_list[j], dic_list[i]) #进行槽值更正
+            for k in range(len(real_slot_list)):
+                correct_slot = correct(real_slot_list[k], dic_list[i]) #进行槽值更正
+                if correct_slot != real_slot_list[k]:
+                    print(data[j][3])
+                    data[j][3] = data[j][3].replace(real_slot_list[k], real_slot_list[k]+"||"+correct_slot)
+                    print(data[j][3])
+
 
     fp = open(path + "\\result\\correct_result.txt", 'w', encoding='UTF-8')
 
@@ -333,15 +344,58 @@ def seg_char(sent):
 
 # 输入slot 和 slot字典，纠正slot
 def correct(slot, slot_list):   # 在dic中
-
-    if (slot in slot_list) or (len(slot) <= 2):
+    # 计算编辑距离和拼音距离
+    if slot in slot_list or len(slot) == 1 or slot == "gin" or slot == "你什么时候带我回家":
+        # 槽可以在字典找到
         return slot
+    edit_distance = [Levenshtein.distance(slot, t) for t in slot_list]
+    pinyin_distance = [Levenshtein.distance(pinyin_str(slot), pinyin_str(t)) for t in slot_list]
+    has_num, hanzi = num_in_str(slot)
+
+    if has_num:               # 槽中有数字，先数字转汉字
+        if hanzi in slot_list:
+            print(slot, "改为", hanzi)
+            return hanzi
+        else:
+            choose1 = slot_list[edit_distance.index(min(edit_distance))]
+            if Levenshtein.distance(slot, choose1) <= 1:  # 拼音只相差一位
+                print(slot, "改为", choose1)
+                return choose1
+            else:
+                return slot
     else:
 
-        edit_distance = [Levenshtein.distance(slot, t) for t in slot_list]
-        #if (min(edit_distance)>1 or )
-        print(slot, "改为", slot_list[edit_distance.index(min(edit_distance))])
-        return slot_list[edit_distance.index(min(edit_distance))]
+        choose1 = slot_list[edit_distance.index(min(edit_distance))]  # 两种距离得出的最相似槽
+        choose2 = slot_list[pinyin_distance.index(min(pinyin_distance))]
+        if Levenshtein.distance(slot, choose2) <= 1:    #拼音只相差一位
+            print(slot, "改为", choose2)
+            return choose2
+
+        if choose1 == choose2:
+            if len(choose1)<=4 or len(slot)<=4:
+                #  如果长度小于4，必须拥有相同字符长度，且为一字之差
+                if len(choose1) == len(slot) and Levenshtein.distance(slot, choose1) == 1:
+                    print(slot, "改为", choose1)
+                    return choose1
+                else:
+                    return slot
+            else:
+                # 如果长度大于都等于5
+                if len(choose1) - len(slot) >= 2 or len(slot) - len(choose1) >= 2:
+                    return slot
+                else:
+                    print(slot, "改为", choose1)
+                    return choose1
+        else:
+            return slot
+
+
+
+    #else:
+
+     #   #if (min(edit_distance)>1 or )
+     #   print(slot, "改为", slot_list[edit_distance.index(min(edit_distance))])
+     #   return slot_list[edit_distance.index(min(edit_distance))]
 
 # 从file中读取数据（字典）
 def file_to_dictionary(filename):
@@ -364,12 +418,41 @@ def all_n(list):
 # 汉字转拼音
 # "天空" ==>"tian1kong1"
 def pinyin_str(str):
-    print(str)
-    return ''.join(pinyin(str, style=Style.TONE3))
+    #print(str)
+    pinyin_str = ""
+    for t in pinyin(str, style=Style.TONE3):
+        pinyin_str = pinyin_str + t[0]
+    return pinyin_str
+
+# has_num 返回str中是否有数字(bool型)
+# hanzi 返回str中数字成汉字
+def num_in_str(str):
+    hanzi = ""
+    has_num = False
+    dic = {"0":"零", "1":"一", "2":"二", "3":"三", "4":"四", "5":"五",
+           "6":"六", "7":"七", "8":"八", "9":"九"}
+    for t in str:
+        if t in dic:
+            hanzi = hanzi + dic[t]
+            has_num = True
+        else:
+            hanzi = hanzi + t
+
+
+    return has_num,hanzi
+
+
+
 
 
 if __name__ == '__main__':
-    #slot_correct(path + "\\result\\rule_result.txt")
+
+
+    #print(Levenshtein.distance("体面", "几面"))
+    #print(pinyin_str("体面"))
+    #print(pinyin_str("几面"))
+    #print(Levenshtein.distance(pinyin_str("体面"), pinyin_str("几面")))
+
+    slot_correct(path + "\\result\\rule_result.txt")
     #rule_based(path + "\\result\\answer_1025.txt")
 
-    

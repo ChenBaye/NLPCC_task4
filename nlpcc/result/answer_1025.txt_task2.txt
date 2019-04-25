@@ -1577,7 +1577,7 @@
 115198718	打电话	phone_call.make_a_phone_call
 115198718	走两步开上去	navigation.navigation
 115198718	我现在在哪买的	OTHERS
-115198718	我要去门口那里等我们两个人在那里是啊	music.play
+115198718	我要去门口那里等我们两个人在那里是啊	OTHERS
 119198205	导航结束	navigation.cancel_navigation
 119198205	导航结束	navigation.cancel_navigation
 119198205	漂流	music.play
@@ -3262,7 +3262,7 @@
 111199959	中山三角镇	navigation.navigation
 111199959	取消	navigation.cancel_navigation
 111198544	去羊台山	navigation.navigation
-111198544	打电话你们在那里	music.play
+111198544	打电话你们在那里	OTHERS
 111198544	andy	OTHERS
 111198544	循环	OTHERS
 111198544	打电话	phone_call.make_a_phone_call
@@ -3296,7 +3296,7 @@
 119197786	导航到那个什么	navigation.navigation
 119197786	取消导航小妹没吃早餐买面包过来叮当你好	navigation.cancel_navigation
 119197786	唉你们不要瞎讲嘛搞得他都搞不清你好	OTHERS
-119197786	这个问题你们在那里调戏她	music.play
+119197786	这个问题你们在那里调戏她	OTHERS
 119197786	导航大业路导航开始导航开启哪个地方连接路	navigation.navigation
 119197786	导航到灵杰路	navigation.navigation
 119197786	拨打666	phone_call.make_a_phone_call

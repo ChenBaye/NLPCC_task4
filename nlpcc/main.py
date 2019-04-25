@@ -580,5 +580,8 @@ if __name__ == '__main__':
     #rule_based(path + "\\result\\answer_1025.txt")
     #calculate_onefile(path + "\\result\\rule_result.txt")
     #calculate_onefile(path + "\\result\\feature_result.txt")
+    slot_correct(path + "\\result\\rule_result.txt")
+    calculate_onefile(path + "\\result\\correct_result.txt")
+    output_task2(path + "\\result\\correct_result.txt")
 
 

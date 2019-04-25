@@ -45,7 +45,8 @@ def combine_dic():
 
             if (len(value)>=1 and j==6 and value!="高飞"):                        # singer6
                 print(i," ",value," ",j)
-            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要" and value!="80000" and value!="什么东西" and value!="恋爱了"):     # song7
+            elif (len(value)>=3 and j==7 and value!="打电话" and value!="不需要" and value!="80000" and value!="什么东西"
+                  and value!="恋爱了" and value!="在那里"):     # song7
                 print(i, " ", value, " ", j)
             elif (j==8 and len(value) >= 1 and value!="电子" and value!="大草原"):                        # style8
                 print(i, " ", value, " ", j)
