@@ -90,6 +90,7 @@ if __name__ == '__main__':
 
     for x in psg.cut("堤口路水果市场"):
         print(x.word, x.flag)
+    print("ArgMax:0".split(","))
 
 
 
