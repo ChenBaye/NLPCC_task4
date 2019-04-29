@@ -92,6 +92,7 @@ class Model:
         intent_logits = tf.add(tf.matmul(encoder_final_state_h, intent_W), intent_b)
         # intent_prob = tf.nn.softmax(intent_logits)
         self.intent = tf.argmax(intent_logits, axis=1)
+        print("name:.......", self.intent.name)
         #返回最大值对应索引，即最可能的意图
 
         sos_time_slice = tf.ones([self.batch_size], dtype=tf.int32, name='SOS') * 2

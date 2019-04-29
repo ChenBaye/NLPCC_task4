@@ -151,6 +151,7 @@ class Model:
 
         self.slot = tf.transpose(decode_tags, perm=[1, 0])
         print("self.slot shape: ", self.slot.shape)
+        print("name:.......", self.slot.name)
 
         self.mask = mask
         self.intent = tf.Variable(tf.constant(2, shape=[self.batch_size]))
